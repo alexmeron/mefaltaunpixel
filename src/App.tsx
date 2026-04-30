@@ -5,7 +5,6 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Soul } from './pages/Soul';
 import { ProjectDetail } from './pages/ProjectDetail';
-import { Articles } from './pages/Articles';
 import { LikeButton } from './components/LikeButton';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
