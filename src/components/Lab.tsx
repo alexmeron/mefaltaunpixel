@@ -8,7 +8,7 @@ export const Lab = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 2.0; // Set to 2.0x speed
+      videoRef.current.playbackRate = 4.0; // Boost to 4.0x speed
     }
   }, []);
 
@@ -35,8 +35,11 @@ export const Lab = () => {
               loop 
               playsInline 
               className="lab-video-asset"
+              onLoadedMetadata={(e) => {
+                e.currentTarget.playbackRate = 4.0;
+              }}
               onPlay={(e) => {
-                e.currentTarget.playbackRate = 2.0;
+                e.currentTarget.playbackRate = 4.0;
               }}
               onTimeUpdate={(e) => {
                 const vid = e.currentTarget;
