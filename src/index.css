@@ -637,6 +637,12 @@ img {
   margin-bottom: 240px;
 }
 
+@media (max-width: 640px) {
+  .projects { padding-bottom: 80px; }
+  .lab { padding-bottom: 80px; }
+  .skills { margin-bottom: 80px; }
+}
+
 .about-text-content p {
   font-size: 24px;
   line-height: 1.4;
