@@ -503,7 +503,7 @@ img {
 .lab-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: 64px;
 }
 
 .lab-item {
@@ -624,7 +624,7 @@ img {
 @media (max-width: 640px) {
   .lab-intro { font-size: 28px; }
   .lab-grid { grid-template-columns: 1fr; }
-  .lab-item { margin-bottom: 40px; }
+  .lab-item { margin-bottom: 64px; }
   .lab-item:last-child { margin-bottom: 0; }
   .lab-image { height: 250px; }
 }
