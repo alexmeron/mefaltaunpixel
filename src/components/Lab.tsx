@@ -36,7 +36,9 @@ export const Lab = () => {
               playsInline 
               className="lab-video-asset"
               onLoadedMetadata={(e) => {
-                e.currentTarget.playbackRate = 4.0;
+                const vid = e.currentTarget;
+                vid.playbackRate = 4.0;
+                vid.currentTime = 1; // Skip first second
               }}
               onPlay={(e) => {
                 e.currentTarget.playbackRate = 4.0;
@@ -44,7 +46,7 @@ export const Lab = () => {
               onTimeUpdate={(e) => {
                 const vid = e.currentTarget;
                 if (vid.duration && vid.currentTime >= vid.duration - 2) {
-                  vid.currentTime = 0;
+                  vid.currentTime = 1; // Back to second 1
                   vid.play();
                 }
               }}
