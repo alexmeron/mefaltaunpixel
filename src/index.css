@@ -93,13 +93,13 @@ img {
 }
 
 .header-scrolled {
-  background-color: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: var(--bg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 [data-theme='dark'] .header-scrolled {
-  background-color: rgba(10, 10, 10, 0.8);
+  background-color: var(--bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .desktop-only {
