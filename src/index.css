@@ -361,7 +361,7 @@ img {
   background-image: url('/waykout-screen.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 60% auto;
 }
 .project-staymyway { background-color: var(--accent-blue); }
 .project-celiams { background-color: var(--accent-black); }
