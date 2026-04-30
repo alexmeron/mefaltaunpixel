@@ -62,8 +62,6 @@ img {
    LAYOUT
    ============================ */
 .page-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
   padding-left: 64px;
   padding-right: 64px;
 }
@@ -207,8 +205,6 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
-  margin: 0 auto;
   height: 100%;
   padding: 0 64px;
 }
@@ -294,8 +290,6 @@ img {
    HERO
    ============================ */
 .hero {
-  max-width: 1440px;
-  margin: 0 auto;
   height: 635px;
   padding: 0 64px;
   display: flex;
