@@ -63,7 +63,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     en: {
       nav_soul: "Soul",
       nav_about: "About",
-      nav_work: "Projects",
+      nav_work: "Work",
       nav_resume: "Resume",
       hero_title: "Hello! I'm Alex!",
       hero_subtitle: "Product Designer with over 10+ years of experience. Specialized in Design Systems that allow teams and companies to scale with speed and consistency.",
