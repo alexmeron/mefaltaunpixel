@@ -295,6 +295,12 @@ img {
   justify-content: flex-end;
 }
 
+@media (max-width: 640px) {
+  .hero {
+    padding: 0 16px;
+  }
+}
+
 .hero-content {
   padding-bottom: 48px;
 }
@@ -319,8 +325,13 @@ img {
 }
 
 @media (max-width: 768px) {
-  .hero-title { font-size: 94px; }
-  .hero-description { font-size: 36px; }
+  .hero-title { font-size: 80px; }
+  .hero-description { font-size: 32px; }
+}
+
+@media (max-width: 640px) {
+  .hero-title { font-size: 48px; }
+  .hero-description { font-size: 32px; }
 }
 
 /* ============================
@@ -368,6 +379,12 @@ img {
   height: auto;
   animation: floatBalloon 4s ease-in-out infinite;
   filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+@media (max-width: 640px) {
+  .balloon {
+    width: 140px;
+  }
 }
 
 .project-coming-soon {
@@ -451,10 +468,19 @@ img {
   }
   .project-row .project-item:last-child { margin-top: 0; }
   .project-image.large, .project-image.medium, .project-image.small {
-    height: 400px;
+    height: auto;
     aspect-ratio: 16/9;
   }
   .project-title { font-size: 24px; }
+}
+
+@media (max-width: 640px) {
+  .projects-list {
+    gap: 24px;
+  }
+  .project-row {
+    gap: 24px;
+  }
 }
 
 /* ============================
@@ -598,6 +624,8 @@ img {
 @media (max-width: 640px) {
   .lab-intro { font-size: 28px; }
   .lab-grid { grid-template-columns: 1fr; }
+  .lab-item { margin-bottom: 40px; }
+  .lab-item:last-child { margin-bottom: 0; }
   .lab-image { height: 250px; }
 }
 
