@@ -133,7 +133,7 @@ export const Header = () => {
                   <span>{language === 'es' ? 'Idioma: EN' : 'Language: ES'}</span>
                 </div>
                 <div className="mobile-control-item" onClick={toggleTheme}>
-                  <span>{theme === 'light' ? 'Modo Oscuro' : 'Modo Claro'}</span>
+                  <span>{theme === 'light' ? t('theme_dark') : t('theme_light')}</span>
                   {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
                 </div>
               </div>

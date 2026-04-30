@@ -35,6 +35,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       soul_send: "ENVIAR",
       footer_contact: "Hablemos de tu próximo proyecto",
       footer_email: "Enviar Email",
+      theme_dark: "Modo Oscuro",
+      theme_light: "Modo Claro",
       footer_rights: "© 2025 Alex Salmerón. Todos los derechos reservados.",
       // SEO ES
       seo_home_title: "Alex Salmerón - Senior Product Designer",
@@ -79,6 +81,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       soul_send: "SEND",
       footer_contact: "Let's talk about your next project",
       footer_email: "Send Email",
+      theme_dark: "Dark Mode",
+      theme_light: "Light Mode",
       footer_rights: "© 2025 Alex Salmerón. All rights reserved.",
       // SEO EN
       seo_home_title: "Alex Salmerón - Senior Product Designer",
