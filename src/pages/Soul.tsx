@@ -213,13 +213,13 @@ export const Soul = () => {
     const hour = new Date().getHours();
     let timeGreeting = "";
     if (language === 'es') {
-      if (hour < 12) timeGreeting = "Buenos días";
-      else if (hour < 20) timeGreeting = "Buenas tardes";
+      if (hour >= 5 && hour < 12) timeGreeting = "Buenos días";
+      else if (hour >= 12 && hour < 20) timeGreeting = "Buenas tardes";
       else timeGreeting = "Buenas noches";
       return `${timeGreeting}. Soy Soul. <br /> ¿Qué quieres saber sobre Alex?`;
     } else {
-      if (hour < 12) timeGreeting = "Good morning";
-      else if (hour < 20) timeGreeting = "Good afternoon";
+      if (hour >= 5 && hour < 12) timeGreeting = "Good morning";
+      else if (hour >= 12 && hour < 20) timeGreeting = "Good afternoon";
       else timeGreeting = "Good evening";
       return `${timeGreeting}. I’m Soul. <br /> What do you know about Alex?`;
     }

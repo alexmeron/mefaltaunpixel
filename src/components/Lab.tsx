@@ -57,10 +57,8 @@ export const Lab = () => {
                 }
               }}
             />
-          </a>
-          <div className="lab-meta">
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
-          </div>
+          </a>
           <p className="lab-text">
             {t('lab_item1_title')}<br />
             {t('lab_item1_desc')}
@@ -85,10 +83,8 @@ export const Lab = () => {
             className="lab-image"
           >
             <img src="/modes.png" alt="Infinite Variable Modes - Figma Resource for scaling design systems" className="lab-asset-cover" />
-          </a>
-          <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
-          </div>
+          </a>
           <p className="lab-text">
             {t('lab_item2_title')}<br />
             {t('lab_item2_desc')}
@@ -129,10 +125,8 @@ export const Lab = () => {
                 e.currentTarget.playbackRate = 4.0;
               }}
             />
-          </a>
-          <div className="lab-meta">
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
-          </div>
+          </a>
           <p className="lab-text">
             {t('lab_item3_title')}<br />
             {t('lab_item3_desc')}
@@ -157,10 +151,8 @@ export const Lab = () => {
             className="lab-image"
           >
             <img src="/icons-var.png" alt="Icon Library with Variables - Comprehensive SVG icons for design systems" className="lab-video-asset" />
-          </a>
-          <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
-          </div>
+          </a>
           <p className="lab-text">
             {t('lab_item4_title')}<br />
             {t('lab_item4_desc')}

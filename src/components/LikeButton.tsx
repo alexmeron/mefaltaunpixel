@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -13,24 +14,51 @@ export const LikeButton = () => {
   const [likes, setLikes] = useState(124);
   const [isLiked, setIsLiked] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
+  const location = useLocation();
+  const isSoulPage = location.pathname.includes('/soul');
 
   useEffect(() => {
+    // 1. Fetch real likes from API
+    fetch('/api/likes')
+      .then(res => res.json())
+      .then(data => {
+        if (data && typeof data.likes === 'number') {
+          setLikes(data.likes);
+        }
+      })
+      .catch(err => console.error('Failed to fetch likes:', err));
+
+    // 2. Check local storage
     const savedLike = localStorage.getItem('portfolio_liked');
     if (savedLike) {
       setIsLiked(true);
-      setLikes(prev => prev + 1);
+      // We don't increment here because the global count already includes their past like
     }
   }, []);
 
   const handleLike = () => {
     if (isLiked) {
+      // Optimistic update (unlike is not supported globally yet, but we allow removing local flag)
       setIsLiked(false);
       setLikes(prev => prev - 1);
       localStorage.removeItem('portfolio_liked');
+      // For simplicity, we only let people ADD likes to the backend.
+      // If we wanted unlike, we would need a DELETE endpoint.
     } else {
+      // Optimistic update
       setIsLiked(true);
       setLikes(prev => prev + 1);
       localStorage.setItem('portfolio_liked', 'true');
+      
+      // Tell backend to increment
+      fetch('/api/likes', { method: 'POST' })
+        .then(res => res.json())
+        .then(data => {
+          if (data && typeof data.likes === 'number') {
+            setLikes(data.likes); // sync with real backend value
+          }
+        })
+        .catch(err => console.error('Failed to post like:', err));
       
       // Generate particles
       const newParticles = Array.from({ length: 12 }).map((_, i) => ({
@@ -47,7 +75,7 @@ export const LikeButton = () => {
   };
 
   return (
-    <div className="floating-like-container">
+    <div className={`floating-like-container ${isSoulPage ? 'hide-mobile-soul' : ''}`}>
       <div className="particles-wrapper">
         <AnimatePresence>
           {particles.map((p) => (

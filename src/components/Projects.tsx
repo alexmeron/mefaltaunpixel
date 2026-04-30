@@ -34,7 +34,7 @@ export const Projects = () => {
                 ease: "easeInOut"
               }}
             >
-              <Balloon />
+              <Balloon className="balloon" />
             </motion.div>
           </div>
           <h3 className="project-title">Waykout.com</h3>
