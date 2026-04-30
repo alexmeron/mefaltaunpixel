@@ -8,7 +8,7 @@ export const Lab = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 2.0; // Set to 2.0x speed
+      videoRef.current.playbackRate = 1.5; // Set to 1.5x speed
     }
   }, []);
 
