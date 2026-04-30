@@ -75,7 +75,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/modes.png" alt="Infinite Variable Modes" className="lab-video-asset" />
+            <img src="/modes.png" alt="Infinite Variable Modes" className="lab-asset-cover" />
           </a>
           <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
