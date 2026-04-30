@@ -23,8 +23,8 @@
 }
 
 [data-theme='dark'] {
-  --bg: #0A0A0A;
-  --text: #F5F5F5;
+  --bg: #121212;
+  --text: #FFFFFF;
   --text-muted: #A0A0A0;
   --accent-pink: #f6085a;
   --accent-blue: #0830f6;
@@ -94,12 +94,10 @@ img {
 
 .header-scrolled {
   background-color: var(--bg);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 [data-theme='dark'] .header-scrolled {
   background-color: var(--bg);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .desktop-only {
@@ -344,6 +342,7 @@ img {
   flex-direction: column;
   gap: var(--project-inner-gap);
   cursor: pointer;
+  position: relative;
 }
 
 .project-image {
@@ -358,18 +357,77 @@ img {
 
 .project-waykout { 
   background-color: var(--accent-pink); 
-  background-image: url('/waykout-screen.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.balloon {
+  width: 240px;
+  height: auto;
+  animation: floatBalloon 4s ease-in-out infinite;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+}
+
+.project-coming-soon {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  background-color: #121212;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+@keyframes floatBalloon {
+  0%, 100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(2deg);
+  }
+}
+.project-xnorb { 
+  background-color: #121212; 
+  background-image: url('/original-ds.webp');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 60% auto;
+  background-size: cover;
 }
-.project-staymyway { background-color: var(--accent-blue); }
+.project-staymyway { 
+  background-color: var(--accent-blue); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock {
+  width: 120px;
+  height: auto;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+  animation: floatLock 5s ease-in-out infinite;
+}
+
+@keyframes floatLock {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
 .project-celiams { background-color: var(--accent-black); }
 .project-displaynote { background-color: var(--accent-black); }
 
 .project-row {
   display: grid;
-  grid-template-columns: 1.4fr 0.6fr; /* Asymmetrical widths */
+  grid-template-columns: 1fr 1fr; /* Balanced 50/50 split for wider Xnorb */
   gap: 40px;
   align-items: start;
 }

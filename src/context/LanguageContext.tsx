@@ -114,6 +114,16 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return translations[language][key] || key;
   };
 
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.title = t('seo_home_title');
+    
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute('content', t('seo_home_desc'));
+    }
+  }, [language]);
+
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
   };

@@ -4,11 +4,15 @@ import { useLanguage } from '../context/LanguageContext';
 
 export const Lab = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const componentsVideoRef = useRef<HTMLVideoElement>(null);
   const { t } = useLanguage();
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 4.0; // Boost to 4.0x speed
+      videoRef.current.playbackRate = 4.0;
+    }
+    if (componentsVideoRef.current) {
+      componentsVideoRef.current.playbackRate = 4.0;
     }
   }, []);
 
@@ -35,10 +39,12 @@ export const Lab = () => {
               loop 
               playsInline 
               className="lab-video-asset"
+              aria-label="Figma plugin variables timeline demonstration"
+              title="Variables Timeline Plugin for Figma"
               onLoadedMetadata={(e) => {
                 const vid = e.currentTarget;
                 vid.playbackRate = 4.0;
-                vid.currentTime = 2; // Skip first 2 seconds
+                vid.currentTime = 3; // Skip first 3 seconds
               }}
               onPlay={(e) => {
                 e.currentTarget.playbackRate = 4.0;
@@ -46,7 +52,7 @@ export const Lab = () => {
               onTimeUpdate={(e) => {
                 const vid = e.currentTarget;
                 if (vid.duration && vid.currentTime >= vid.duration - 2) {
-                  vid.currentTime = 2; // Back to second 2
+                  vid.currentTime = 3; // Back to second 3
                   vid.play();
                 }
               }}
@@ -64,6 +70,7 @@ export const Lab = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="lab-community-link"
+            aria-label="Try Variables Timeline plugin on Figma Community"
           >
             {t('lab_try_figma')} <ArrowRight size={16} />
           </a>
@@ -77,7 +84,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/modes.png" alt="Infinite Variable Modes" className="lab-asset-cover" />
+            <img src="/modes.png" alt="Infinite Variable Modes - Figma Resource for scaling design systems" className="lab-asset-cover" />
           </a>
           <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
@@ -91,6 +98,7 @@ export const Lab = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="lab-community-link"
+            aria-label="Try Infinite Variable Modes resource on Figma Community"
           >
             {t('lab_try_figma')} <ArrowRight size={16} />
           </a>
@@ -104,6 +112,23 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
+            <video 
+              ref={componentsVideoRef}
+              src="/videos/components.webm" 
+              autoPlay 
+              muted 
+              loop 
+              playsInline 
+              className="lab-video-asset"
+              aria-label="Figma plugin components explorer demonstration"
+              title="Components Explorer Plugin for Figma"
+              onLoadedMetadata={(e) => {
+                e.currentTarget.playbackRate = 4.0;
+              }}
+              onPlay={(e) => {
+                e.currentTarget.playbackRate = 4.0;
+              }}
+            />
           </a>
           <div className="lab-meta">
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
@@ -117,6 +142,7 @@ export const Lab = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="lab-community-link"
+            aria-label="Try Components Explorer plugin on Figma Community"
           >
             {t('lab_try_figma')} <ArrowRight size={16} />
           </a>
@@ -130,7 +156,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/icons-var.png" alt="Icon Library with Variables" className="lab-video-asset" />
+            <img src="/icons-var.png" alt="Icon Library with Variables - Comprehensive SVG icons for design systems" className="lab-video-asset" />
           </a>
           <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
@@ -144,6 +170,7 @@ export const Lab = () => {
             target="_blank" 
             rel="noopener noreferrer"
             className="lab-community-link"
+            aria-label="Try Icons Library with Variables on Figma Community"
           >
             {t('lab_try_figma')} <ArrowRight size={16} />
           </a>
