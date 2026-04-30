@@ -5,6 +5,8 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Soul } from './pages/Soul';
 import { ProjectDetail } from './pages/ProjectDetail';
+import { Articles } from './pages/Articles';
+import { LikeButton } from './components/LikeButton';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
 
 // This component syncs the URL language parameter with the context state
@@ -41,6 +43,7 @@ function App() {
           <Route path="/:lang/soul" element={<LanguageManager><Header /><Soul /></LanguageManager>} />
           <Route path="/:lang/project/:id" element={<LanguageManager><Header /><ProjectDetail /></LanguageManager>} />
         </Routes>
+        <LikeButton />
       </Router>
     </LanguageProvider>
   );

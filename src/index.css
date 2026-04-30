@@ -1353,3 +1353,77 @@ img {
   .soul-hero { padding-left: 16px; padding-right: 16px; }
   .soul-input-area { padding: 16px; }
 }
+/* ============================
+   FLOATING LIKE BUTTON
+   ============================ */
+.floating-like-container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.particles-wrapper {
+  position: absolute;
+  pointer-events: none;
+}
+
+.heart-particle {
+  position: absolute;
+  pointer-events: none;
+}
+
+.like-button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  /* Stabilize backdrop-filter to prevent glitching */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(0); /* Hardware acceleration */
+}
+
+.like-button:active {
+  backdrop-filter: none; /* Disable blur during active press to avoid browser rendering glitch */
+}
+
+.like-button.liked {
+  border-color: var(--accent-pink);
+  background: var(--bg); /* Keep it solid to avoid double blur issues */
+}
+
+.heart-icon {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.like-button:hover .heart-icon {
+  transform: scale(1.15);
+}
+
+.like-count {
+  font-weight: 700;
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .floating-like-container {
+    bottom: 24px;
+    right: 24px;
+  }
+  
+  .like-button {
+    padding: 10px 20px;
+  }
+}
+
