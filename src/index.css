@@ -638,9 +638,14 @@ img {
 }
 
 @media (max-width: 640px) {
-  .projects { padding-bottom: 80px; }
+  .projects { padding-bottom: 40px; }
   .lab { padding-bottom: 80px; }
   .skills { margin-bottom: 80px; }
+  .lab-video-asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .about-text-content p {
