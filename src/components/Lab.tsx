@@ -35,6 +35,13 @@ export const Lab = () => {
               loop 
               playsInline 
               className="lab-video-asset"
+              onTimeUpdate={(e) => {
+                const vid = e.currentTarget;
+                if (vid.duration && vid.currentTime >= vid.duration - 2) {
+                  vid.currentTime = 0;
+                  vid.play();
+                }
+              }}
             />
           </a>
           <div className="lab-meta">
