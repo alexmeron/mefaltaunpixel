@@ -21,7 +21,12 @@ export const Lab = () => {
       <div className="lab-grid">
         {/* Item 1 - Video */}
         <div className="lab-item">
-          <div className="lab-image">
+          <a 
+            href="https://www.figma.com/community/plugin/1600155199369592947/variables-timeline" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="lab-image"
+          >
             <video 
               ref={videoRef}
               src="/videos/thumb-vars.webm" 
@@ -31,7 +36,7 @@ export const Lab = () => {
               playsInline 
               className="lab-video-asset"
             />
-          </div>
+          </a>
           <div className="lab-meta">
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
           </div>
@@ -51,9 +56,14 @@ export const Lab = () => {
 
         {/* Item 2 */}
         <div className="lab-item">
-          <div className="lab-image">
+          <a 
+            href="https://www.figma.com/community/file/1445434350337332622/infinite-variable-modes" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="lab-image"
+          >
             <img src="/swap-var.png" alt="Infinite Variable Modes" className="lab-video-asset" />
-          </div>
+          </a>
           <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
           </div>
@@ -73,8 +83,13 @@ export const Lab = () => {
 
         {/* Item 3 */}
         <div className="lab-item">
-          <div className="lab-image">
-          </div>
+          <a 
+            href="https://www.figma.com/community/plugin/1505449538275448157/components-explorer" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="lab-image"
+          >
+          </a>
           <div className="lab-meta">
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
           </div>
@@ -83,7 +98,7 @@ export const Lab = () => {
             {t('lab_item3_desc')}
           </p>
           <a 
-            href="https://www.figma.com/@mefaltaunpixel" 
+            href="https://www.figma.com/community/plugin/1505449538275448157/components-explorer" 
             target="_blank" 
             rel="noopener noreferrer"
             className="lab-community-link"
@@ -94,9 +109,14 @@ export const Lab = () => {
 
         {/* Item 4 */}
         <div className="lab-item">
-          <div className="lab-image">
+          <a 
+            href="https://www.figma.com/community/file/1445427402991631750" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="lab-image"
+          >
             <img src="/icons-var.png" alt="Icon Library with Variables" className="lab-video-asset" />
-          </div>
+          </a>
           <div className="lab-meta">
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
           </div>
