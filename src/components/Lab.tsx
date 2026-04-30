@@ -38,7 +38,7 @@ export const Lab = () => {
               onLoadedMetadata={(e) => {
                 const vid = e.currentTarget;
                 vid.playbackRate = 4.0;
-                vid.currentTime = 1; // Skip first second
+                vid.currentTime = 2; // Skip first 2 seconds
               }}
               onPlay={(e) => {
                 e.currentTarget.playbackRate = 4.0;
@@ -46,7 +46,7 @@ export const Lab = () => {
               onTimeUpdate={(e) => {
                 const vid = e.currentTarget;
                 if (vid.duration && vid.currentTime >= vid.duration - 2) {
-                  vid.currentTime = 1; // Back to second 1
+                  vid.currentTime = 2; // Back to second 2
                   vid.play();
                 }
               }}
