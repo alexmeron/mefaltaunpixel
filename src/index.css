@@ -356,7 +356,13 @@ img {
 .project-image.medium { height: 590px; }
 .project-image.small { height: 480px; }
 
-.project-waykout { background-color: var(--accent-pink); }
+.project-waykout { 
+  background-color: var(--accent-pink); 
+  background-image: url('/waykout-screen.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .project-staymyway { background-color: var(--accent-blue); }
 .project-celiams { background-color: var(--accent-black); }
 .project-displaynote { background-color: var(--accent-black); }
