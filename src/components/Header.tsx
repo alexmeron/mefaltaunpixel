@@ -85,6 +85,7 @@ export const Header = () => {
               <li><NavLink to={`/${language}/soul`} className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_soul')}</NavLink></li>
               <li><NavLink to={`/${language}/about`} className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_about')}</NavLink></li>
               <li><NavLink to={`/${language}`} end className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_work')}</NavLink></li>
+              <li><span style={{ opacity: 0.4, cursor: 'default' }}>{t('nav_articles')}</span></li>
               <li><a href="/cv-alex-salmeron.pdf" target="_blank" rel="noreferrer">{t('nav_resume')}</a></li>
             </ul>
           </nav>
@@ -125,6 +126,7 @@ export const Header = () => {
                 <NavLink to={`/${language}/soul`} onClick={() => setIsMenuOpen(false)}>{t('nav_soul')}</NavLink>
                 <NavLink to={`/${language}/about`} onClick={() => setIsMenuOpen(false)}>{t('nav_about')}</NavLink>
                 <NavLink to={`/${language}`} end onClick={() => setIsMenuOpen(false)}>{t('nav_work')}</NavLink>
+                <span style={{ opacity: 0.4, fontSize: '42px', fontWeight: 500, letterSpacing: '-0.02em' }}>{t('nav_articles')}</span>
                 <a href="/cv-alex-salmeron.pdf" target="_blank" rel="noreferrer">{t('nav_resume')}</a>
               </nav>
 
