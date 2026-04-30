@@ -35,6 +35,9 @@ export const Lab = () => {
               loop 
               playsInline 
               className="lab-video-asset"
+              onPlay={(e) => {
+                e.currentTarget.playbackRate = 1.5;
+              }}
               onTimeUpdate={(e) => {
                 const vid = e.currentTarget;
                 if (vid.duration && vid.currentTime >= vid.duration - 2) {
