@@ -442,7 +442,7 @@ img {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative; /* For absolute positioning of badge */
 }
 

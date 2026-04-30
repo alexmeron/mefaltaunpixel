@@ -29,7 +29,7 @@ export const Lab = () => {
           >
             <video 
               ref={videoRef}
-              src="/videos/thumb-vars.webm" 
+              src="/videos/dthumb-vars.webm" 
               autoPlay 
               muted 
               loop 
