@@ -19,7 +19,7 @@ const getGreeting = () => {
 };
 
 const SUGGESTIONS = [
-  { label: "About Alex", key: "about" },
+  { label: "About Álex", key: "about" },
   { label: "Current role", key: "current" },
   { label: "Skills", key: "skills" },
   { label: "Located", key: "located" },
@@ -59,21 +59,21 @@ export const Soul = () => {
   const [charIndex, setCharIndex] = useState(0);
   
   const EXAMPLES = [
-    "Ask anything about Alex",
-    "What is Alex's current role?",
-    "Where is Alex based?",
+    "Ask anything about Álex",
+    "What is Álex's current role?",
+    "Where is Álex based?",
     "What are his main skills?",
     "Who is Bronx?",
     "Where can I find him on social media?",
-    "How can I reach out to Alex?",
+    "How can I reach out to Álex?",
     "What is the best way to get in touch with him?",
     "What is his design process?",
     "Tell me about his work at Cella",
     "Tell me about his work at DisplayNote",
-    "Where did Alex study?",
+    "Where did Álex study?",
     "What languages does he speak?",
     "How does he work with developers?",
-    "Is Alex available for new projects?",
+    "Is Álex available for new projects?",
     "Can I see his resume?"
   ];
 
@@ -91,7 +91,7 @@ export const Soul = () => {
       const timeout = setTimeout(() => {
         setDisplayedPlaceholder(prev => prev + currentFullText[charIndex]);
         setCharIndex(prev => prev + 1);
-      }, 50);
+      }, 70);
       return () => clearTimeout(timeout);
     } else {
       const timeout = setTimeout(() => {
@@ -140,12 +140,11 @@ export const Soul = () => {
       const query = messageText.toLowerCase();
       const normalizedQuery = normalize(query);
       
-      // Simple language detection: check for common Spanish words or keywords
-      const isSpanish = /[áéíóúüñ]/.test(query) || /\b(hola|quien|quién|cómo|como|donde|dónde|de|el|la|en|sobre|por|para|con|un|una|uno|mi|mis|tu|tus|su|sus)\b/.test(query);
+      const isSpanishLanguage = language === 'es';
       
       let bestMatch = { 
         score: 0, 
-        response: isSpanish ? DEFAULT_RESPONSE_ES : DEFAULT_RESPONSE_EN 
+        response: isSpanishLanguage ? DEFAULT_RESPONSE_ES : DEFAULT_RESPONSE_EN 
       };
 
       for (const entry of SOUL_KNOWLEDGE) {
@@ -161,7 +160,7 @@ export const Soul = () => {
         }
         
         if (score > bestMatch.score) {
-          const rawResponse = isSpanish ? entry.responseEs : entry.responseEn;
+          const rawResponse = isSpanishLanguage ? entry.responseEs : entry.responseEn;
           const finalResponse = Array.isArray(rawResponse) 
             ? rawResponse[Math.floor(Math.random() * rawResponse.length)]
             : rawResponse;
@@ -185,10 +184,10 @@ export const Soul = () => {
           })
         }).catch(err => console.error("Error sending notification:", err));
         
-        const fallbackEn = "I'm sorry, I don't have an answer for that yet. But I've just sent your question to Alex so he can teach me! In the meantime, you can ask about his work at Cella, his dog Bronx, or how to contact him.";
-        const fallbackEs = "Lo siento, aún no tengo una respuesta para eso. Pero acabo de enviarle tu pregunta a Alex para que me la enseñe. Mientras tanto, puedes preguntarme sobre su trabajo en Cella, su perro Bronx o cómo contactar con él.";
+        const fallbackEn = "I'm sorry, I don't have an answer for that yet. But I've just sent your question to Álex so he can teach me! In the meantime, you can ask about his work at Cella, his dog Bronx, or how to contact him.";
+        const fallbackEs = "Lo siento, aún no tengo una respuesta para eso. Pero acabo de enviarle tu pregunta a Álex para que me la enseñe. Mientras tanto, puedes preguntarme sobre su trabajo en Cella, su perro Bronx o cómo contactar con él.";
         
-        bestMatch.response = isSpanish ? fallbackEs : fallbackEn;
+        bestMatch.response = isSpanishLanguage ? fallbackEs : fallbackEn;
       }
 
       const assistantMessage: Message = { id: (Date.now() + 1).toString(), role: 'assistant', content: bestMatch.response };
@@ -209,21 +208,21 @@ export const Soul = () => {
 
   const { t, language } = useLanguage();
 
-  const getGreetingText = () => {
+  const greetingText = React.useMemo(() => {
     const hour = new Date().getHours();
     let timeGreeting = "";
     if (language === 'es') {
       if (hour >= 5 && hour < 12) timeGreeting = "Buenos días";
       else if (hour >= 12 && hour < 20) timeGreeting = "Buenas tardes";
       else timeGreeting = "Buenas noches";
-      return `${timeGreeting}. Soy Soul. <br /> ¿Qué quieres saber sobre Alex?`;
+      return `${timeGreeting}. <span translate="no">Soy Soul</span>. <br /> ¿Qué quieres saber sobre Álex?`;
     } else {
       if (hour >= 5 && hour < 12) timeGreeting = "Good morning";
       else if (hour >= 12 && hour < 20) timeGreeting = "Good afternoon";
       else timeGreeting = "Good evening";
-      return `${timeGreeting}. I’m Soul. <br /> What do you know about Alex?`;
+      return `${timeGreeting}. <span translate="no">I’m Soul</span>. <br /> What do you know about Álex?`;
     }
-  };
+  }, [language]);
 
   const SOUL_SUGGESTIONS = [
     { label: t('soul_suggestion_about'), key: "about" },
@@ -242,8 +241,8 @@ export const Soul = () => {
         <div className="soul-content">
           <div className="soul-greeting">
             <h1 className="greeting-text">
-              <span style={{ marginRight: '24px', verticalAlign: 'middle', display: 'inline-block' }}>🙃</span>
-              <span dangerouslySetInnerHTML={{ __html: getGreetingText() }} />
+              <span style={{ marginRight: '12px', verticalAlign: 'middle', display: 'inline-block' }}>🙃</span>
+              <span dangerouslySetInnerHTML={{ __html: greetingText }} />
             </h1>
             
             <div className="suggestion-pills">

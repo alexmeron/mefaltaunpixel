@@ -109,8 +109,9 @@ export const LikeButton = () => {
       >
         <Heart 
           size={24} 
-          fill={isLiked ? "var(--accent-pink)" : "none"} 
+          fill={isLiked ? "var(--accent-pink)" : "rgba(150, 150, 150, 0.15)"} 
           stroke={isLiked ? "var(--accent-pink)" : "currentColor"} 
+          strokeWidth={isLiked ? 0 : 2}
           className="heart-icon"
         />
         <span className="like-count">{likes}</span>

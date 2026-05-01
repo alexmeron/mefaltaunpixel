@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
-import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface Article {
@@ -80,59 +80,45 @@ export const Articles = () => {
       />
       
       <header className="articles-header">
-        <motion.h1 
-          className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {t('articles_title')}
-        </motion.h1>
-        <motion.p 
-          className="section-subtitle"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          {t('articles_subtitle')}
-        </motion.p>
+        <div className="articles-title-container">
+          <motion.h1 
+            className="section-title"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {t('articles_title')}
+          </motion.h1>
+        </div>
       </header>
 
       <section className="articles-list">
         {ARTICLES.map((article, index) => (
-          <motion.article 
+          <motion.div
             key={article.id}
-            className="article-item"
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <div className="article-content">
-              <div className="article-meta">
-                <span className="article-category">{article.category}</span>
-                <span className="article-divider">•</span>
-                <span className="article-date">{article.date}</span>
-                <span className="article-divider">•</span>
-                <span className="article-readtime">{article.readTime} {t('articles_min_read')}</span>
+            <Link to={`/${language}/articles/${article.id}`} className="article-item">
+              <div className="article-content">
+                <div className="article-meta">
+                  <span className="article-category">{article.category}</span>
+                  <span className="meta-sep">•</span>
+                  <span className="article-date">{article.date}</span>
+                  <span className="meta-sep">•</span>
+                  <span className="article-readtime">{article.readTime} min read</span>
+                </div>
+                
+                <h2 className="article-title">{article.title[language]}</h2>
+                <p className="article-excerpt">{article.excerpt[language]}</p>
               </div>
               
-              <h2 className="article-title">
-                <a href={`/${language}/articles/${article.id}`}>{article.title[language]}</a>
-              </h2>
-              
-              <p className="article-excerpt">{article.excerpt[language]}</p>
-              
-              <div className="article-footer">
-                <a href={`/${language}/articles/${article.id}`} className="article-link">
-                  {t('articles_read_more')} <ArrowRight size={16} />
-                </a>
+              <div className="article-image-container">
+                <img src={article.image} alt={article.title[language]} className="article-image" />
               </div>
-            </div>
-            
-            <div className="article-image-container">
-              <img src={article.image} alt={article.title[language]} className="article-image" />
-            </div>
-          </motion.article>
+            </Link>
+          </motion.div>
         ))}
       </section>
     </main>

@@ -4,6 +4,8 @@ import { Header } from './components/Header';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Soul } from './pages/Soul';
+import { Articles } from './pages/Articles';
+import { ArticleDetail } from './pages/ArticleDetail';
 import { ProjectDetail } from './pages/ProjectDetail';
 import { LikeButton } from './components/LikeButton';
 import { LanguageProvider, useLanguage } from './context/LanguageContext';
@@ -40,6 +42,8 @@ function App() {
           <Route path="/:lang" element={<LanguageManager><Header /><Home /></LanguageManager>} />
           <Route path="/:lang/about" element={<LanguageManager><Header /><About /></LanguageManager>} />
           <Route path="/:lang/soul" element={<LanguageManager><Header /><Soul /></LanguageManager>} />
+          <Route path="/:lang/articles" element={<LanguageManager><Header /><Articles /></LanguageManager>} />
+          <Route path="/:lang/articles/:id" element={<LanguageManager><Header /><ArticleDetail /></LanguageManager>} />
           <Route path="/:lang/project/:id" element={<LanguageManager><Header /><ProjectDetail /></LanguageManager>} />
         </Routes>
         <LikeButton />

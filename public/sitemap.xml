@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- HOME -->
+  <url>
+    <loc>https://mefaltaunpixel.com/es</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.com/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.com/es"/>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://mefaltaunpixel.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.com/es"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.com/es"/>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <!-- ABOUT -->
+  <url>
+    <loc>https://mefaltaunpixel.com/es/about</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.com/en/about"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mefaltaunpixel.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.com/es/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.com/en/about"/>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- SOUL -->
+  <url>
+    <loc>https://mefaltaunpixel.com/es/soul</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.com/es/soul"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.com/en/soul"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mefaltaunpixel.com/en/soul</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.com/es/soul"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.com/en/soul"/>
+    <priority>0.7</priority>
+  </url>
+</urlset>
