@@ -9,7 +9,7 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
   const location = useLocation();
-  const baseUrl = "https://mefaltaunpixel.com"; // Change to your real domain
+  const baseUrl = "https://mefaltaunpixel.es"; // Using the correct .es domain
   const currentPath = location.pathname;
   
   // Construct URLs for hreflang

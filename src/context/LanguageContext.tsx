@@ -40,8 +40,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       theme_light: "Modo Claro",
       footer_rights: "© 2025 Álex Salmerón. Todos los derechos reservados.",
       // SEO ES
-      seo_home_title: "Álex Salmerón - Senior Product Designer",
-      seo_home_desc: "Portfolio de Álex Salmerón, Diseñador de Producto Senior con +10 años de experiencia. Especialista en Sistemas de Diseño, DesignOps y creación de productos digitales escalables en Figma.",
+      seo_home_title: "Álex Salmerón - Diseñador de Producto Senior",
+      seo_home_desc: "Portfolio de Álex Salmerón, diseñador de producto senior especializado en sistemas de diseño y DesignOps. Descubre mis proyectos de diseño y herramientas para Figma.",
       seo_about_title: "Sobre mí | Álex Salmerón - Product Designer",
       seo_about_desc: "Conoce mi trayectoria profesional desde 2007. Especialista en Figma Camp y DesignOps. Descubre mi biblioteca de diseño y mi pasión por el crossfit y la naturaleza.",
       seo_soul_title: "Soul AI | Álex Salmerón - Asistente Personal de Diseño",
@@ -94,7 +94,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       footer_rights: "© 2025 Álex Salmerón. All rights reserved.",
       // SEO EN
       seo_home_title: "Álex Salmerón - Senior Product Designer",
-      seo_home_desc: "Portfolio of Álex Salmerón, Senior Product Designer with 10+ years of experience. Specialist in Design Systems, DesignOps, and building scalable digital products in Figma.",
+      seo_home_desc: "Portfolio of Álex Salmerón, senior product designer specialized in design systems and DesignOps. Discover my design projects and tools for Figma.",
       seo_about_title: "About | Álex Salmerón - Product Designer",
       seo_about_desc: "Explore my professional journey since 2007. Specialist in DesignOps and Figma Camp. Discover my design library and my passion for nature and life with Bronx.",
       seo_soul_title: "Soul AI | Álex Salmerón - Personal Design Assistant",
