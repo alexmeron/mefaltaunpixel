@@ -5,7 +5,7 @@
     <loc>https://mefaltaunpixel.es/es</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.es/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.es/en"/>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
@@ -13,7 +13,7 @@
     <loc>https://mefaltaunpixel.es/en</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.es/es"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.es/en"/>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>

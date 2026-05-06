@@ -67,7 +67,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
     // Hreflang
     updateLink('alternate', esUrl, 'es');
     updateLink('alternate', enUrl, 'en');
-    updateLink('alternate', esUrl, 'x-default'); // Default to Spanish as per user preference
+    updateLink('alternate', enUrl, 'x-default'); // Default to English for search engines as per user preference
 
     // Language attribute on html tag
     document.documentElement.lang = lang;
