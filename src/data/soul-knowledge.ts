@@ -59,8 +59,8 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
   },
   {
     keywords: ["quién es alex", "quien es alex", "sobre alex", "profile", "who is alex", "who's alex", "who alex", "about alex", "biografía", "bio"],
-    responseEn: "Álex Salmerón is a Senior Product Designer with 10+ years of experience, specialized in Design Systems and Product Design. Currently at Cella Medical Solutions, he bridges the gap between design and engineering.",
-    responseEs: "Álex Salmerón es un Senior Product Designer con más de 10 años de experiencia, especializado en Design Systems and Product Design. Actualmente en Cella Medical Solutions, actúa como puente entre diseño e ingeniería."
+    responseEn: "Álex Salmerón is a Senior Product Designer with +15 years of experience, specialized in Design Systems and Product Design. Currently at Cella Medical Solutions, he bridges the gap between design and engineering.",
+    responseEs: "Álex Salmerón es un Senior Product Designer con más de 15 años de experiencia, especializado en Design Systems and Product Design. Actualmente en Cella Medical Solutions, actúa como puente entre diseño e ingeniería."
   },
   {
     keywords: ["contact", "email", "contacto", "correo", "how to contact", "how to reach", "get in touch", "write to", "escribir a"],
@@ -88,9 +88,9 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
     responseEs: "Una de las mayores fortalezas de Álex es actuar como puente entre diseño y desarrollo. Entiende el código (HTML/CSS/React) y se enfoca en DesignOps para mejorar la calidad del handoff."
   },
   {
-    keywords: ["trabajo actual", "actualidad", "puesto actual", "que hace alex", "qué hace alex", "donde trabaja alex", "dónde trabaja alex", "current role", "what is alex doing", "doing right now"],
-    responseEn: "At Cella Medical Solutions (2025-Now), Álex focuses on UX Research for surgical planning tools and evolved their Design System using Figma, Zeroheight, and Claude AI. He also leads Waykout.com, a marketplace for tourist experiences aimed at boosting the rural economy by connecting travelers with traditions and alternative environments that go beyond conventional tourism.",
-    responseEs: "En Cella Medical Solutions (2025-Actualidad), Álex se centra en UX Research para herramientas de planificación quirúrgica y ha evolucionado su Design System usando Figma, Zeroheight y Claude AI. Además, lidera Waykout.com, un marketplace de experiencias diseñado para dinamizar la economía rural conectando tradiciones y entornos alternativos que van más allá del turismo convencional."
+    keywords: ["trabajo actual", "actualidad", "puesto actual", "que hace alex", "qué hace alex", "donde trabaja alex", "dónde trabaja alex", "current role", "what is alex doing", "doing right now", "empresa actual", "empresa", "company", "current company", "donde trabaja", "dónde trabaja", "where does he work", "where does alex work"],
+    responseEn: "At Cella Medical Solutions (2025-Now), Álex focuses on UX Research for surgical planning tools and evolved their Design System using Figma, Zeroheight, and Claude AI. He also leads Waykout.com, a marketplace for tourist experiences aimed at boosting the rural economy by connecting travelers with traditions and alternative environments that go beyond",
+    responseEs: "At Cella Medical Solutions (2025-Now), Álex focuses on UX Research for surgical planning tools and evolved their Design System using Figma, Zeroheight, and Claude AI. He also leads Waykout.com, a marketplace for tourist experiences aimed at boosting the rural economy by connecting travelers with traditions and alternative environments that go beyond"
   },
   {
     keywords: ["displaynote", "past", "experience", "experiencia", "anterior"],
@@ -226,5 +226,5 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
   }
 ];
 
-export const DEFAULT_RESPONSE_EN = "I'm Soul, Álex's companion. I can tell you about his 10+ years of experience in Design Systems, his work at Cella or DisplayNote, or how to contact him.";
-export const DEFAULT_RESPONSE_ES = "Soy Soul, la compañía de Álex. Puedo contarte sobre sus más de 10 años de experiencia en Design Systems, su trabajo en Cella o DisplayNote, o cómo contactar con él.";
+export const DEFAULT_RESPONSE_EN = "I'm Soul, Álex's companion. I can tell you about his +15 years of experience in Design Systems, his work at Cella or DisplayNote, or how to contact him.";
+export const DEFAULT_RESPONSE_ES = "Soy Soul, la compañía de Álex. Puedo contarte sobre sus más de 15 años de experiencia en Design Systems, su trabajo en Cella o DisplayNote, o cómo contactar con él.";
