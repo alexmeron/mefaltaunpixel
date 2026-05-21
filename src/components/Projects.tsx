@@ -22,13 +22,15 @@ export const Projects = () => {
           <div className="project-image large project-waykout">
             <div className="project-waykout-content">
               <div className="project-waykout-text">
-                <svg className="waykout-svg-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect width="512" height="512" fill="#F6085A"/>
-                  <path d="M219.959 354.244H288.509C310.302 354.244 327.97 371.912 327.97 393.704V400.562L327.957 401.58C327.417 422.903 309.962 440.02 288.509 440.02H219.959C198.166 440.02 180.498 422.355 180.498 400.562V393.704L180.511 392.69C181.042 371.704 197.955 354.79 218.939 354.257L219.959 354.244ZM219.167 378.348C211.043 378.761 204.583 385.478 204.583 393.704V400.562L204.602 401.353C205.015 409.48 211.732 415.938 219.959 415.938H288.509C297.001 415.938 303.887 409.056 303.889 400.562V393.704L303.869 392.913C303.456 384.788 296.736 378.329 288.509 378.329H219.959L219.167 378.348Z" fill="white"/>
-                  <path d="M255.588 85.9156C325.174 85.9156 380.739 140.165 380.739 206.06C380.738 271.955 325.174 326.205 255.588 326.205C186.002 326.205 130.438 271.955 130.438 206.06C130.438 140.165 186.002 85.9156 255.588 85.9156Z" stroke="white" stroke-width="26.6988"/>
-                  <path d="M255.588 90.9218C270.063 90.922 284.934 101.612 296.667 122.789C308.241 143.678 315.661 173.103 315.661 206.06C315.661 239.017 308.241 268.441 296.667 289.331C284.934 310.508 270.063 321.198 255.588 321.198C241.113 321.198 226.242 310.508 214.509 289.331C202.935 268.441 195.516 239.017 195.516 206.06C195.516 173.103 202.935 143.678 214.509 122.789C226.242 101.612 241.113 90.9218 255.588 90.9218Z" stroke="white" stroke-width="16.6867"/>
-                </svg>
-                <h3 className="project-waykout-title">{t('waykout_title')}</h3>
+                <div className="project-waykout-header">
+                  <svg className="waykout-svg-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="512" height="512" fill="#F6085A"/>
+                    <path d="M219.959 354.244H288.509C310.302 354.244 327.97 371.912 327.97 393.704V400.562L327.957 401.58C327.417 422.903 309.962 440.02 288.509 440.02H219.959C198.166 440.02 180.498 422.355 180.498 400.562V393.704L180.511 392.69C181.042 371.704 197.955 354.79 218.939 354.257L219.959 354.244ZM219.167 378.348C211.043 378.761 204.583 385.478 204.583 393.704V400.562L204.602 401.353C205.015 409.48 211.732 415.938 219.959 415.938H288.509C297.001 415.938 303.887 409.056 303.889 400.562V393.704L303.869 392.913C303.456 384.788 296.736 378.329 288.509 378.329H219.959L219.167 378.348Z" fill="white"/>
+                    <path d="M255.588 85.9156C325.174 85.9156 380.739 140.165 380.739 206.06C380.738 271.955 325.174 326.205 255.588 326.205C186.002 326.205 130.438 271.955 130.438 206.06C130.438 140.165 186.002 85.9156 255.588 85.9156Z" stroke="white" stroke-width="26.6988"/>
+                    <path d="M255.588 90.9218C270.063 90.922 284.934 101.612 296.667 122.789C308.241 143.678 315.661 173.103 315.661 206.06C315.661 239.017 308.241 268.441 296.667 289.331C284.934 310.508 270.063 321.198 255.588 321.198C241.113 321.198 226.242 310.508 214.509 289.331C202.935 268.441 195.516 239.017 195.516 206.06C195.516 173.103 202.935 143.678 214.509 122.789C226.242 101.612 241.113 90.9218 255.588 90.9218Z" stroke="white" stroke-width="16.6867"/>
+                  </svg>
+                  <h3 className="project-waykout-title">{t('waykout_title')}</h3>
+                </div>
                 <p className="project-waykout-description">{t('waykout_desc')}</p>
               </div>
               <div className="project-waykout-media">
@@ -60,21 +62,27 @@ export const Projects = () => {
             */}
           </div>
         </div>
-        {/* Helix Design System — Row */}
-        <div className="project-row helix-row">
-          <div className="project-item no-link">
+        {/* Helix Design System — 6/12 columns */}
+        <div className="project-row half-row">
+          <div className="project-item no-link project-helix-item">
             <div className="project-coming-soon">Coming soon</div>
-            <div className="project-image medium project-celiams">
-              <img src="/helix-preview.png" alt="Helix Design System Preview" className="helix-preview-image" />
+            <div className="project-image large project-helix">
+              <div className="project-helix-content">
+                <div className="project-helix-text">
+                  <div className="project-helix-header">
+                    <svg className="helix-svg-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="512" height="512" fill="#1EADFF"/>
+                      <path d="M131.284 401V110.091H192.79V230.119H317.648V110.091H379.011V401H317.648V280.83H192.79V401H131.284Z" fill="white"/>
+                    </svg>
+                    <h3 className="project-helix-title">{t('helix_title')}</h3>
+                  </div>
+                  <p className="project-helix-description">{t('helix_desc')}</p>
+                </div>
+                <div className="project-helix-media">
+                  <img src="/helix-preview.png" alt="Helix Design System Preview" className="helix-preview-image" />
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="project-helix-text">
-            <svg className="helix-svg-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="512" height="512" fill="#1EADFF"/>
-              <path d="M131.284 401V110.091H192.79V230.119H317.648V110.091H379.011V401H317.648V280.83H192.79V401H131.284Z" fill="white"/>
-            </svg>
-            <h3 className="project-helix-title">{t('helix_title')}</h3>
-            <p className="project-helix-description">{t('helix_desc')}</p>
           </div>
         </div>
       </div>

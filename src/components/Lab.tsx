@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -7,16 +7,39 @@ export const Lab = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const componentsVideoRef = useRef<HTMLVideoElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+  const [scrollRange, setScrollRange] = useState(0);
   const { t } = useLanguage();
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
+    offset: ["start start", "end end"]
   });
 
-  // Move the container horizontally based on vertical scroll.
-  // Adjusting the end percentage based on the track width. 
-  // With 4 items and gaps, moving it roughly -70% to -75% works well for a 4-item list.
-  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-70%"]);
+  // Calculate the exact distance to scroll horizontally based on DOM widths
+  useEffect(() => {
+    const updateScrollRange = () => {
+      if (gridRef.current && trackRef.current) {
+        // Total width of the items minus the visible width of the track (excluding page paddings)
+        const maxScroll = gridRef.current.scrollWidth - trackRef.current.clientWidth;
+        setScrollRange(maxScroll > 0 ? maxScroll : 0);
+      }
+    };
+
+    updateScrollRange();
+    // Use a small delay to ensure fonts/images are loaded for accurate width
+    setTimeout(updateScrollRange, 100);
+    // Add another larger delay just in case images load very slowly
+    setTimeout(updateScrollRange, 500);
+    window.addEventListener('resize', updateScrollRange);
+    return () => window.removeEventListener('resize', updateScrollRange);
+  }, []);
+
+  const deadZone = 500; // Extra scroll distance to pause at the end
+  const totalScroll = scrollRange + deadZone;
+  const endProgress = scrollRange > 0 ? scrollRange / totalScroll : 1;
+  const x = useTransform(scrollYProgress, [0, endProgress], [0, -scrollRange]);
 
   useEffect(() => {
     if (videoRef.current) {
@@ -28,14 +51,15 @@ export const Lab = () => {
   }, []);
 
   return (
-    <section className="lab" ref={targetRef}>
+    <section className="lab" ref={targetRef} style={{ height: `calc(100vh + ${totalScroll}px)` }}>
       <div className="lab-sticky-wrapper page-wrapper">
         <h2 className="lab-intro">
           {t('lab_title')}
         </h2>
         
-        <motion.div className="lab-grid" style={{ x }}>
-        {/* Item 1 - Video */}
+        <div className="lab-track" ref={trackRef} style={{ width: '100%', overflow: 'visible' }}>
+          <motion.div className="lab-grid" style={{ x }} ref={gridRef}>
+          {/* Item 1 - Video */}
         <div className="lab-item">
           <a 
             href="https://www.figma.com/community/plugin/1600155199369592947/variables-timeline" 
@@ -175,7 +199,8 @@ export const Lab = () => {
             {t('lab_try_figma')} <ArrowRight size={16} />
           </a>
         </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
