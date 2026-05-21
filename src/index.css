@@ -554,7 +554,7 @@ img {
   }
   
   .project-waykout-media {
-    height: 300px !important; /* Taller on mobile */
+    height: 340px !important; /* Taller on mobile (+40px) */
   }
 }
 
@@ -753,7 +753,7 @@ img {
     font-size: 24px;
   }
   .project-celiams {
-    height: 300px !important; /* Taller on mobile */
+    height: 340px !important; /* Taller on mobile (+40px) */
   }
 }
 
