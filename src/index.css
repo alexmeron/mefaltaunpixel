@@ -782,27 +782,24 @@ img {
 
 .lab-sticky-wrapper {
   position: sticky;
-  top: 0;
-  height: 100vh;
+  top: 180px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 40px;
-  padding-bottom: 40px;
 }
 
 .lab-intro {
-  margin-top: auto;
   font-size: 48px;
   font-weight: 500;
   line-height: 1.2;
   color: var(--text);
   max-width: 975px;
-  margin-bottom: min(64px, 6vh);
+  margin-bottom: 64px;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 .lab-grid {
-  margin-bottom: auto;
   display: flex;
   gap: 32px;
   width: max-content;

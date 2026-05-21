@@ -51,7 +51,7 @@ export const Lab = () => {
   }, []);
 
   return (
-    <section className="lab" ref={targetRef} style={{ height: `calc(100vh + ${totalScroll}px)` }}>
+    <section className="lab" ref={targetRef} style={{ height: `calc(700px + ${totalScroll}px)` }}>
       <div className="lab-sticky-wrapper page-wrapper">
         <h2 className="lab-intro">
           {t('lab_title')}
