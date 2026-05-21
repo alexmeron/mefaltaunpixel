@@ -291,10 +291,7 @@ img {
    HERO
    ============================ */
 .hero {
-  max-width: 1680px;
-  margin-left: auto;
-  margin-right: auto;
-  height: 635px;
+  height: 90vh;
   padding: 0 64px;
   display: flex;
   flex-direction: column;
