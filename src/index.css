@@ -952,14 +952,30 @@ img {
 
 @media (max-width: 640px) {
   .lab-grid { 
-    grid-template-columns: 1fr; 
-    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 16px;
+    grid-template-columns: unset;
+    padding-bottom: 16px;
+    /* extend slightly beyond page padding to feel edge-to-edge */
+    margin-left: calc(-1 * var(--page-padding, 16px));
+    margin-right: calc(-1 * var(--page-padding, 16px));
+    padding-left: var(--page-padding, 16px);
+    padding-right: var(--page-padding, 16px);
+  }
+  .lab-grid::-webkit-scrollbar {
+    display: none;
   }
   .lab-item {
+    flex: 0 0 80vw; /* Show a bit of the next card */
+    scroll-snap-align: start;
     margin-bottom: 0;
   }
   .lab-image {
-    height: 220px;
+    height: 340px;
   }
 }
 
