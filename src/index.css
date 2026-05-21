@@ -416,13 +416,7 @@ img {
   height: 88px;
   margin-bottom: 16px;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(246, 8, 90, 0.35);
   display: block;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.project-item:hover .waykout-svg-logo {
-  transform: scale(1.08) translateY(-2px);
 }
 
 .helix-svg-logo {
@@ -430,7 +424,6 @@ img {
   height: 88px;
   margin-bottom: 16px;
   border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(30, 173, 255, 0.35);
   display: block;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -484,13 +477,17 @@ img {
 @media (max-width: 1024px) {
   .project-image.large.project-waykout {
     height: auto !important;
+    aspect-ratio: auto !important;
+    background-color: transparent !important;
+    overflow: visible !important;
+    border-radius: 0;
   }
   
   .project-waykout-content {
     display: flex;
     flex-direction: column-reverse; /* Reorder: image on top, text below! */
-    gap: 32px;
-    padding: 32px;
+    gap: 24px !important;
+    padding: 0 !important;
     height: auto;
   }
   
@@ -500,6 +497,7 @@ img {
   
   .project-waykout-title {
     font-size: 28px;
+    color: var(--text) !important;
   }
   
   .waykout-svg-logo {
@@ -513,26 +511,42 @@ img {
     font-size: 24px;
     font-weight: 300;
     line-height: 1.5;
+    color: var(--text) !important;
+  }
+  
+  [data-theme='dark'] .project-waykout-title {
+    color: white !important;
+  }
+  
+  [data-theme='dark'] .project-waykout-description {
+    color: #f5f5f5 !important;
   }
   
   .project-waykout-media {
     height: 380px !important; /* Taller on tablet */
     aspect-ratio: auto !important;
     overflow: hidden;
+    background-color: #191A1C !important;
+    border-radius: 16px 8px 8px 8px;
+    position: relative;
+    width: 100%;
   }
   
   .waykout-preview-image {
     position: relative;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    transform: none;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    box-shadow: none !important;
+    border-radius: 16px 8px 8px 8px;
   }
 }
 
 @media (max-width: 640px) {
   .project-waykout-content {
-    padding: 24px;
+    padding: 0 !important;
   }
   
   .project-waykout-description {
