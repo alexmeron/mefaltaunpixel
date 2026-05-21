@@ -576,9 +576,9 @@ img {
 
 .project-coming-soon {
   position: absolute;
-  top: 32px;
-  right: 32px;
-  background-color: #121212;
+  top: 24px;
+  right: 24px;
+  background-color: #3C3A45;
   color: white;
   padding: 6px 14px;
   border-radius: 100px;
@@ -627,7 +627,7 @@ img {
 }
 .project-celiams { 
   background-color: #191A1C; 
-  overflow: visible;
+  overflow: hidden;
   position: relative;
   border-radius: 16px 8px 8px 8px;
 }
@@ -787,47 +787,37 @@ img {
    ============================ */
 .lab {
   margin-top: 120px;
-  padding-bottom: 120px;
+  height: 300vh;
+  position: relative;
+}
+
+.lab-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .lab-intro {
+  margin-top: auto;
   font-size: 48px;
   font-weight: 500;
   line-height: 1.2;
   color: var(--text);
   max-width: 975px;
-  margin-bottom: 64px;
+  margin-bottom: min(64px, 6vh);
 }
 
 .lab-grid {
+  margin-bottom: auto;
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   gap: 32px;
+  width: max-content;
   padding-bottom: 24px;
-  scrollbar-width: thin;
-}
-
-.lab-grid::-webkit-scrollbar {
-  height: 6px;
-}
-.lab-grid::-webkit-scrollbar-track {
-  background: transparent;
-}
-.lab-grid::-webkit-scrollbar-thumb {
-  background-color: rgba(18, 18, 18, 0.15);
-  border-radius: 999px;
-}
-.lab-grid::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(18, 18, 18, 0.3);
-}
-
-[data-theme='dark'] .lab-grid::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.15);
-}
-[data-theme='dark'] .lab-grid::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .lab-item {
@@ -839,7 +829,7 @@ img {
 }
 
 .lab-image {
-  height: 420px;
+  height: min(420px, 45vh);
   background-color: #121212;
   border-radius: 12px;
   overflow: hidden;
@@ -851,8 +841,8 @@ img {
 
 .lab-badge {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 24px;
+  right: 24px;
   background-color: #7E37F0;
   color: #FFFFFF;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -930,52 +920,24 @@ img {
 
 @media (max-width: 1200px) {
   .lab-intro { font-size: 40px; }
-  .lab-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    overflow-x: visible;
-    scroll-snap-type: none;
-    gap: 32px;
-    padding-bottom: 0;
-  }
-  .lab-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .lab-item {
-    flex: none;
-    width: auto;
-  }
   .lab-image {
     height: 320px;
   }
 }
 
 @media (max-width: 640px) {
-  .lab-grid { 
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 16px;
-    grid-template-columns: unset;
-    padding-bottom: 16px;
-    /* extend slightly beyond page padding to feel edge-to-edge */
-    margin-left: calc(-1 * var(--page-padding, 16px));
-    margin-right: calc(-1 * var(--page-padding, 16px));
-    padding-left: var(--page-padding, 16px);
-    padding-right: var(--page-padding, 16px);
+  .lab-badge {
+    top: 16px;
+    right: 16px;
   }
-  .lab-grid::-webkit-scrollbar {
-    display: none;
+  .lab-grid { 
+    gap: 16px;
   }
   .lab-item {
-    flex: 0 0 80vw; /* Show a bit of the next card */
-    scroll-snap-align: start;
-    margin-bottom: 0;
+    flex: 0 0 85vw; /* Slightly less than 100vw to peek next card */
   }
   .lab-image {
-    height: 340px;
+    height: min(340px, 45vh);
   }
 }
 
