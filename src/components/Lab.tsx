@@ -36,7 +36,7 @@ export const Lab = () => {
     return () => window.removeEventListener('resize', updateScrollRange);
   }, []);
 
-  const deadZone = 500; // Extra scroll distance to pause at the end
+  const deadZone = scrollRange > 0 ? 500 : 0; // Extra scroll distance to pause at the end ONLY if there is horizontal overflow
   const totalScroll = scrollRange + deadZone;
   const endProgress = scrollRange > 0 ? scrollRange / totalScroll : 1;
   const x = useTransform(scrollYProgress, [0, endProgress], [0, -scrollRange]);
@@ -50,8 +50,12 @@ export const Lab = () => {
     }
   }, []);
 
+  const sectionStyle = scrollRange > 0 
+    ? { height: `calc(700px + ${totalScroll}px)` }
+    : { height: 'auto' };
+
   return (
-    <section className="lab" ref={targetRef} style={{ height: `calc(700px + ${totalScroll}px)` }}>
+    <section className="lab" ref={targetRef} style={sectionStyle}>
       <div className="lab-sticky-wrapper page-wrapper">
         <h2 className="lab-intro">
           {t('lab_title')}
