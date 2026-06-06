@@ -232,38 +232,26 @@ const HTML_CONTENT = {
         </nav>
       </header>
       <main>
-        <section>
-          <h2>Contexto y problema</h2>
-          <p>El turismo en España se concentra en los mismos destinos de siempre. Mientras tanto, regiones como Murcia esconden una riqueza cultural, gastronómica y natural que pasa desapercibida para la mayoría de viajeros, no por falta de interés, sino por falta de visibilidad.</p>
-          <p>Waykout nació para cambiar eso. Una plataforma de turismo colaborativo donde anfitriones locales publican sus experiencias y viajeros las descubren y reservan al instante.</p>
-          <p>Decidimos arrancar en la Región de Murcia por una razón estratégica: la proximidad nos daba control sobre el feedback y la posibilidad de construir con early adopters reales desde el primer día.</p>
-        </section>
+        <div class="project-summary-grid">
+          <section>
+            <h2>El diseño</h2>
+            <p>El diseño de Waykout se centró en eliminar las barreras de entrada y la complejidad de publicación en un sector poco digitalizado. Rediseñamos el flujo de registro eliminando la contraseña tradicional y sustituyéndola por un sistema sin contraseña (magic links) que reduce el abandono del usuario. Para los anfitriones, simplificamos la publicación de experiencias mediante una interfaz asistida por IA: el anfitrión describe brevemente su actividad y la inteligencia artificial redacta automáticamente títulos, puntos clave y descripciones optimizadas. El diseño se complementó con un completo UI Kit en Figma que garantiza consistencia visual en tarjetas, estados y componentes esenciales, escalando el desarrollo con coherencia.</p>
+          </section>
+          <section>
+            <h2>Mi rol</h2>
+            <p>Mi trabajo abarcó desde la validación inicial de la idea hasta el diseño completo del producto final. Lanzamos campañas segmentadas en Instagram y Google Ads para medir la demanda real de viajeros y anfitriones antes de escribir código. Con los datos obtenidos y las hipótesis validadas, prototipé y probé wireframes en ciclos iterativos con early adopters reales en la Región de Murcia. Además del diseño del flujo principal de usuarios y las herramientas de gestión interna para anfitriones, desarrollé el sistema visual y el UI Kit completo. Esto permitió lanzar un MVP que, en su primer mes, captó a más de 100 usuarios, 50 anfitriones activos y facilitó más de 120 reservas.</p>
+          </section>
+        </div>
 
-        <section>
-          <h2>Mi rol</h2>
-          <p>Mi trabajo abarcó desde la validación de la idea hasta el diseño completo del producto. Antes de diseñar una sola pantalla, lancé campañas segmentadas en Instagram y Google Ads para medir si había demanda real, definiendo el user persona del viajero y del anfitrión y acotando la inversión a esos perfiles. Los resultados confirmaron el interés y nos dieron datos concretos para priorizar qué construir primero.</p>
-          <p>Una vez validada la hipótesis, el ciclo de producto del MVP giró en torno a dos actores: usuarios (viajeros) y anfitriones. Prototipé y validé wireframes e hipótesis con early adopters reales en cada iteración. También creé un UI Kit en Figma que estableció las bases visuales de la plataforma y aceleró el diseño de todos los flujos.</p>
-        </section>
-
-        <section>
-          <h2>Decisiones de diseño clave</h2>
-          <article>
-            <h3>Login sin contraseña</h3>
-            <p>Una de las primeras fricciones que identificamos fue el registro. Waykout es una plataforma que un usuario puede usar una o dos veces al mes, no todos los días. Pedirle que recuerde una contraseña nueva era garantía de abandono. Rediseñamos el flujo completo de autenticación eliminando la contraseña tradicional e implementando acceso mediante magic link: un enlace enviado al email que autentica al usuario en un clic. Menos fricción, más conversión, y sin que el usuario tenga que gestionar una credencial más.</p>
-          </article>
-          <article>
-            <h3>Publicación de experiencias asistida por IA</h3>
-            <p>Durante las primeras semanas detectamos una fricción crítica en el lado del anfitrión: describir bien una actividad es difícil. Muchos anfitriones locales tienen una experiencia única que ofrecer, pero no saben cómo presentarla de forma atractiva. El resultado eran fichas pobres que no convertían, y anfitriones frustrados que abandonaban el proceso a mitad. Diseñamos una interfaz de publicación basada en sugerencias inteligentes: el anfitrión escribe una descripción breve y libre de su actividad, y una IA genera automáticamente la ficha completa de la experiencia, título, descripción, puntos destacados y tono, lista para publicar. El anfitrión revisa, ajusta si quiere y publica. El impacto fue inmediato: más anfitriones completaban el proceso de publicación y la calidad media de las fichas mejoró notablemente, lo que se tradujo directamente en más reservas.</p>
-          </article>
-          <article>
-            <h3>Herramientas para anfitriones</h3>
-            <p>Más allá de la publicación, diseñamos herramientas internas para que los anfitriones pudieran gestionar sus reservas recibidas de forma sencilla. Un anfitrión que tiene control sobre su agenda y sus reservas es un anfitrión que sigue publicando, y eso es lo que hace crecer la plataforma. También trabajamos el posicionamiento orgánico de cada ficha de experiencia para generar tráfico sin depender exclusivamente de campañas de pago.</p>
-          </article>
-        </section>
-
-        <section>
-          <h2>UI Kit</h2>
-          <p>Para mantener consistencia y velocidad de ejecución desde el primer día, construí un UI Kit en Figma con todos los componentes base de la plataforma. Colores, tipografía, botones, formularios, cards de experiencia y estados de cada elemento. Esto nos permitió escalar el diseño de nuevos flujos sin perder tiempo en decisiones repetitivas ni en inconsistencias visuales.</p>
+        <section class="project-images-list">
+          <h2>Imágenes del proyecto</h2>
+          <ul>
+            <li><img src="/assets/projects/waykout/waykout-hero.webp" alt="Waykout Hero" /></li>
+            <li><img src="/assets/projects/waykout/waykout-login-magiclink.webp" alt="Waykout Login Magiclink" /></li>
+            <li><img src="/assets/projects/waykout/waykout-publicacion-ia.webp" alt="Waykout Publicación IA" /></li>
+            <li><img src="/assets/projects/waykout/waykout-panel-anfitrion.webp" alt="Waykout Panel Anfitrión" /></li>
+            <li><img src="/assets/projects/waykout/waykout-ui-kit.webp" alt="Waykout UI Kit" /></li>
+          </ul>
         </section>
 
         <section>
@@ -275,13 +263,6 @@ const HTML_CONTENT = {
             <li><strong>+120 reservas:</strong> realizadas</li>
           </ul>
           <p>Todo esto en el primer mes tras el lanzamiento del MVP, arrancando únicamente en la Región de Murcia y con una inversión controlada en campañas de validación.</p>
-        </section>
-
-        <section>
-          <h2>Aprendizajes</h2>
-          <p>Arrancar en una región concreta fue la decisión correcta. La proximidad con los primeros anfitriones y usuarios nos permitió iterar rápido y con confianza real, no suposiciones.</p>
-          <p>Validar con campañas antes de escribir una línea de código evitó semanas de trabajo en la dirección equivocada.</p>
-          <p>El mayor aprendizaje: los anfitriones no necesitaban más campos en un formulario, necesitaban ayuda para contar bien su historia. Cuando les dimos esa ayuda, la plataforma creció sola.</p>
         </section>
       </main>
     `,
@@ -472,38 +453,26 @@ const HTML_CONTENT = {
         </nav>
       </header>
       <main>
-        <section>
-          <h2>Context & problem</h2>
-          <p>Tourism in Spain is concentrated in the same old destinations. Meanwhile, regions like Murcia hide a cultural, gastronomic, and natural richness that goes unnoticed by most travelers, not for lack of interest, but for lack of visibility.</p>
-          <p>Waykout was born to change that. A collaborative tourism platform where local hosts publish their experiences and travelers discover and book them instantly.</p>
-          <p>We decided to start in the Region of Murcia for a strategic reason: proximity gave us control over feedback and the possibility to build with real early adopters from day one.</p>
-        </section>
+        <div class="project-summary-grid">
+          <section>
+            <h2>The design</h2>
+            <p>The design of Waykout focused on removing barriers to entry and the complexity of publishing in a low-digitized sector. We redesigned the registration flow by eliminating the traditional password and replacing it with a passwordless system (magic links) that reduces user abandonment. For hosts, we simplified experience publishing through an AI-assisted interface: the host writes a brief description of their activity and the artificial intelligence automatically drafts optimized titles, key points, and descriptions. The design was complemented by a comprehensive UI Kit in Figma that guarantees visual consistency in cards, states, and essential components, scaling development cohesively.</p>
+          </section>
+          <section>
+            <h2>My role</h2>
+            <p>My work spanned from the initial validation of the idea to the complete design of the final product. We launched targeted campaigns on Instagram and Google Ads to measure the real demand of travelers and hosts before writing code. With the data obtained and hypotheses validated, I prototyped and tested wireframes in iterative cycles with real early adopters in the Region of Murcia. In addition to designing the main user flows and internal management tools for hosts, I developed the complete visual system and UI Kit. This enabled the launch of an MVP that, in its first month, attracted more than 100 users, 50 active hosts, and facilitated over 120 bookings.</p>
+          </section>
+        </div>
 
-        <section>
-          <h2>My role</h2>
-          <p>My work spanned from idea validation to the complete product design. Before designing a single screen, I launched targeted campaigns on Instagram and Google Ads to measure if there was real demand, defining the traveler and host user personas and limiting the investment to those profiles. The results confirmed the interest and gave us concrete data to prioritize what to build first.</p>
-          <p>Once the hypothesis was validated, the MVP product cycle revolved around two actors: users (travelers) and hosts. I prototyped and validated wireframes and hypotheses with real early adopters in each iteration. I also created a UI Kit in Figma that established the visual foundation of the platform and accelerated the design of all workflows.</p>
-        </section>
-
-        <section>
-          <h2>Key design decisions</h2>
-          <article>
-            <h3>Passwordless login</h3>
-            <p>One of the first points of friction we identified was registration. Waykout is a platform that a user might use once or twice a month, not every day. Asking them to remember a new password was a guarantee of abandonment. We redesigned the entire authentication flow, eliminating the traditional password and implementing magic link access: a link sent to the email that authenticates the user in one click. Less friction, more conversion, and without the user having to manage another credential.</p>
-          </article>
-          <article>
-            <h3>AI-assisted experience creation</h3>
-            <p>During the first few weeks, we detected a critical friction point on the host's side: writing a good description for an activity is hard. Many local hosts have a unique experience to offer but don't know how to present it attractively. The result was poor experience listings that didn't convert, and frustrated hosts who abandoned the process halfway. We designed a publishing interface based on smart suggestions: the host writes a brief and free description of their activity, and an AI automatically generates the complete experience listing, including title, description, highlights, and tone, ready to publish. The host reviews, adjusts if they want, and publishes. The impact was immediate: more hosts completed the creation process and the average quality of the listings improved significantly, translating directly into more bookings.</p>
-          </article>
-          <article>
-            <h3>Tools for hosts</h3>
-            <p>Beyond publishing, we designed internal tools so that hosts could easily manage their received bookings. A host who has control over their calendar and bookings is a host who continues to publish, and that is what makes the platform grow. We also worked on the organic search optimization (SEO) of each experience listing to drive traffic without relying exclusively on paid campaigns.</p>
-          </article>
-        </section>
-
-        <section>
-          <h2>UI Kit</h2>
-          <p>To maintain consistency and speed of execution from day one, I built a UI Kit in Figma with all the base components of the platform. Colors, typography, buttons, forms, experience cards, and states for each element. This allowed us to scale the design of new flows without wasting time on repetitive decisions or visual inconsistencies.</p>
+        <section class="project-images-list">
+          <h2>Project Images</h2>
+          <ul>
+            <li><img src="/assets/projects/waykout/waykout-hero.webp" alt="Waykout Hero" /></li>
+            <li><img src="/assets/projects/waykout/waykout-login-magiclink.webp" alt="Waykout Login Magiclink" /></li>
+            <li><img src="/assets/projects/waykout/waykout-publicacion-ia.webp" alt="Waykout Publicación IA" /></li>
+            <li><img src="/assets/projects/waykout/waykout-panel-anfitrion.webp" alt="Waykout Panel Anfitrión" /></li>
+            <li><img src="/assets/projects/waykout/waykout-ui-kit.webp" alt="Waykout UI Kit" /></li>
+          </ul>
         </section>
 
         <section>
@@ -515,13 +484,6 @@ const HTML_CONTENT = {
             <li><strong>+120 bookings:</strong> completed</li>
           </ul>
           <p>All this in the first month following the MVP launch, starting exclusively in the Region of Murcia and with a controlled investment in validation campaigns.</p>
-        </section>
-
-        <section>
-          <h2>Key Takeaways</h2>
-          <p>Starting in a specific region was the right decision. Proximity to our first hosts and users allowed us to iterate quickly and with real confidence, not assumptions.</p>
-          <p>Validating with campaigns before writing a single line of code saved us weeks of work in the wrong direction.</p>
-          <p>The biggest takeaway: hosts didn't need more fields in a form, they needed help to tell their story well. When we gave them that help, the platform grew on its own.</p>
         </section>
       </main>
     `,
