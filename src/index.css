@@ -1831,6 +1831,19 @@ img {
   }
 }
 
+/* Prominent link to live project */
+.visit-project-link:hover {
+  background: var(--text) !important;
+  color: var(--bg) !important;
+  border-color: var(--text) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.visit-project-link:hover svg {
+  transform: translate(2px, -2px);
+}
+
 @media (max-width: 1024px) {
   .soul-hero { padding-top: 120px; padding-left: 32px; padding-right: 32px; padding-bottom: 160px; }
   .chat-row { gap: 24px; flex-direction: column; }

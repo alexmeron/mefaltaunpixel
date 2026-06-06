@@ -22,6 +22,36 @@ const ProjectMeta = ({ project, language }: { project: any, language: 'es' | 'en
   </div>
 );
 
+const VisitWebsiteLink = ({ language }: { language: 'es' | 'en' }) => (
+  <a 
+    href="https://www.waykout.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="visit-project-link"
+    style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '8px',
+      padding: '12px 24px',
+      borderRadius: '100px',
+      fontSize: '14px',
+      fontWeight: 500,
+      textDecoration: 'none',
+      border: '1px solid var(--border)',
+      color: 'var(--text)',
+      background: 'var(--card-bg, rgba(0,0,0,0.02))',
+      transition: 'all 0.3s ease',
+      cursor: 'pointer'
+    }}
+  >
+    <span>{language === 'es' ? 'Visitar waykout.com' : 'Visit waykout.com'}</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s ease' }}>
+      <line x1="7" y1="17" x2="17" y2="7"></line>
+      <polyline points="7 7 17 7 17 17"></polyline>
+    </svg>
+  </a>
+);
+
 export const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { language, t } = useLanguage();
@@ -114,6 +144,16 @@ export const ProjectDetail = () => {
             {language === 'es'
               ? "Waykout es una plataforma de turismo colaborativo diseñada para conectar a viajeros que buscan descubrir la España real con anfitriones locales que ofrecen experiencias culturales, gastronómicas y de naturaleza auténticas. El producto nace con la misión de descentralizar el turismo de masas, dar visibilidad a regiones con un gran potencial inexplorado y revitalizar la economía de las comunidades locales a través de la tecnología."
               : "Waykout is a collaborative tourism platform designed to connect travelers looking to discover the real Spain with local hosts offering authentic cultural, gastronomic, and nature experiences. The product was born with the mission to decentralize mass tourism, give visibility to regions with unexplored potential, and revitalize local economies through technology."}
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            style={{ marginTop: '32px' }}
+          >
+            <VisitWebsiteLink language={language} />
           </motion.div>
         </section>
 
@@ -284,6 +324,21 @@ export const ProjectDetail = () => {
                 : 'All this in the first month following the MVP launch, starting exclusively in the Region of Murcia and with a controlled investment in validation campaigns. This localized and targeted strategy allowed us to optimize the customer acquisition cost (CAC) from day one, securing a continuous flow of direct feedback from hosts and travelers. By centering our efforts on a defined geographical area, we were able to iterate on the product in cycles of less than 48 hours, ensuring user retention before initiating expansion into new provinces.'}
             </p>
           </div>
+        </motion.div>
+
+        {/* Highlighted Link at the End */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ 
+            display: 'flex', 
+            justifyContent: 'center', 
+            marginTop: '-48px', 
+            marginBottom: '80px' 
+          }}
+        >
+          <VisitWebsiteLink language={language} />
         </motion.div>
       </main>
     );
