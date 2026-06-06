@@ -262,7 +262,7 @@ const HTML_CONTENT = {
             <li><strong>+50 experiencias:</strong> publicadas</li>
             <li><strong>+120 reservas:</strong> realizadas</li>
           </ul>
-          <p>Todo esto en el primer mes tras el lanzamiento del MVP, arrancando únicamente en la Región de Murcia y con una inversión controlada en campañas de validación.</p>
+          <p>Todo esto en el primer mes tras el lanzamiento del MVP, arrancando únicamente en la Región de Murcia y con una inversión controlada en campañas de validación. Esta estrategia local y segmentada nos permitió optimizar el coste de adquisición de clientes (CAC) desde el primer día, obteniendo un flujo continuo de feedback directo de anfitriones y viajeros. Al centralizar los esfuerzos en un área geográfica delimitada, pudimos realizar iteraciones sobre el producto en ciclos de menos de 48 horas, asegurando la retención de los usuarios antes de iniciar la expansión a nuevas provincias.</p>
         </section>
       </main>
     `,
@@ -483,7 +483,7 @@ const HTML_CONTENT = {
             <li><strong>+50 experiences:</strong> published</li>
             <li><strong>+120 bookings:</strong> completed</li>
           </ul>
-          <p>All this in the first month following the MVP launch, starting exclusively in the Region of Murcia and with a controlled investment in validation campaigns.</p>
+          <p>All this in the first month following the MVP launch, starting exclusively in the Region of Murcia and with a controlled investment in validation campaigns. This localized and targeted strategy allowed us to optimize the customer acquisition cost (CAC) from day one, securing a continuous flow of direct feedback from hosts and travelers. By centering our efforts on a defined geographical area, we were able to iterate on the product in cycles of less than 48 hours, ensuring user retention before initiating expansion into new provinces.</p>
         </section>
       </main>
     `,
