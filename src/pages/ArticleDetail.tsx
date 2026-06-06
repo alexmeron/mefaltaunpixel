@@ -70,7 +70,7 @@ export const ArticleDetail = () => {
   return (
     <main className="article-detail-page page-wrapper">
       <SEO 
-        title={`${article.title[language]} | Álex Salmerón`}
+        title={`${article.title[language]} | Alex Salmerón`}
         description={article.title[language]}
         lang={language}
       />
@@ -91,7 +91,7 @@ export const ArticleDetail = () => {
 
           <div className="article-author-card">
             <div className="author-info">
-              <span className="author-name">Álex Salmerón</span>
+              <span className="author-name">Alex Salmerón</span>
               <span className="author-role">Product Designer</span>
             </div>
           </div>

@@ -7,7 +7,7 @@ const CONTENT = {
   es: {
     title: "Un poco sobre mí",
     professional: [
-      "Soy Álex Salmerón, diseñador de producto ubicado en Murcia. Desde 2007 me dedico a ayudar a compañías a crear productos digitales eficientes, accesibles y coherentes. Combinando estrategia, investigación y diseño centrado en el usuario para ofrecer soluciones visuales y funcionales alineadas con los objetivos de negocio y producto.",
+      "Soy Alex Salmerón, diseñador de producto ubicado en Murcia. Desde 2007 me dedico a ayudar a compañías a crear productos digitales eficientes, accesibles y coherentes. Combinando estrategia, investigación y diseño centrado en el usuario para ofrecer soluciones visuales y funcionales alineadas con los objetivos de negocio y producto.",
       "Mi trayectoria como diseñador comenzó de forma autodidacta, impulsado por la curiosidad y la práctica constante. Pero además, también he realizado diferentes workshops en <strong>Neoland</strong>, <strong>Instituto Tramontana</strong>, <strong>Figma Camp</strong> y <strong>DesignOps Latam</strong> (Workshop: DesignOps en acción), buscando especializarme en la creación, mantenimiento y organización de sistemas de diseño."
     ],
     personal: [
@@ -33,7 +33,7 @@ const CONTENT = {
   en: {
     title: "A bit about me",
     professional: [
-      "I am Álex Salmerón, a Product Designer based in Murcia. Since 2007, I have been dedicated to helping companies create efficient, accessible, and consistent digital products. By combining strategy, research, and user-centered design, I deliver visual and functional solutions aligned with both business and product objectives.",
+      "I am Alex Salmerón, a Product Designer based in Murcia. Since 2007, I have been dedicated to helping companies create efficient, accessible, and consistent digital products. By combining strategy, research, and user-centered design, I deliver visual and functional solutions aligned with both business and product objectives.",
       "My journey as a designer began as a self-taught pursuit, driven by curiosity and constant practice. Additionally, I have completed various workshops at <strong>Neoland</strong>, <strong>Instituto Tramontana</strong>, <strong>Figma Camp</strong>, and <strong>DesignOps Latam</strong> (Workshop: DesignOps in Action), specializing in the creation, maintenance, and organization of design systems."
     ],
     personal: [
@@ -94,7 +94,7 @@ export const About = () => {
           >
             <img 
               src="/alex-bronx.png" 
-              alt="Álex and Bronx" 
+              alt="Alex and Bronx" 
               className="about-main-img" 
               style={{ borderRadius: 0 }}
             />

@@ -3,80 +3,80 @@ const path = require('path');
 
 const DIST_DIR = path.join(__dirname, '../dist');
 
-// Define SEO metadata translations (matching LanguageContext.tsx)
+// Define SEO metadata translations (matching LanguageContext.tsx and Claude's suggestions)
 const SEO_DATA = {
   es: {
     home: {
-      title: "Álex Salmerón - Diseñador de Producto Senior",
-      desc: "Portfolio de Álex Salmerón, diseñador de producto senior especializado en sistemas de diseño y DesignOps. Descubre mis proyectos de diseño y herramientas para Figma."
+      title: "Alex Salmerón - Diseñador de Producto Senior",
+      desc: "Portfolio de Alex Salmerón, diseñador de producto senior en Murcia, especializado en sistemas de diseño y DesignOps. Descubre mis proyectos de diseño y herramientas para Figma."
     },
     about: {
-      title: "Sobre mí | Álex Salmerón - Product Designer",
-      desc: "Conoce mi trayectoria profesional desde 2007. Especialista en Figma Camp y DesignOps. Descubre mi biblioteca de diseño y mi pasión por el crossfit y la naturaleza."
+      title: "Sobre mí | Alex Salmerón - Product Designer",
+      desc: "Conoce la trayectoria de Alex Salmerón, product designer en Murcia desde 2007, especialista en Design Systems y Figma. Descubre mi biblioteca de diseño y mi pasión por el crossfit y la naturaleza."
     },
     soul: {
-      title: "Soul AI | Álex Salmerón - Asistente Personal de Diseño",
+      title: "Soul AI | Alex Salmerón - Asistente Personal de Diseño",
       desc: "Interactúa con Soul, mi IA personalizada. Resuelve dudas sobre mi experiencia en Design Systems, metodología de trabajo y proyectos de diseño de producto."
     },
     articles: {
-      title: "Artículos | Álex Salmerón - Product Designer",
+      title: "Artículos | Alex Salmerón - Product Designer",
       desc: "Lee mi opinión y mis últimos artículos sobre sistemas de diseño, flujos de trabajo en Figma y el futuro del diseño de producto."
     },
     projects: {
       waykout: {
-        title: "Waykout | Proyecto de Diseño de Producto por Álex Salmerón",
+        title: "Waykout | Proyecto de Diseño de Producto por Alex Salmerón",
         desc: "Waykout es una plataforma integral diseñada para optimizar la logística y la gestión de vehículos en tiempo real, centrada en la eficiencia operativa y la experiencia del conductor."
       }
     },
     articles_list: {
       'design-systems-scale': {
-        title: "Sistemas de Diseño a escala: El caso Xnorb | Álex Salmerón",
+        title: "Sistemas de Diseño a escala: El caso Xnorb | Alex Salmerón",
         desc: "Cómo construimos un sistema que permite a más de 50 diseñadores trabajar de forma síncrona sin perder la consistencia."
       },
       'figma-variables-workflow': {
-        title: "Figma Variables: Un cambio de paradigma | Álex Salmerón",
+        title: "Figma Variables: Un cambio de paradigma | Alex Salmerón",
         desc: "Las variables han cambiado para siempre cómo estructuramos nuestros archivos. Ya no se trata de estilos, sino de lógica de diseño."
       },
       'product-design-future': {
-        title: "El futuro del Diseño de Producto en la era de la IA | Álex Salmerón",
+        title: "El futuro del Diseño de Producto en la era de la IA | Alex Salmerón",
         desc: "Reflexiones sobre cómo la inteligencia artificial está redefiniendo nuestro rol como diseñadores y creadores."
       }
     }
   },
   en: {
     home: {
-      title: "Álex Salmerón - Senior Product Designer",
-      desc: "Portfolio of Álex Salmerón, senior product designer specialized in design systems and DesignOps. Discover my design projects and tools for Figma."
+      title: "Alex Salmerón - Senior Product Designer",
+      desc: "Portfolio of Alex Salmerón, senior product designer based in Murcia, Spain, specialized in design systems and DesignOps. Discover my design projects and tools for Figma."
     },
     about: {
-      title: "About | Álex Salmerón - Product Designer",
+      title: "About | Alex Salmerón - Product Designer",
       desc: "Explore my professional journey since 2007. Specialist in DesignOps and Figma Camp. Discover my design library and my passion for nature and life with Bronx."
     },
     soul: {
-      title: "Soul AI | Álex Salmerón - Personal Design Assistant",
+      title: "Soul AI | Alex Salmerón - Personal Design Assistant",
       desc: "Chat with Soul, my custom AI assistant. Get insights into my experience with Design Systems, workflows, and product design projects."
     },
     articles: {
-      title: "Articles | Álex Salmerón - Product Designer",
+      title: "Articles | Alex Salmerón - Product Designer",
       desc: "Read my latest articles about design systems, Figma workflows, and the future of product design."
     },
     projects: {
       waykout: {
-        title: "Waykout | Product Design Project by Álex Salmerón",
+        title: "Waykout | Product Design Project by Alex Salmerón",
         desc: "Waykout is a comprehensive platform designed to optimize logistics and vehicle management in real time, focused on operational efficiency and driver experience."
       }
     },
     articles_list: {
       'design-systems-scale': {
-        title: "Design Systems at Scale: The Xnorb Case | Álex Salmerón",
+        title: "Design Systems at Scale: The Xnorb Case | Alex Salmerón",
         desc: "How we built a system that allows more than 50 designers to work synchronously without losing consistency."
       },
       'figma-variables-workflow': {
-        title: "Figma Variables: A Paradigm Shift | Álex Salmerón",
+        title: "Figma Variables: A Paradigm Shift | Alex Salmerón",
         desc: "Variables have forever changed how we structure our files. It's no longer about styles, but about design logic."
       },
       'product-design-future': {
-        title: "The Future of Product Design in the AI Era | Álex Salmerón",
+        title: "The Future of Product Design in the AI Era | Alex Salmerón",
         desc: "Reflections on how artificial intelligence is redefining our role as designers and creators."
       }
     }
@@ -88,7 +88,7 @@ const HTML_CONTENT = {
   es: {
     home: `
       <header>
-        <h1>Álex Salmerón</h1>
+        <h1>Alex Salmerón</h1>
         <p>Diseñador de Producto con más de 15 años de experiencia. Especializado en Sistemas de Diseño que permiten a equipos y empresas escalar con velocidad y consistencia.</p>
         <nav>
           <a href="/es">Proyectos</a> | <a href="/es/about">Sobre mí</a> | <a href="/es/soul">Soul AI</a> | <a href="/es/articles">Artículos</a>
@@ -137,7 +137,7 @@ const HTML_CONTENT = {
     `,
     about: `
       <header>
-        <h1>Álex Salmerón — Sobre mí</h1>
+        <h1>Alex Salmerón — Sobre mí</h1>
         <nav>
           <a href="/es">Proyectos</a> | <a href="/es/about">Sobre mí</a> | <a href="/es/soul">Soul AI</a> | <a href="/es/articles">Artículos</a>
         </nav>
@@ -145,13 +145,13 @@ const HTML_CONTENT = {
       <main>
         <section>
           <h2>Trayectoria Profesional</h2>
-          <p>Soy Álex Salmerón, diseñador de producto ubicado en Murcia. Desde 2007 me dedico a ayudar a compañías a crear productos digitales eficientes, accesibles y coherentes. Combinando estrategia, investigación y diseño centrado en el usuario para ofrecer soluciones visuales y funcionales alineadas con los objetivos de negocio y producto.</p>
+          <p>Soy Alex Salmerón, diseñador de producto ubicado en Murcia. Desde 2007 me dedico a ayudar a compañías a crear productos digitales eficientes, accesibles y coherentes. Combinando estrategia, investigación y diseño centrado en el usuario para ofrecer soluciones visuales y funcionales alineadas con los objetivos de negocio y producto.</p>
           <p>Mi trayectoria como diseñador comenzó de forma autodidacta, impulsado por la curiosidad y la práctica constante. Pero además, también he realizado diferentes workshops en Neoland, Instituto Tramontana, Figma Camp y DesignOps Latam (Workshop: DesignOps en acción), buscando especializarme en la creación, mantenimiento y organización de sistemas de diseño.</p>
         </section>
         <section>
           <h2>Vida Personal</h2>
           <p>También me encanta la naturaleza, viajar, descubrir nuevos lugares, practicar CrossFit, disfrutar de un buen concierto de indie o rock, perderme en una maratón de cine… y, sobre todo, compartir momentos con ese pequeño ser que aparece en la foto.</p>
-          <p>Él es Bronx, mi compañero de vida y una de mi mayores fuentes de inspiración desde hace más de 15 años. En todo este tiempo hemos vivido aventuras recorriendo miles de kilómetros y explorando rincones increíbles. Esta es la parte más personal de la historia… y poder disfrutar de todo esto, lo llamo suerte.</p>
+          <p>Él es Bronx, mi compañero de vida y una de mis mayores fuentes de inspiración desde hace más de 15 años. En todo este tiempo hemos vivido aventuras recorriendo miles de kilómetros y explorando rincones increíbles. Esta es la parte más personal de la historia… y poder disfrutar de todo esto, lo llamo suerte.</p>
         </section>
         <section>
           <h3>Biblioteca de diseño</h3>
@@ -182,7 +182,7 @@ const HTML_CONTENT = {
     `,
     soul: `
       <header>
-        <h1>Soul AI — Asistente de Diseño de Álex Salmerón</h1>
+        <h1>Soul AI — Asistente de Diseño de Alex Salmerón</h1>
         <nav>
           <a href="/es">Proyectos</a> | <a href="/es/about">Sobre mí</a> | <a href="/es/soul">Soul AI</a> | <a href="/es/articles">Artículos</a>
         </nav>
@@ -191,7 +191,7 @@ const HTML_CONTENT = {
         <p>Interactúa con Soul, mi IA personalizada. Resuelve dudas sobre mi experiencia en Design Systems, metodología de trabajo y proyectos de diseño de producto.</p>
         <p>Preguntas frecuentes que puedes hacerle:</p>
         <ul>
-          <li>¿Quién es Álex?</li>
+          <li>¿Quién es Alex?</li>
           <li>¿Cuál es su rol actual?</li>
           <li>¿Qué habilidades tiene?</li>
           <li>¿Dónde reside?</li>
@@ -201,7 +201,7 @@ const HTML_CONTENT = {
     `,
     articles: `
       <header>
-        <h1>Artículos de Álex Salmerón</h1>
+        <h1>Artículos de Alex Salmerón</h1>
         <p>Compartiendo pensamientos sobre diseño, tecnología y flujos de trabajo.</p>
         <nav>
           <a href="/es">Proyectos</a> | <a href="/es/about">Sobre mí</a> | <a href="/es/soul">Soul AI</a> | <a href="/es/articles">Artículos</a>
@@ -292,7 +292,7 @@ const HTML_CONTENT = {
   en: {
     home: `
       <header>
-        <h1>Álex Salmerón</h1>
+        <h1>Alex Salmerón</h1>
         <p>Product Designer with over +15 years of experience. Specialized in Design Systems that allow teams and companies to scale with speed and consistency.</p>
         <nav>
           <a href="/en">Work</a> | <a href="/en/about">About</a> | <a href="/en/soul">Soul AI</a> | <a href="/en/articles">Articles</a>
@@ -341,7 +341,7 @@ const HTML_CONTENT = {
     `,
     about: `
       <header>
-        <h1>Álex Salmerón — About me</h1>
+        <h1>Alex Salmerón — About me</h1>
         <nav>
           <a href="/en">Work</a> | <a href="/en/about">About</a> | <a href="/en/soul">Soul AI</a> | <a href="/en/articles">Articles</a>
         </nav>
@@ -349,7 +349,7 @@ const HTML_CONTENT = {
       <main>
         <section>
           <h2>Professional Journey</h2>
-          <p>I am Álex Salmerón, a Product Designer based in Murcia. Since 2007, I have been dedicated to helping companies create efficient, accessible, and consistent digital products. By combining strategy, research, and user-centered design, I deliver visual and functional solutions aligned with both business and product objectives.</p>
+          <p>I am Alex Salmerón, a Product Designer based in Murcia. Since 2007, I have been dedicated to helping companies create efficient, accessible, and consistent digital products. By combining strategy, research, and user-centered design, I deliver visual and functional solutions aligned with both business and product objectives.</p>
           <p>My journey as a designer began as a self-taught pursuit, driven by curiosity and constant practice. Additionally, I have completed various workshops at Neoland, Instituto Tramontana, Figma Camp, and DesignOps Latam (Workshop: DesignOps in Action), specializing in the creation, maintenance, and organization of design systems.</p>
         </section>
         <section>
@@ -386,7 +386,7 @@ const HTML_CONTENT = {
     `,
     soul: `
       <header>
-        <h1>Soul AI — Álex Salmerón's Design Assistant</h1>
+        <h1>Soul AI — Alex Salmerón's Design Assistant</h1>
         <nav>
           <a href="/en">Work</a> | <a href="/en/about">About</a> | <a href="/en/soul">Soul AI</a> | <a href="/en/articles">Articles</a>
         </nav>
@@ -395,7 +395,7 @@ const HTML_CONTENT = {
         <p>Chat with Soul, my custom AI assistant. Get insights into my experience with Design Systems, workflows, and product design projects.</p>
         <p>Suggested questions to ask:</p>
         <ul>
-          <li>About Álex</li>
+          <li>About Alex</li>
           <li>Current role</li>
           <li>Main skills</li>
           <li>Location</li>
@@ -405,7 +405,7 @@ const HTML_CONTENT = {
     `,
     articles: `
       <header>
-        <h1>Articles by Álex Salmerón</h1>
+        <h1>Articles by Alex Salmerón</h1>
         <p>Sharing thoughts on design, technology, and workflows.</p>
         <nav>
           <a href="/en">Work</a> | <a href="/en/about">About</a> | <a href="/en/soul">Soul AI</a> | <a href="/en/articles">Articles</a>

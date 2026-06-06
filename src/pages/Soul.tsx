@@ -19,7 +19,7 @@ const getGreeting = () => {
 };
 
 const SUGGESTIONS = [
-  { label: "About Álex", key: "about" },
+  { label: "About Alex", key: "about" },
   { label: "Current role", key: "current" },
   { label: "Skills", key: "skills" },
   { label: "Located", key: "located" },
@@ -59,21 +59,21 @@ export const Soul = () => {
   const [charIndex, setCharIndex] = useState(0);
   
   const EXAMPLES = [
-    "Ask anything about Álex",
-    "What is Álex's current role?",
-    "Where is Álex based?",
+    "Ask anything about Alex",
+    "What is Alex's current role?",
+    "Where is Alex based?",
     "What are his main skills?",
     "Who is Bronx?",
     "Where can I find him on social media?",
-    "How can I reach out to Álex?",
+    "How can I reach out to Alex?",
     "What is the best way to get in touch with him?",
     "What is his design process?",
     "Tell me about his work at Cella",
     "Tell me about his work at DisplayNote",
-    "Where did Álex study?",
+    "Where did Alex study?",
     "What languages does he speak?",
     "How does he work with developers?",
-    "Is Álex available for new projects?",
+    "Is Alex available for new projects?",
     "Can I see his resume?"
   ];
 
@@ -184,8 +184,8 @@ export const Soul = () => {
           })
         }).catch(err => console.error("Error sending notification:", err));
         
-        const fallbackEn = "I'm sorry, I don't have an answer for that yet. But I've just sent your question to Álex so he can teach me! In the meantime, you can ask about his work at Cella, his dog Bronx, or how to contact him.";
-        const fallbackEs = "Lo siento, aún no tengo una respuesta para eso. Pero acabo de enviarle tu pregunta a Álex para que me la enseñe. Mientras tanto, puedes preguntarme sobre su trabajo en Cella, su perro Bronx o cómo contactar con él.";
+        const fallbackEn = "I'm sorry, I don't have an answer for that yet. But I've just sent your question to Alex so he can teach me! In the meantime, you can ask about his work at Cella, his dog Bronx, or how to contact him.";
+        const fallbackEs = "Lo siento, aún no tengo una respuesta para eso. Pero acabo de enviarle tu pregunta a Alex para que me la enseñe. Mientras tanto, puedes preguntarme sobre su trabajo en Cella, su perro Bronx o cómo contactar con él.";
         
         bestMatch.response = isSpanishLanguage ? fallbackEs : fallbackEn;
       }
@@ -215,12 +215,12 @@ export const Soul = () => {
       if (hour >= 5 && hour < 12) timeGreeting = "Buenos días";
       else if (hour >= 12 && hour < 20) timeGreeting = "Buenas tardes";
       else timeGreeting = "Buenas noches";
-      return `${timeGreeting}. <span translate="no">Soy Soul</span>. <br /> ¿Qué quieres saber sobre Álex?`;
+      return `${timeGreeting}. <span translate="no">Soy Soul</span>. <br /> ¿Qué quieres saber sobre Alex?`;
     } else {
       if (hour >= 5 && hour < 12) timeGreeting = "Good morning";
       else if (hour >= 12 && hour < 20) timeGreeting = "Good afternoon";
       else timeGreeting = "Good evening";
-      return `${timeGreeting}. <span translate="no">I’m Soul</span>. <br /> What do you know about Álex?`;
+      return `${timeGreeting}. <span translate="no">I’m Soul</span>. <br /> What do you know about Alex?`;
     }
   }, [language]);
 
