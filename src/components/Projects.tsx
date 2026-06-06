@@ -12,13 +12,12 @@ const Balloon = ({ className }: { className?: string }) => (
 );
 
 export const Projects = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   return (
     <section className="projects page-wrapper">
       <div className="projects-list">
         {/* Waykout — Large */}
-        <div className="project-item no-link">
-          <div className="project-coming-soon">Coming soon</div>
+        <Link to={`/${language}/project/waykout`} className="project-item">
           <div className="project-image large project-waykout">
             <div className="project-waykout-content">
               <div className="project-waykout-text">
@@ -61,7 +60,7 @@ export const Projects = () => {
             </motion.div>
             */}
           </div>
-        </div>
+        </Link>
         {/* Helix Design System — 6/12 columns */}
         <div className="project-row half-row">
           <div className="project-item no-link project-helix-item">
