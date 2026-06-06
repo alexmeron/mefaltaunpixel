@@ -96,6 +96,25 @@ export const ProjectDetail = () => {
               ? "Una plataforma que acerca el turismo auténtico a los rincones menos conocidos de España"
               : "A platform that brings authentic tourism to the lesser-known corners of Spain"}
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            style={{ 
+              fontSize: '18px', 
+              lineHeight: '1.6', 
+              fontWeight: 300, 
+              opacity: 0.7, 
+              marginTop: '24px',
+              maxWidth: '800px'
+            }}
+          >
+            {language === 'es'
+              ? "Waykout es una plataforma de turismo colaborativo diseñada para conectar a viajeros que buscan descubrir la España real con anfitriones locales que ofrecen experiencias culturales, gastronómicas y de naturaleza auténticas. El producto nace con la misión de descentralizar el turismo de masas, dar visibilidad a regiones con un gran potencial inexplorado y revitalizar la economía de las comunidades locales a través de la tecnología."
+              : "Waykout is a collaborative tourism platform designed to connect travelers looking to discover the real Spain with local hosts offering authentic cultural, gastronomic, and nature experiences. The product was born with the mission to decentralize mass tourism, give visibility to regions with unexplored potential, and revitalize local economies through technology."}
+          </motion.div>
         </section>
 
         {/* Horizontal Slider Section */}

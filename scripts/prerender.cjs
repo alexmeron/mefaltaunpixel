@@ -226,6 +226,7 @@ const HTML_CONTENT = {
       <header>
         <h1>Waykout — Plataforma de turismo colaborativo</h1>
         <p>Una plataforma que acerca el turismo auténtico a los rincones menos conocidos de España</p>
+        <p>Waykout es una plataforma de turismo colaborativo diseñada para conectar a viajeros que buscan descubrir la España real con anfitriones locales que ofrecen experiencias culturales, gastronómicas y de naturaleza auténticas. El producto nace con la misión de descentralizar el turismo de masas, dar visibilidad a regiones con un gran potencial inexplorado y revitalizar la economía de las comunidades locales a través de la tecnología.</p>
         <p>Tags: Product Design · UX Research · UI Kit · IA · MVP · 2025</p>
         <nav>
           <a href="/es">Proyectos</a> | <a href="/es/about">Sobre mí</a> | <a href="/es/soul">Soul AI</a> | <a href="/es/articles">Artículos</a>
@@ -447,6 +448,7 @@ const HTML_CONTENT = {
       <header>
         <h1>Waykout — Collaborative tourism platform</h1>
         <p>A platform that brings authentic tourism to the lesser-known corners of Spain</p>
+        <p>Waykout is a collaborative tourism platform designed to connect travelers looking to discover the real Spain with local hosts offering authentic cultural, gastronomic, and nature experiences. The product was born with the mission to decentralize mass tourism, give visibility to regions with unexplored potential, and revitalize local economies through technology.</p>
         <p>Tags: Product Design · UX Research · UI Kit · IA · MVP · 2025</p>
         <nav>
           <a href="/en">Work</a> | <a href="/en/about">About</a> | <a href="/en/soul">Soul AI</a> | <a href="/en/articles">Articles</a>
