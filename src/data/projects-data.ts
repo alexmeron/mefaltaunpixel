@@ -34,16 +34,16 @@ export const PROJECTS_DATA: ProjectContent[] = [
   {
     id: 'waykout',
     title: 'Waykout',
-    category: 'Product Design / SaaS',
-    year: '2024',
-    role: 'Lead Product Designer',
+    category: 'Product Design / MVP',
+    year: '2025',
+    role: 'Product Designer',
     intro: {
-      es: 'Revolucionando la gestión de flotas y movilidad inteligente.',
-      en: 'Revolutionizing fleet management and smart mobility.'
+      es: 'Una plataforma que acerca el turismo auténtico a los rincones menos conocidos de España',
+      en: 'A platform that brings authentic tourism to the lesser-known corners of Spain'
     },
     description: {
-      es: 'Waykout es una plataforma integral diseñada para optimizar la logística y la gestión de vehículos en tiempo real, centrada en la eficiencia operativa y la experiencia del conductor.',
-      en: 'Waykout is a comprehensive platform designed to optimize logistics and vehicle management in real time, focused on operational efficiency and driver experience.'
+      es: 'Waykout es una plataforma de turismo colaborativo para descubrir y reservar experiencias locales auténticas en la Región de Murcia. Diseño de producto y MVP por Alex Salmerón.',
+      en: 'Waykout is a collaborative tourism platform to discover and book authentic local experiences in the Region of Murcia, Spain. Product design and MVP by Alex Salmerón.'
     },
     blocks: [
       {
