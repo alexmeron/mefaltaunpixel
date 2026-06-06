@@ -646,16 +646,12 @@ function generateSitemap() {
   const basePages = [
     { path: '', priority: '1.0', changefreq: 'weekly' },
     { path: 'about', priority: '0.8', changefreq: 'weekly' },
-    { path: 'soul', priority: '0.7', changefreq: 'weekly' },
-    { path: 'articles', priority: '0.8', changefreq: 'weekly' }
+    { path: 'soul', priority: '0.7', changefreq: 'weekly' }
   ];
 
-  // Dynamic projects & articles list
+  // Dynamic projects list
   const dynamicPages = [
-    { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' },
-    { path: 'articles/design-systems-scale', priority: '0.7', changefreq: 'monthly' },
-    { path: 'articles/figma-variables-workflow', priority: '0.7', changefreq: 'monthly' },
-    { path: 'articles/product-design-future', priority: '0.7', changefreq: 'monthly' }
+    { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' }
   ];
 
   const allPages = [...basePages, ...dynamicPages];
