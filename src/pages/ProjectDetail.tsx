@@ -28,24 +28,9 @@ const VisitWebsiteLink = ({ language }: { language: 'es' | 'en' }) => (
     target="_blank" 
     rel="noopener noreferrer"
     className="visit-project-link"
-    style={{
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '8px',
-      padding: '12px 24px',
-      borderRadius: '100px',
-      fontSize: '14px',
-      fontWeight: 500,
-      textDecoration: 'none',
-      border: '1px solid var(--border)',
-      color: 'var(--text)',
-      background: 'var(--card-bg, rgba(0,0,0,0.02))',
-      transition: 'all 0.3s ease',
-      cursor: 'pointer'
-    }}
   >
     <span>{language === 'es' ? 'Visitar waykout.com' : 'Visit waykout.com'}</span>
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ transition: 'transform 0.3s ease' }}>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <line x1="7" y1="17" x2="17" y2="7"></line>
       <polyline points="7 7 17 7 17 17"></polyline>
     </svg>
@@ -333,8 +318,8 @@ export const ProjectDetail = () => {
           viewport={{ once: true }}
           style={{ 
             display: 'flex', 
-            justifyContent: 'center', 
-            marginTop: '-48px', 
+            justifyContent: 'flex-start', 
+            marginTop: '32px', 
             marginBottom: '80px' 
           }}
         >

@@ -1832,16 +1832,25 @@ img {
 }
 
 /* Prominent link to live project */
-.visit-project-link:hover {
-  background: var(--text) !important;
-  color: var(--bg) !important;
-  border-color: var(--text) !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+.visit-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: var(--accent-blue);
+  color: #ffffff !important;
+  border: 1px solid var(--accent-blue);
+  transition: background 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
-.visit-project-link:hover svg {
-  transform: translate(2px, -2px);
+.visit-project-link:hover {
+  background: #0524c9 !important; /* Slightly darker shade of blue */
+  border-color: #0524c9 !important;
 }
 
 @media (max-width: 1024px) {
