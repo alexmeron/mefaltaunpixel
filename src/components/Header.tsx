@@ -87,7 +87,7 @@ export const Header = () => {
         <div className="header-inner">
           <Link to={`/${language}`} className="logo-area" onClick={() => setIsMenuOpen(false)}>
             <LogoIcon />
-            <span className="logo-name">Alex Salmerón</span>
+            <span className="logo-name">Álex Salmerón</span>
           </Link>
 
           {/* Desktop Nav */}

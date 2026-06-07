@@ -91,7 +91,7 @@ export const ArticleDetail = () => {
 
           <div className="article-author-card">
             <div className="author-info">
-              <span className="author-name">Alex Salmerón</span>
+              <span className="author-name">Álex Salmerón</span>
               <span className="author-role">Product Designer</span>
             </div>
           </div>
