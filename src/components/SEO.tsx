@@ -94,7 +94,7 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
       "url": "https://mefaltaunpixel.es",
       "jobTitle": lang === 'es' ? "Diseñador UX/UI Senior" : "Senior Product Designer",
       "description": description,
-      "image": "https://mefaltaunpixel.es/og-image.svg",
+      "image": "https://mefaltaunpixel.es/og-image.png",
       "email": "pixel@mefaltaunpixel.es",
       "address": {
         "@type": "PostalAddress",

@@ -676,12 +676,20 @@ function prerender() {
       `<meta property="og:description" content="${seo.desc}" />`
     );
     html = html.replace(
+      /<meta property="og:url" content=".*?" \/>/g,
+      `<meta property="og:url" content="${canonicalUrl}" />`
+    );
+    html = html.replace(
       /<meta property="twitter:title" content=".*?" \/>/g,
       `<meta property="twitter:title" content="${seo.title}" />`
     );
     html = html.replace(
       /<meta property="twitter:description" content=".*?" \/>/g,
       `<meta property="twitter:description" content="${seo.desc}" />`
+    );
+    html = html.replace(
+      /<meta property="twitter:url" content=".*?" \/>/g,
+      `<meta property="twitter:url" content="${canonicalUrl}" />`
     );
 
     // 5. Inject language-specific Schema.org markup
