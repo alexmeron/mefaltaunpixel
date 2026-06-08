@@ -634,6 +634,20 @@ function prerender() {
     // 1. Set html lang attribute
     html = html.replace('<html lang="en">', `<html lang="${route.lang}">`);
 
+    // 1.5 Inject canonical and hreflang tags
+    const baseUrl = 'https://mefaltaunpixel.es';
+    const canonicalUrl = `${baseUrl}/${route.path}`;
+    const esPath = route.lang === 'es' ? route.path : route.path.replace(/^en/, 'es');
+    const enPath = route.lang === 'en' ? route.path : route.path.replace(/^es/, 'en');
+    
+    const seoLinks = `
+    <link rel="canonical" href="${canonicalUrl}" />
+    <link rel="alternate" hreflang="es" href="${baseUrl}/${esPath}" />
+    <link rel="alternate" hreflang="en" href="${baseUrl}/${enPath}" />
+    <link rel="alternate" hreflang="x-default" href="${baseUrl}/${enPath}" />`;
+
+    html = html.replace('<!-- SEO_LINKS -->', seoLinks);
+
     // 2. Set title
     html = html.replace(/<title>.*?<\/title>/, `<title>${seo.title}</title>`);
 
