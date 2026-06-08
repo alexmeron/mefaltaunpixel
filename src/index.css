@@ -354,9 +354,9 @@ img {
 }
 
 .projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
 }
 
 .project-item {
@@ -760,6 +760,9 @@ img {
 }
 
 @media (max-width: 1024px) {
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
   .project-row {
     grid-template-columns: 1fr;
     gap: var(--project-gap);
@@ -774,7 +777,7 @@ img {
 
 @media (max-width: 640px) {
   .projects-list {
-    gap: 0px;
+    gap: 24px;
   }
   .project-row {
     gap: 24px;
