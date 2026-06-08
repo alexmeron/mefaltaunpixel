@@ -659,10 +659,10 @@ function prerender() {
     // Remove the default schema block in template and insert the localized one
     html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, schemaScript);
 
-    // 6. Keep the root empty to avoid any confusion or unstyled text
+    // 6. Inject faithful HTML fallback inside <div id="root"> with sr-only class to avoid FOUC
     html = html.replace(
       /<div id="root">[\s\S]*?<\/div>/,
-      `<div id="root"></div>`
+      `<div id="root"><div class="sr-only-fallback">${content}</div></div>`
     );
 
     // 7. Save output file
