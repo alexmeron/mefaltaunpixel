@@ -50,8 +50,36 @@ export default {
       }
     }
 
+    // Redirección de la raíz al idioma detectado
+    if (url.pathname === '/') {
+      const acceptLang = request.headers.get('Accept-Language') || '';
+      const targetLang = acceptLang.toLowerCase().startsWith('es') ? 'es' : 'en';
+      return Response.redirect(`${url.origin}/${targetLang}`, 302);
+    }
+
     // Para el resto de rutas, servir assets estáticos
     // @ts-ignore
-    return env.ASSETS.fetch(request);
+    let response = await env.ASSETS.fetch(request);
+
+    // Si es el sitemap, forzar Content-Type application/xml
+    if (url.pathname === '/sitemap.xml' && response.status === 200) {
+      const newResponse = new Response(response.body, response);
+      newResponse.headers.set('Content-Type', 'application/xml');
+      return newResponse;
+    }
+
+    // Implicit index.html resolution para subrutas
+    if (response.status === 404 && !url.pathname.includes('.')) {
+      const newUrl = new URL(url.toString());
+      if (!newUrl.pathname.endsWith('/')) {
+        newUrl.pathname += '/';
+      }
+      newUrl.pathname += 'index.html';
+      const newRequest = new Request(newUrl, request);
+      // @ts-ignore
+      response = await env.ASSETS.fetch(newRequest);
+    }
+
+    return response;
   }
 };

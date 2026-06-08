@@ -742,7 +742,10 @@ function generateSitemap() {
       xml += `    <xhtml:link rel="alternate" hreflang="es" href="${alternateEs}"/>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="en" href="${alternateEn}"/>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${alternateEn}"/>\n`;
-      if (page.priority) xml += `    <priority>${page.priority}</priority>\n`;
+      if (page.priority) {
+        const finalPriority = lang === 'es' ? page.priority : Math.max(0.1, parseFloat(page.priority) - 0.1).toFixed(1);
+        xml += `    <priority>${finalPriority}</priority>\n`;
+      }
       if (page.changefreq) xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
       xml += '  </url>\n';
     });
