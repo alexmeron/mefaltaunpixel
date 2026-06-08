@@ -74,5 +74,38 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
 
   }, [title, description, lang, canonicalUrl, esUrl, enUrl]);
 
+  useEffect(() => {
+    // Schema.org Person JSON-LD
+    const schemaId = 'schema-person';
+    let schemaScript = document.getElementById(schemaId);
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.setAttribute('type', 'application/ld+json');
+      schemaScript.id = schemaId;
+      document.head.appendChild(schemaScript);
+    }
+    schemaScript.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alex Salmerón",
+      "url": "https://mefaltaunpixel.es",
+      "jobTitle": lang === 'es' ? "Diseñador UX/UI Senior" : "Senior Product Designer",
+      "description": description,
+      "image": "https://mefaltaunpixel.es/og-image.svg",
+      "email": "pixel@mefaltaunpixel.es",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Murcia",
+        "addressCountry": "ES"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/alexsalmeron",
+        "https://dribbble.com/mefaltaunpixel",
+        "https://figma.com/@mefaltaunpixel",
+        "https://x.com/mefaltaunpixel"
+      ]
+    });
+  }, [lang, description]);
+
   return null;
 };
