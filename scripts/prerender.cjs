@@ -717,6 +717,13 @@ function prerender() {
   // 8. Generate dynamic sitemap.xml
   generateSitemap();
 
+  // 9. Delete root index.html so Cloudflare Workers Assets doesn't hijack the root "/"
+  // This allows worker.ts to execute and perform the Accept-Language redirect
+  const rootIndex = path.join(DIST_DIR, 'index.html');
+  if (fs.existsSync(rootIndex)) {
+    fs.unlinkSync(rootIndex);
+  }
+
   console.log('Pre-rendering finished successfully!');
 }
 
