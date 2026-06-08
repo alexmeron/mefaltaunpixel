@@ -640,11 +640,15 @@ function prerender() {
     const esPath = route.lang === 'es' ? route.path : route.path.replace(/^en/, 'es');
     const enPath = route.lang === 'en' ? route.path : route.path.replace(/^es/, 'en');
     
+    // For the homepage, x-default should point to the root "/" since it auto-redirects
+    const isHome = route.path === 'es' || route.path === 'en';
+    const xDefaultUrl = isHome ? `${baseUrl}/` : `${baseUrl}/${enPath}`;
+    
     const seoLinks = `
     <link rel="canonical" href="${canonicalUrl}" />
     <link rel="alternate" hreflang="es" href="${baseUrl}/${esPath}" />
     <link rel="alternate" hreflang="en" href="${baseUrl}/${enPath}" />
-    <link rel="alternate" hreflang="x-default" href="${baseUrl}/${enPath}" />`;
+    <link rel="alternate" hreflang="x-default" href="${xDefaultUrl}" />`;
 
     html = html.replace('<!-- SEO_LINKS -->', seoLinks);
 
@@ -737,11 +741,14 @@ function generateSitemap() {
       const alternateEs = `${baseUrl}/es${pagePath}`;
       const alternateEn = `${baseUrl}/en${pagePath}`;
 
+      const isHome = pagePath === '';
+      const xDefaultUrl = isHome ? `${baseUrl}/` : alternateEn;
+
       xml += '  <url>\n';
       xml += `    <loc>${currentUrl}</loc>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="es" href="${alternateEs}"/>\n`;
       xml += `    <xhtml:link rel="alternate" hreflang="en" href="${alternateEn}"/>\n`;
-      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${alternateEn}"/>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${xDefaultUrl}"/>\n`;
       if (page.priority) {
         const finalPriority = lang === 'es' ? page.priority : Math.max(0.1, parseFloat(page.priority) - 0.1).toFixed(1);
         xml += `    <priority>${finalPriority}</priority>\n`;

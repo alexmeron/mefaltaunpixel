@@ -65,9 +65,12 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
     updateLink('canonical', canonicalUrl);
 
     // Hreflang
+    const isHome = currentPath === '/es' || currentPath === '/en' || currentPath === '/es/' || currentPath === '/en/';
+    const xDefaultUrl = isHome ? `${baseUrl}/` : enUrl;
+
     updateLink('alternate', esUrl, 'es');
     updateLink('alternate', enUrl, 'en');
-    updateLink('alternate', enUrl, 'x-default'); // Default to English for search engines as per user preference
+    updateLink('alternate', xDefaultUrl, 'x-default'); // Point to root for home, otherwise English
 
     // Language attribute on html tag
     document.documentElement.lang = lang;
