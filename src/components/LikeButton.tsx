@@ -21,7 +21,7 @@ export const LikeButton = () => {
     // 1. Fetch real likes from API
     fetch('/api/likes')
       .then(res => res.json())
-      .then(data => {
+      .then((data: any) => {
         if (data && typeof data.likes === 'number') {
           setLikes(data.likes);
         }
@@ -53,7 +53,7 @@ export const LikeButton = () => {
       // Tell backend to increment
       fetch('/api/likes', { method: 'POST' })
         .then(res => res.json())
-        .then(data => {
+        .then((data: any) => {
           if (data && typeof data.likes === 'number') {
             setLikes(data.likes); // sync with real backend value
           }
