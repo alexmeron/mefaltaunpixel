@@ -138,6 +138,10 @@ const HTML_CONTENT = {
           <p>Product Design (end-to-end) / Design Systems / Systems thinking / Prototyping / Research / Collaboration with product & engineering / Figma / Zeroheight / Git / GitHub / AI workflows (Claude) / HTML / CSS</p>
         </section>
       </main>
+      <footer>
+        <h2>Para más detalles sobre mi trabajo, contáctame en <a href="https://www.linkedin.com/in/alexsalmeron/">LinkedIn</a>, <a href="https://www.figma.com/@mefaltaunpixel/">Figma</a> & <a href="https://dribbble.com/mefaltaunpixel">Dribbble</a>.</h2>
+        <a href="mailto:pixel@mefaltaunpixel.es">pixel@mefaltaunpixel.es</a>
+      </footer>
     `,
     about: `
       <header>
@@ -366,6 +370,10 @@ const HTML_CONTENT = {
           <p>Product Design (end-to-end) / Design Systems / Systems thinking / Prototyping / Research / Collaboration with product & engineering / Figma / Zeroheight / Git / GitHub / AI workflows (Claude) / HTML / CSS</p>
         </section>
       </main>
+      <footer>
+        <h2>For details about my work, reach out on <a href="https://www.linkedin.com/in/alexsalmeron/">LinkedIn</a>, <a href="https://www.figma.com/@mefaltaunpixel/">Figma</a> & <a href="https://dribbble.com/mefaltaunpixel">Dribbble</a>.</h2>
+        <a href="mailto:pixel@mefaltaunpixel.es">pixel@mefaltaunpixel.es</a>
+      </footer>
     `,
     about: `
       <header>
