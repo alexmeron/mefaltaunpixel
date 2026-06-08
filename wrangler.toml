@@ -1,0 +1,9 @@
+name = "mefaltaunpixel"
+compatibility_date = "2026-06-08"
+compatibility_flags = ["nodejs_compat"]
+
+assets = { directory = "./dist" }
+
+[[kv_namespaces]]
+binding = "PORTFOLIO_DATA"
+id = "9a46e32e7015466c87736adb941d7c01"
