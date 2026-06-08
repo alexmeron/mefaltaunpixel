@@ -5,6 +5,8 @@ import { SEO } from '../components/SEO';
 import { ArrowLeft, Clock, Calendar, Tag, Share2 } from 'lucide-react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
+import iconsVar from '../assets/images/icons-var.png?format=webp&w=908';
+
 export const ArticleDetail = () => {
   const { id, lang } = useParams<{ id: string, lang: string }>();
   const { language, t } = useLanguage();
@@ -57,7 +59,7 @@ export const ArticleDetail = () => {
       category: 'DesignOps',
       date: 'Mar 12, 2024',
       readTime: '12',
-      image: '/icons-var.png',
+      image: iconsVar,
       content: {
         es: `<p>Las variables han cambiado para siempre cómo estructuramos nuestros archivos. Ya no se trata de estilos, sino de lógica de diseño.</p>`,
         en: `<p>Variables have forever changed how we structure our files. It's no longer about styles, but about design logic.</p>`

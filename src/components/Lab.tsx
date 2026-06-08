@@ -3,14 +3,23 @@ import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+import coverUiFlow from '../assets/images/cover-ui-flow.png?format=webp&w=1800';
+import modesImg from '../assets/images/modes.png?format=webp&w=1324';
+import coverComponents from '../assets/images/cover-components.png?format=webp&w=1800';
+import iconsVar from '../assets/images/icons-var.png?format=webp&w=908';
+
 export const Lab = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const componentsVideoRef = useRef<HTMLVideoElement>(null);
+  const video1ContainerRef = useRef<HTMLAnchorElement>(null);
+  const video2ContainerRef = useRef<HTMLAnchorElement>(null);
   const targetRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
   const [scrollRange, setScrollRange] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [vid1Visible, setVid1Visible] = useState(false);
+  const [vid2Visible, setVid2Visible] = useState(false);
   const { t } = useLanguage();
 
   const { scrollYProgress } = useScroll({
@@ -38,6 +47,23 @@ export const Lab = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  // Lazy loading observer for videos
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target === video1ContainerRef.current) setVid1Visible(true);
+          if (entry.target === video2ContainerRef.current) setVid2Visible(true);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    if (video1ContainerRef.current) observer.observe(video1ContainerRef.current);
+    if (video2ContainerRef.current) observer.observe(video2ContainerRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   const deadZone = scrollRange > 0 ? 500 : 0; // Extra scroll distance to pause at the end ONLY if there is horizontal overflow
   const totalScroll = scrollRange + deadZone;
   const endProgress = scrollRange > 0 ? scrollRange / totalScroll : 1;
@@ -50,7 +76,7 @@ export const Lab = () => {
     if (componentsVideoRef.current) {
       componentsVideoRef.current.playbackRate = 4.0;
     }
-  }, []);
+  }, [vid1Visible, vid2Visible]);
 
   const sectionStyle = !isMobile && scrollRange > 0 
     ? { height: `calc(700px + ${totalScroll}px)` }
@@ -68,37 +94,40 @@ export const Lab = () => {
           {/* Item 1 - Video */}
         <div className="lab-item">
           <a 
+            ref={video1ContainerRef}
             href="https://www.figma.com/community/plugin/1600155199369592947/variables-timeline" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <video 
-              ref={videoRef}
-              src="/videos/variables.webm" 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
-              className="lab-video-asset"
-              aria-label="Figma plugin variables timeline demonstration"
-              title="Variables Timeline Plugin for Figma"
-              onLoadedMetadata={(e) => {
-                const vid = e.currentTarget;
-                vid.playbackRate = 4.0;
-                vid.currentTime = 3; // Skip first 3 seconds
-              }}
-              onPlay={(e) => {
-                e.currentTarget.playbackRate = 4.0;
-              }}
-              onTimeUpdate={(e) => {
-                const vid = e.currentTarget;
-                if (vid.duration && vid.currentTime >= vid.duration - 2) {
-                  vid.currentTime = 3; // Back to second 3
-                  vid.play();
-                }
-              }}
-            />
+            {vid1Visible && (
+              <video 
+                ref={videoRef}
+                src="/videos/variables.webm" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                className="lab-video-asset"
+                aria-label="Figma plugin variables timeline demonstration"
+                title="Variables Timeline Plugin for Figma"
+                onLoadedMetadata={(e) => {
+                  const vid = e.currentTarget;
+                  vid.playbackRate = 4.0;
+                  vid.currentTime = 3; // Skip first 3 seconds
+                }}
+                onPlay={(e) => {
+                  e.currentTarget.playbackRate = 4.0;
+                }}
+                onTimeUpdate={(e) => {
+                  const vid = e.currentTarget;
+                  if (vid.duration && vid.currentTime >= vid.duration - 2) {
+                    vid.currentTime = 3; // Back to second 3
+                    vid.play();
+                  }
+                }}
+              />
+            )}
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
           </a>
           <p className="lab-text">
@@ -123,7 +152,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/cover-ui-flow.png" alt="UI Flow - Figma Resource" className="lab-asset-cover-left" />
+            <img src={coverUiFlow} alt="UI Flow - Figma Resource" className="lab-asset-cover-left" />
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
           </a>
           <p className="lab-text">
@@ -148,7 +177,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/modes.png" alt="Infinite Variable Modes - Figma Resource for scaling design systems" className="lab-asset-cover" />
+            <img src={modesImg} alt="Infinite Variable Modes - Figma Resource for scaling design systems" className="lab-asset-cover" />
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
           </a>
           <p className="lab-text">
@@ -173,7 +202,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/cover-components.png" alt="Components Explorer - Figma Resource" className="lab-asset-cover-left" />
+            <img src={coverComponents} alt="Components Explorer - Figma Resource" className="lab-asset-cover-left" />
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
           </a>
           <p className="lab-text">
@@ -193,28 +222,31 @@ export const Lab = () => {
         {/* Item 5 (originally Item 3) */}
         <div className="lab-item">
           <a 
+            ref={video2ContainerRef}
             href="https://www.figma.com/community/plugin/1505449538275448157/components-explorer" 
             target="_blank" 
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <video 
-              ref={componentsVideoRef}
-              src="/videos/components.webm" 
-              autoPlay 
-              muted 
-              loop 
-              playsInline 
-              className="lab-video-asset"
-              aria-label="Figma plugin components explorer demonstration"
-              title="Components Explorer Plugin for Figma"
-              onLoadedMetadata={(e) => {
-                e.currentTarget.playbackRate = 4.0;
-              }}
-              onPlay={(e) => {
-                e.currentTarget.playbackRate = 4.0;
-              }}
-            />
+            {vid2Visible && (
+              <video 
+                ref={componentsVideoRef}
+                src="/videos/components.webm" 
+                autoPlay 
+                muted 
+                loop 
+                playsInline 
+                className="lab-video-asset"
+                aria-label="Figma plugin components explorer demonstration"
+                title="Components Explorer Plugin for Figma"
+                onLoadedMetadata={(e) => {
+                  e.currentTarget.playbackRate = 4.0;
+                }}
+                onPlay={(e) => {
+                  e.currentTarget.playbackRate = 4.0;
+                }}
+              />
+            )}
             <div className="lab-badge">{t('lab_badge_plugin')}</div>
           </a>
           <p className="lab-text">
@@ -239,7 +271,7 @@ export const Lab = () => {
             rel="noopener noreferrer" 
             className="lab-image"
           >
-            <img src="/icons-var.png" alt="Icon Library with Variables - Comprehensive SVG icons for design systems" className="lab-video-asset" />
+            <img src={iconsVar} alt="Icon Library with Variables - Comprehensive SVG icons for design systems" className="lab-video-asset" />
             <div className="lab-badge lab-badge-resource">{t('lab_badge_resource')}</div>
           </a>
           <p className="lab-text">

@@ -4,6 +4,9 @@ import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
 import { motion } from 'framer-motion';
 
+import iconsVar from '../assets/images/icons-var.png?format=webp&w=908';
+import modesImg from '../assets/images/modes.png?format=webp&w=1324';
+
 interface Article {
   id: string;
   date: string;
@@ -48,7 +51,7 @@ const ARTICLES: Article[] = [
       es: 'Guía completa sobre cómo implementar variables para mejorar el traspaso a desarrollo y la flexibilidad del producto.',
       en: 'Comprehensive guide on how to implement variables to improve development handoff and product flexibility.'
     },
-    image: '/icons-var.png',
+    image: iconsVar,
     category: 'DesignOps'
   },
   {
@@ -63,7 +66,7 @@ const ARTICLES: Article[] = [
       es: 'Reflexiones sobre cómo la inteligencia artificial está redefiniendo nuestro rol como diseñadores y creadores.',
       en: 'Reflections on how artificial intelligence is redefining our role as designers and creators.'
     },
-    image: '/modes.png',
+    image: modesImg,
     category: 'Thinking'
   }
 ];
