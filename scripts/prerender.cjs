@@ -133,6 +133,10 @@ const HTML_CONTENT = {
             </li>
           </ul>
         </section>
+        <section id="skills">
+          <h2>Habilidades y Herramientas</h2>
+          <p>Product Design (end-to-end) / Design Systems / Systems thinking / Prototyping / Research / Collaboration with product & engineering / Figma / Zeroheight / Git / GitHub / AI workflows (Claude) / HTML / CSS</p>
+        </section>
       </main>
     `,
     about: `
@@ -356,6 +360,10 @@ const HTML_CONTENT = {
               <br/><a href="https://www.figma.com/community/file/1445427402991631750">Try it on Figma</a>
             </li>
           </ul>
+        </section>
+        <section id="skills">
+          <h2>Skills & Tools</h2>
+          <p>Product Design (end-to-end) / Design Systems / Systems thinking / Prototyping / Research / Collaboration with product & engineering / Figma / Zeroheight / Git / GitHub / AI workflows (Claude) / HTML / CSS</p>
         </section>
       </main>
     `,
