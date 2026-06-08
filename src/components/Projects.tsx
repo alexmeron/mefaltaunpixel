@@ -63,15 +63,12 @@ export const Projects = () => {
         </Link>
         {/* Helix Design System — 6/12 columns */}
         <div className="project-item no-link project-helix-item">
-          <div className="project-coming-soon">Coming soon</div>
           <div className="project-image large project-helix">
+            <div className="project-coming-soon">Coming soon</div>
             <div className="project-helix-content">
               <div className="project-helix-text">
                 <div className="project-helix-header">
-                  <svg className="helix-svg-logo" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="512" height="512" fill="#1EADFF"/>
-                    <path d="M131.284 401V110.091H192.79V230.119H317.648V110.091H379.011V401H317.648V280.83H192.79V401H131.284Z" fill="white"/>
-                  </svg>
+
                   <h3 className="project-helix-title">{t('helix_title')}</h3>
                 </div>
                 <p className="project-helix-description">{t('helix_desc')}</p>
