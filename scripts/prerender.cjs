@@ -50,7 +50,7 @@ const HTML_CONTENT = {
       <h1>Álex Salmerón — Senior Product Designer</h1>
       <p>Product Designer based in Murcia, Spain, with 15+ years of experience. Specialized in Visual Design, Design Systems and DesignOps. Helping teams and companies build consistent, scalable and maintainable digital products.</p>
       <nav>
-        <a href="/">Work</a> | <a href="/about">About</a> | <a href="/soul">Soul AI</a> | <a href="/articles">Articles</a>
+        <a href="/">Work</a> | <a href="/about">About</a> | <a href="/soul">Soul AI</a>
       </nav>
     </header>
     <main>
@@ -257,12 +257,20 @@ function prerender() {
     // 1. Set html lang attribute
     html = html.replace(/<html lang=".*?">/, '<html lang="en">');
 
-    // 1.5 Inject canonical
+    // 1.5 Inject canonical (and robots noindex for articles)
     const baseUrl = 'https://mefaltaunpixel.es';
     const canonicalUrl = route.path === '' ? baseUrl : `${baseUrl}/${route.path}`;
     
     const seoLinks = `<link rel="canonical" href="${canonicalUrl}" />`;
     html = html.replace('<!-- SEO_LINKS -->', seoLinks);
+
+    // 1.6 Update robots meta tag for articles
+    if (route.path.startsWith('articles')) {
+      html = html.replace(
+        /<meta name="robots" content="index, follow" \/>/,
+        '<meta name="robots" content="noindex, nofollow" />'
+      );
+    }
 
     // 2. Set title
     html = html.replace(/<title>.*?<\/title>/, `<title>${seo.title}</title>`);
@@ -325,11 +333,7 @@ function generateSitemap() {
     { path: '', priority: '1.0', changefreq: 'weekly' },
     { path: 'about', priority: '0.8', changefreq: 'weekly' },
     { path: 'soul', priority: '0.8', changefreq: 'weekly' },
-    { path: 'articles', priority: '0.8', changefreq: 'weekly' },
-    { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' },
-    { path: 'articles/design-systems-scale', priority: '0.7', changefreq: 'monthly' },
-    { path: 'articles/figma-variables-workflow', priority: '0.7', changefreq: 'monthly' },
-    { path: 'articles/product-design-future', priority: '0.7', changefreq: 'monthly' }
+    { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' }
   ];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
