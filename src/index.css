@@ -308,6 +308,8 @@ img {
 @media (max-width: 640px) {
   .hero {
     padding: 0 16px;
+    height: 75vh;
+    height: 75dvh;
   }
 }
 

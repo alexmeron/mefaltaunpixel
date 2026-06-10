@@ -42,13 +42,12 @@ export const Skills = () => {
 
       <footer className="footer page-wrapper">
         <h2 className="footer-contact">
-          <span className="footer-regular">{t('footer_about_work')}</span> <br />
-          <span className="footer-bold">
-            {t('footer_reach')}{' '}
-            <a href="https://www.linkedin.com/in/alexsalmeron/" target="_blank" rel="noreferrer">LinkedIn</a>,{' '}
-            <a href="https://www.figma.com/@mefaltaunpixel/" target="_blank" rel="noreferrer">Figma</a> &{' '}
-            <a href="https://dribbble.com/mefaltaunpixel" target="_blank" rel="noreferrer">Dribbble</a>.
-          </span>
+          <span className="footer-regular">{t('footer_reach')}</span>{' '}
+          <a href="https://www.linkedin.com/in/alexsalmeron/" target="_blank" rel="noreferrer" className="footer-bold">LinkedIn</a>{' '}
+          <span className="footer-regular">{t('footer_explore')}</span>{' '}
+          <a href="https://www.figma.com/@mefaltaunpixel/" target="_blank" rel="noreferrer" className="footer-bold">Figma</a>{' '}
+          <span className="footer-regular">&</span>{' '}
+          <a href="https://dribbble.com/mefaltaunpixel" target="_blank" rel="noreferrer" className="footer-bold">Dribbble</a><span className="footer-regular">.</span>
         </h2>
         
         <div className="footer-divider"></div>

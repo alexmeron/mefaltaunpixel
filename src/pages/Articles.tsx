@@ -79,7 +79,6 @@ export const Articles = () => {
       <SEO 
         title={t('seo_articles_title')} 
         description={t('seo_articles_desc')} 
-        lang={language}
       />
       
       <header className="articles-header">

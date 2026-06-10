@@ -50,13 +50,6 @@ export default {
       }
     }
 
-    // Redirección de la raíz al idioma detectado
-    if (url.pathname === '/') {
-      const acceptLang = request.headers.get('Accept-Language') || '';
-      const targetLang = acceptLang.toLowerCase().startsWith('es') ? 'es' : 'en';
-      return Response.redirect(`${url.origin}/${targetLang}`, 302);
-    }
-
     // Para el resto de rutas, servir assets estáticos
     // @ts-ignore
     let response = await env.ASSETS.fetch(request);

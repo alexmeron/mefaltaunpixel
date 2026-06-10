@@ -13,7 +13,6 @@ export const Home = () => {
       <SEO 
         title={t('seo_home_title')} 
         description={t('seo_home_desc')} 
-        lang={language}
       />
       <Hero />
       <Projects />

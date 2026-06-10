@@ -69,13 +69,6 @@ export const Header = () => {
     };
   }, [isMenuOpen]);
 
-  const toggleLanguage = () => {
-    const newLang = language === 'es' ? 'en' : 'es';
-    // Replace current lang in URL
-    const newPath = location.pathname.replace(`/${language}`, `/${newLang}`);
-    navigate(newPath);
-  };
-
   const menuVariants = {
     closed: { opacity: 0, x: "100%" },
     open: { opacity: 1, x: 0 }
@@ -85,7 +78,7 @@ export const Header = () => {
     <>
       <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
         <div className="header-inner">
-          <Link to={`/${language}`} className="logo-area" onClick={() => setIsMenuOpen(false)}>
+          <Link to="/" className="logo-area" onClick={() => setIsMenuOpen(false)}>
             <LogoIcon />
             <span className="logo-name">Álex Salmerón</span>
           </Link>
@@ -93,18 +86,15 @@ export const Header = () => {
           {/* Desktop Nav */}
           <nav className="nav-center desktop-only">
             <ul className="nav-links">
-              <li><NavLink to={`/${language}/soul`} className={({isActive}) => isActive ? 'nav-active' : ''} translate="no">{t('nav_soul')}</NavLink></li>
-              <li><NavLink to={`/${language}/about`} className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_about')}</NavLink></li>
-              <li><NavLink to={`/${language}`} end className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_work')}</NavLink></li>
+              <li><NavLink to="/soul" className={({isActive}) => isActive ? 'nav-active' : ''} translate="no">{t('nav_soul')}</NavLink></li>
+              <li><NavLink to="/about" className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_about')}</NavLink></li>
+              <li><NavLink to="/" end className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_work')}</NavLink></li>
               <li><a href="/cv-alex-salmeron.pdf" target="_blank" rel="noreferrer">{t('nav_resume')}</a></li>
             </ul>
           </nav>
 
           <div className="header-actions">
             <div className="header-actions-group desktop-only">
-              <button className="lang-toggle" onClick={toggleLanguage} aria-label="Toggle language">
-                {language === 'es' ? 'EN' : 'ES'}
-              </button>
               <button className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
                 {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
               </button>
@@ -133,16 +123,13 @@ export const Header = () => {
 
             <div className="mobile-menu-content">
               <nav className="mobile-nav">
-                <NavLink to={`/${language}/soul`} onClick={() => setIsMenuOpen(false)} translate="no">{t('nav_soul')}</NavLink>
-                <NavLink to={`/${language}/about`} onClick={() => setIsMenuOpen(false)}>{t('nav_about')}</NavLink>
-                <NavLink to={`/${language}`} end onClick={() => setIsMenuOpen(false)}>{t('nav_work')}</NavLink>
+                <NavLink to="/soul" onClick={() => setIsMenuOpen(false)} translate="no">{t('nav_soul')}</NavLink>
+                <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>{t('nav_about')}</NavLink>
+                <NavLink to="/" end onClick={() => setIsMenuOpen(false)}>{t('nav_work')}</NavLink>
                 <a href="/cv-alex-salmeron.pdf" target="_blank" rel="noreferrer">{t('nav_resume')}</a>
               </nav>
 
               <div className="mobile-controls">
-                <div className="mobile-control-item" onClick={toggleLanguage}>
-                  <span>{language === 'es' ? 'Idioma: EN' : 'Language: ES'}</span>
-                </div>
                 <div className="mobile-control-item" onClick={toggleTheme}>
                   <span>{theme === 'light' ? t('theme_dark') : t('theme_light')}</span>
                   {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}

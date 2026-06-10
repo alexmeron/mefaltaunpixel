@@ -72,9 +72,8 @@ export const ArticleDetail = () => {
   return (
     <main className="article-detail-page page-wrapper">
       <SEO 
-        title={`${article.title[language]} | Alex Salmerón`}
+        title={`${article.title[language]} | Álex Salmerón`}
         description={article.title[language]}
-        lang={language}
       />
 
       <motion.div className="reading-progress-bar" style={{ scaleX }} />

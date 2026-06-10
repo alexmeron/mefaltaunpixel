@@ -4,18 +4,12 @@ import { useLocation } from 'react-router-dom';
 interface SEOProps {
   title: string;
   description: string;
-  lang: 'es' | 'en';
 }
 
-export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
+export const SEO: React.FC<SEOProps> = ({ title, description }) => {
   const location = useLocation();
-  const baseUrl = "https://mefaltaunpixel.es"; // Using the correct .es domain
-  const currentPath = location.pathname;
-  
-  // Construct URLs for hreflang
-  const esUrl = `${baseUrl}${currentPath.replace(/^\/(es|en)/, '/es')}`;
-  const enUrl = `${baseUrl}${currentPath.replace(/^\/(es|en)/, '/en')}`;
-  const canonicalUrl = `${baseUrl}${currentPath}`;
+  const baseUrl = "https://mefaltaunpixel.es";
+  const canonicalUrl = `${baseUrl}${location.pathname}`;
 
   useEffect(() => {
     // Update Document Title
@@ -35,10 +29,8 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
       }
     };
 
-    const updateLink = (rel: string, href: string, hreflang?: string) => {
+    const updateLink = (rel: string, href: string) => {
       let selector = `link[rel="${rel}"]`;
-      if (hreflang) selector += `[hreflang="${hreflang}"]`;
-      
       let element = document.querySelector(selector);
       if (element) {
         element.setAttribute('href', href);
@@ -46,7 +38,6 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
         element = document.createElement('link');
         element.setAttribute('rel', rel);
         element.setAttribute('href', href);
-        if (hreflang) element.setAttribute('hreflang', hreflang);
         document.head.appendChild(element);
       }
     };
@@ -59,23 +50,15 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
     updateMeta('meta[property="og:description"]', 'content', description);
     updateMeta('meta[property="og:type"]', 'content', 'website');
     updateMeta('meta[property="og:url"]', 'content', canonicalUrl);
-    updateMeta('meta[property="og:locale"]', 'content', lang === 'es' ? 'es_ES' : 'en_US');
+    updateMeta('meta[property="og:locale"]', 'content', 'en_US');
 
     // Canonical
     updateLink('canonical', canonicalUrl);
 
-    // Hreflang
-    const isHome = currentPath === '/es' || currentPath === '/en' || currentPath === '/es/' || currentPath === '/en/';
-    const xDefaultUrl = isHome ? `${baseUrl}/` : enUrl;
-
-    updateLink('alternate', esUrl, 'es');
-    updateLink('alternate', enUrl, 'en');
-    updateLink('alternate', xDefaultUrl, 'x-default'); // Point to root for home, otherwise English
-
     // Language attribute on html tag
-    document.documentElement.lang = lang;
+    document.documentElement.lang = 'en';
 
-  }, [title, description, lang, canonicalUrl, esUrl, enUrl]);
+  }, [title, description, canonicalUrl]);
 
   useEffect(() => {
     // Schema.org Person JSON-LD
@@ -90,25 +73,52 @@ export const SEO: React.FC<SEOProps> = ({ title, description, lang }) => {
     schemaScript.textContent = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "Alex Salmerón",
+      "name": "Álex Salmerón",
+      "alternateName": "Alex Salmeron",
       "url": "https://mefaltaunpixel.es",
-      "jobTitle": lang === 'es' ? "Diseñador UX/UI Senior" : "Senior Product Designer",
+      "jobTitle": "Senior Product Designer",
       "description": description,
       "image": "https://mefaltaunpixel.es/og-image.png",
       "email": "pixel@mefaltaunpixel.es",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Murcia",
+        "addressRegion": "Murcia",
         "addressCountry": "ES"
       },
+      "knowsAbout": [
+        "Product Design",
+        "Design Systems",
+        "DesignOps",
+        "Visual Design",
+        "UX Research",
+        "Figma",
+        "UI Design",
+        "Prototyping",
+        "Component Libraries",
+        "Design Tokens"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Senior Product Designer",
+        "occupationLocation": {
+          "@type": "City",
+          "name": "Murcia"
+        },
+        "skills": "Product Design, Design Systems, DesignOps, Figma, Visual Design, UX Research"
+      },
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Cella Medical Solutions"
+      },
       "sameAs": [
-        "https://www.linkedin.com/in/alexsalmeron",
+        "https://www.linkedin.com/in/alexsalmeron/",
         "https://dribbble.com/mefaltaunpixel",
-        "https://figma.com/@mefaltaunpixel",
+        "https://www.figma.com/@mefaltaunpixel",
         "https://x.com/mefaltaunpixel"
       ]
     });
-  }, [lang, description]);
+  }, [description]);
 
   return null;
 };

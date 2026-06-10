@@ -42,8 +42,8 @@ export const PROJECTS_DATA: ProjectContent[] = [
       en: 'Redesigning the way travelers discover authentic destinations in Spain.'
     },
     description: {
-      es: 'Waykout es una plataforma de turismo colaborativo para descubrir y reservar experiencias locales auténticas en la Región de Murcia. Diseño de producto y MVP por Alex Salmerón.',
-      en: 'Waykout is a collaborative tourism platform to discover and book authentic local experiences in the Region of Murcia, Spain. Product design and MVP by Alex Salmerón.'
+      es: 'Waykout es una plataforma de turismo colaborativo para descubrir y reservar experiencias locales auténticas en la Región de Murcia. Diseño de producto y MVP por Álex Salmerón.',
+      en: 'Waykout is a collaborative tourism platform to discover and book authentic local experiences in the Region of Murcia, Spain. Product design and MVP by Álex Salmerón.'
     },
     blocks: [
       {

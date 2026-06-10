@@ -7,15 +7,15 @@ import { SEO } from '../components/SEO';
 const ProjectMeta = ({ project, language }: { project: any, language: 'es' | 'en' }) => (
   <div className="project-meta-inline">
     <div className="meta-item">
-      <span className="meta-label">{language === 'es' ? 'Categoría' : 'Category'}</span>
+      <span className="meta-label">Category</span>
       <span className="meta-value">{project.category}</span>
     </div>
     <div className="meta-item">
-      <span className="meta-label">{language === 'es' ? 'Año' : 'Year'}</span>
+      <span className="meta-label">Year</span>
       <span className="meta-value">{project.year}</span>
     </div>
     <div className="meta-item">
-      <span className="meta-label">{language === 'es' ? 'Rol' : 'Role'}</span>
+      <span className="meta-label">Role</span>
       <span className="meta-value">{project.role}</span>
     </div>
   </div>
@@ -28,7 +28,7 @@ const VisitWebsiteLink = ({ language }: { language: 'es' | 'en' }) => (
     rel="noopener noreferrer" 
     className="visit-project-link"
   >
-    <span>{language === 'es' ? 'Visitar waykout.com' : 'Visit waykout.com'}</span>
+    <span>Visit waykout.com</span>
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
       <line x1="7" y1="17" x2="17" y2="7"></line>
       <polyline points="7 7 17 7 17 17"></polyline>
@@ -62,14 +62,12 @@ export const ProjectDetail = () => {
 
   // --- CUSTOM WAYKOUT CASE STUDY LAYOUT ---
   if (id === 'waykout') {
-    const seoTitle = `Waykout | ${language === 'es' ? 'Proyecto de Diseño de Producto por Alex Salmerón' : 'Product Design Project by Alex Salmerón'}`;
-    const seoDesc = language === 'es'
-      ? "Waykout es una plataforma de turismo colaborativo para descubrir y reservar experiencias locales auténticas en la Región de Murcia. Diseño de producto y MVP por Alex Salmerón."
-      : "Waykout is a collaborative tourism platform to discover and book authentic local experiences in the Region of Murcia, Spain. Product design and MVP by Alex Salmerón.";
+    const seoTitle = `Waykout | Product Design Project by Álex Salmerón`;
+    const seoDesc = "Waykout is a collaborative tourism platform to discover and book authentic local experiences in the Region of Murcia, Spain. Product design and MVP by Álex Salmerón.";
 
     return (
       <main className="project-detail-page page-wrapper">
-        <SEO title={seoTitle} description={seoDesc} lang={language} />
+        <SEO title={seoTitle} description={seoDesc}  />
 
         {/* Section 1: Hero */}
         <section className="project-intro-section" style={{ paddingBottom: '24px', paddingTop: '80px' }}>
@@ -111,9 +109,7 @@ export const ProjectDetail = () => {
             className="project-description-text"
             style={{ fontSize: '26px', lineHeight: '1.4', fontWeight: 300, opacity: 0.9 }}
           >
-            {language === 'es' 
-              ? "Rediseñando la forma en que los viajeros descubren destinos auténticos en España."
-              : "Redesigning the way travelers discover authentic destinations in Spain."}
+            {"Redesigning the way travelers discover authentic destinations in Spain."}
           </motion.div>
 
           <motion.div
@@ -130,9 +126,7 @@ export const ProjectDetail = () => {
               maxWidth: '800px'
             }}
           >
-            {language === 'es'
-              ? "Waykout es una plataforma de turismo colaborativo diseñada para conectar a viajeros que buscan descubrir la España real con anfitriones locales que ofrecen experiencias culturales, gastronómicas y de naturaleza auténticas. El producto nació con la misión de descentralizar el turismo de masas, dar visibilidad a territorios y espacios con un gran potencial inexplorado y revitalizar la economía de las comunidades locales a través de la tecnología."
-              : "Waykout is a collaborative tourism platform designed to connect travelers looking to discover the real Spain with local hosts offering authentic cultural, gastronomic, and nature experiences. The product was born with the mission to decentralize mass tourism, give visibility to territories and spaces with great unexplored potential, and revitalize local community economies through technology."}
+            {"Waykout is a collaborative tourism platform designed to connect travelers looking to discover the real Spain with local hosts offering authentic cultural, gastronomic, and nature experiences. The product was born with the mission to decentralize mass tourism, give visibility to territories and spaces with great unexplored potential, and revitalize local community economies through technology."}
           </motion.div>
 
           <motion.div
@@ -206,12 +200,10 @@ export const ProjectDetail = () => {
               transition={{ duration: 0.6 }}
             >
               <h3 style={{ fontSize: '28px', fontWeight: 500, marginBottom: '20px', borderBottom: '1px solid var(--border)', paddingBottom: '12px' }}>
-                {language === 'es' ? 'Mi rol' : 'My role'}
+                My role
               </h3>
               <p style={{ fontSize: '18px', lineHeight: '1.7', fontWeight: 300, opacity: 0.85 }}>
-                {language === 'es'
-                  ? 'Waykout es mi side-project. Como co-fundador, mi trabajo abarcó desde la validación inicial de la idea hasta el diseño completo del producto final. Lanzamos campañas segmentadas en Instagram y Google Ads para medir la demanda real de viajeros y anfitriones antes de escribir código. Con los datos obtenidos y las hipótesis validadas, prototipé y probé wireframes en ciclos iterativos con early adopters reales en la Región de Murcia. Además del diseño del flujo principal de usuarios y las herramientas de gestión interna para anfitriones, desarrollé el sistema visual y el UI Kit completo. Esto permitió lanzar un MVP que, en su primer mes, captó a más de 100 usuarios, 50 anfitriones activos y facilitó más de 120 reservas.'
-                  : 'Waykout is my side-project. As co-founder, my work spanned from the initial validation of the idea to the complete design of the final product. We launched targeted campaigns on Instagram and Google Ads to measure the real demand of travelers and hosts before writing code. With the data obtained and hypotheses validated, I prototyped and tested wireframes in iterative cycles with real early adopters in the Region of Murcia. In addition to designing the main user flows and internal management tools for hosts, I developed the complete visual system and UI Kit. This enabled the launch of an MVP that, in its first month, attracted more than 100 users, 50 active hosts, and facilitated over 120 bookings.'}
+                Waykout is my side-project. As co-founder, my work spanned from the initial validation of the idea to the complete design of the final product. We launched targeted campaigns on Instagram and Google Ads to measure the real demand of travelers and hosts before writing code. With the data obtained and hypotheses validated, I prototyped and tested wireframes in iterative cycles with real early adopters in the Region of Murcia. In addition to designing the main user flows and internal management tools for hosts, I developed the complete visual system and UI Kit. This enabled the launch of an MVP that, in its first month, attracted more than 100 users, 50 active hosts, and facilitated over 120 bookings.
               </p>
             </motion.div>
 
@@ -222,12 +214,10 @@ export const ProjectDetail = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h3 style={{ fontSize: '28px', fontWeight: 500, marginBottom: '20px', borderBottom: '1px solid var(--border)', paddingBottom: '12px' }}>
-                {language === 'es' ? 'El diseño' : 'The design'}
+                The design
               </h3>
               <p style={{ fontSize: '18px', lineHeight: '1.7', fontWeight: 300, opacity: 0.85 }}>
-                {language === 'es' 
-                  ? 'El diseño de Waykout se centró en eliminar las barreras de entrada y la complejidad de publicación en un sector poco digitalizado. Rediseñamos el flujo de registro eliminando la contraseña tradicional y sustituyéndola por un sistema sin contraseña (magic links) que reduce el abandono del usuario. Para los anfitriones, simplificamos la publicación de experiencias mediante una interfaz asistida por IA: el anfitrión describe brevemente su actividad y la inteligencia artificial redacta automáticamente títulos, puntos clave y descripciones optimizadas. El diseño se complementó con un completo UI Kit en Figma que garantiza consistencia visual en tarjetas, estados y componentes esenciales, escalando el desarrollo con coherencia.'
-                  : 'The design of Waykout focused on removing barriers to entry and the complexity of publishing in a low-digitized sector. We redesigned the registration flow by eliminating the traditional password and replacing it with a passwordless system (magic links) that reduces user abandonment. For hosts, we simplified experience publishing through an AI-assisted interface: the host writes a brief description of their activity and the artificial intelligence automatically drafts optimized titles, key points, and descriptions. The design was complemented by a comprehensive UI Kit in Figma that guarantees visual consistency in cards, states, and essential components, scaling development cohesively.'}
+                The design of Waykout focused on removing barriers to entry and the complexity of publishing in a low-digitized sector. We redesigned the registration flow by eliminating the traditional password and replacing it with a passwordless system (magic links) that reduces user abandonment. For hosts, we simplified experience publishing through an AI-assisted interface: the host writes a brief description of their activity and the artificial intelligence automatically drafts optimized titles, key points, and descriptions. The design was complemented by a comprehensive UI Kit in Figma that guarantees visual consistency in cards, states, and essential components, scaling development cohesively.
               </p>
             </motion.div>
           </div>
@@ -244,13 +234,11 @@ export const ProjectDetail = () => {
         >
           <div className="text-block-inner" style={{ maxWidth: '100%' }}>
             <h3 className="block-title" style={{ fontSize: '36px', fontWeight: 500, marginBottom: '24px' }}>
-              {language === 'es' ? 'Resultados' : 'Results'}
+              Results
             </h3>
             
             <p className="block-content" style={{ fontSize: '20px', lineHeight: '1.6', fontWeight: 300, marginBottom: '40px' }}>
-              {language === 'es'
-                ? 'Todo esto en el primer mes tras el lanzamiento del MVP, arrancando únicamente en la Región de Murcia y con una inversión controlada en campañas de validación. Esta estrategia local y segmentada nos permitió optimizar el coste de adquisición de clientes (CAC) desde el primer día, obteniendo un flujo continuo de feedback directo de anfitriones y viajeros. Al centralizar los esfuerzos en un área geográfica delimitada, pudimos realizar iteraciones sobre el producto en ciclos de menos de 48 horas, asegurando la retención de los usuarios antes de iniciar la expansión a nuevas provincias.'
-                : 'All this in the first month following the MVP launch, starting exclusively in the Region of Murcia and with a controlled investment in validation campaigns. This localized and targeted strategy allowed us to optimize the customer acquisition cost (CAC) from day one, securing a continuous flow of direct feedback from hosts and travelers. By centering our efforts on a defined geographical area, we were able to iterate on the product in cycles of less than 48 hours, ensuring user retention before initiating expansion into new provinces.'}
+              All this in the first month following the MVP launch, starting exclusively in the Region of Murcia and with a controlled investment in validation campaigns. This localized and targeted strategy allowed us to optimize the customer acquisition cost (CAC) from day one, securing a continuous flow of direct feedback from hosts and travelers. By centering our efforts on a defined geographical area, we were able to iterate on the product in cycles of less than 48 hours, ensuring user retention before initiating expansion into new provinces.
             </p>
 
             {/* Metrics grid */}
@@ -283,10 +271,10 @@ export const ProjectDetail = () => {
               ].map((m, idx) => (
                 <div key={idx} className="results-card">
                   <div className="results-number">
-                    {language === 'es' ? m.numEs : m.numEn}
+                    {m.numEn}
                   </div>
                   <div className="results-label">
-                    {language === 'es' ? m.lblEs : m.lblEn}
+                    {m.lblEn}
                   </div>
                 </div>
               ))}
@@ -318,7 +306,7 @@ export const ProjectDetail = () => {
 
   return (
     <main className="project-detail-page page-wrapper">
-      <SEO title={seoTitle} description={seoDesc} lang={language} />
+      <SEO title={seoTitle} description={seoDesc}  />
 
       {/* Intro Text */}
       <section className="project-intro-section">
