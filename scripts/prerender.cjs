@@ -332,16 +332,16 @@ function generateSitemap() {
     { path: 'articles/product-design-future', priority: '0.7', changefreq: 'monthly' }
   ];
 
-  let xml = '<?xml version="1.0" encoding="UTF-8"?>\\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\\n';
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
 
   pages.forEach(page => {
     const currentUrl = page.path === '' ? baseUrl : `${baseUrl}/${page.path}`;
-    xml += '  <url>\\n';
-    xml += `    <loc>${currentUrl}</loc>\\n`;
-    xml += `    <priority>${page.priority}</priority>\\n`;
-    xml += `    <changefreq>${page.changefreq}</changefreq>\\n`;
-    xml += '  </url>\\n';
+    xml += '  <url>\n';
+    xml += `    <loc>${currentUrl}</loc>\n`;
+    xml += `    <priority>${page.priority}</priority>\n`;
+    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+    xml += '  </url>\n';
   });
 
   xml += '</urlset>';
