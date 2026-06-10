@@ -8,7 +8,7 @@ interface SEOProps {
 
 export const SEO: React.FC<SEOProps> = ({ title, description }) => {
   const location = useLocation();
-  const baseUrl = "https://mefaltaunpixel.es";
+  const baseUrl = "https://www.mefaltaunpixel.es";
   const canonicalUrl = `${baseUrl}${location.pathname}`;
 
   useEffect(() => {
@@ -75,10 +75,10 @@ export const SEO: React.FC<SEOProps> = ({ title, description }) => {
       "@type": "Person",
       "name": "Álex Salmerón",
       "alternateName": "Alex Salmeron",
-      "url": "https://mefaltaunpixel.es",
+      "url": "https://www.mefaltaunpixel.es",
       "jobTitle": "Senior Product Designer",
       "description": description,
-      "image": "https://mefaltaunpixel.es/og-image.png",
+      "image": "https://www.mefaltaunpixel.es/og-image.png",
       "email": "pixel@mefaltaunpixel.es",
       "address": {
         "@type": "PostalAddress",

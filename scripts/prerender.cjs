@@ -168,9 +168,9 @@ const SCHEMA_DATA = {
   "name": "Álex Salmerón",
   "alternateName": "Alex Salmeron",
   "jobTitle": "Senior Product Designer",
-  "url": "https://mefaltaunpixel.es",
+  "url": "https://www.mefaltaunpixel.es",
   "email": "pixel@mefaltaunpixel.es",
-  "image": "https://mefaltaunpixel.es/og-image.png",
+  "image": "https://www.mefaltaunpixel.es/og-image.png",
   "description": "Senior Product Designer based in Murcia, Spain, with 15+ years of experience. Specialized in Visual Design, Design Systems and DesignOps.",
   "address": {
     "@type": "PostalAddress",
@@ -258,7 +258,7 @@ function prerender() {
     html = html.replace(/<html lang=".*?">/, '<html lang="en">');
 
     // 1.5 Inject canonical (and robots noindex for articles)
-    const baseUrl = 'https://mefaltaunpixel.es';
+    const baseUrl = 'https://www.mefaltaunpixel.es';
     const canonicalUrl = route.path === '' ? baseUrl : `${baseUrl}/${route.path}`;
     
     const seoLinks = `<link rel="canonical" href="${canonicalUrl}" />`;
@@ -327,7 +327,7 @@ function prerender() {
 
 function generateSitemap() {
   console.log('Generating sitemap.xml...');
-  const baseUrl = 'https://mefaltaunpixel.es';
+  const baseUrl = 'https://www.mefaltaunpixel.es';
 
   const pages = [
     { path: '', priority: '1.0', changefreq: 'weekly' },
