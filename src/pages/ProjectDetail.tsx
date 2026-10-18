@@ -113,7 +113,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Landing experience designed to connect travelers with authentic local activities. Features destination search, recommended picks, and intuitive category browsing.',
         },
         url: 'waykout.com',
-        src: '/wayk-mages/5.png',
+        src: '/wayk-mages/5.webp',
         alt: 'Waykout Marketplace Homepage',
       },
       {
@@ -128,7 +128,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'High-impact grid view with essential details at a glance (prices, duration, verified ratings) and responsive faceted filtering.',
         },
         url: 'waykout.com/experiencias/murcia',
-        src: '/wayk-mages/2.png',
+        src: '/wayk-mages/2.webp',
         alt: 'Waykout Catalog and Filters',
       },
       {
@@ -143,7 +143,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Conversion-centered architecture built on trust: rich photo gallery, transparent itinerary breakdown, verified host profile, map integration, and instant booking module with real-time pricing.',
         },
         url: 'waykout.com/experiencia/senderismo-moratalla',
-        src: '/wayk-mages/3.png',
+        src: '/wayk-mages/3.webp',
         alt: 'Waykout Experience Detail',
       },
       {
@@ -158,7 +158,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Intuitive user hub to manage active bookings, past experiences, verified credentials, and communication preferences.',
         },
         url: 'waykout.com/cuenta/perfil',
-        src: '/wayk-mages/7.png',
+        src: '/wayk-mages/7.webp',
         alt: 'Waykout User Profile',
       },
       {
@@ -173,7 +173,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Guided onboarding designed for non-digital native hosts. Features transparent value propositions, earnings guidance, and step-by-step publishing assistance.',
         },
         url: 'waykout.com/publica-experiencia',
-        src: '/wayk-mages/4.png',
+        src: '/wayk-mages/4.webp',
         alt: 'Waykout Host Portal',
       },
       {
@@ -188,7 +188,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'To eliminate drop-off at checkout, we removed traditional passwords. A streamlined Magic Link and OAuth flow enables quick, frictionless signups and instant access.',
         },
         url: 'waykout.com/auth/flow',
-        src: '/wayk-mages/1.png',
+        src: '/wayk-mages/1.webp',
         alt: 'Waykout User Flow and Auth',
       },
       {
@@ -203,7 +203,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Modular Figma library structured with semantic tokens for system states, feedback alerts, and reusable components, ensuring total visual parity between design and code.',
         },
         url: 'figma.com/@waykout/design-system',
-        src: '/wayk-mages/6.png',
+        src: '/wayk-mages/6.webp',
         alt: 'Waykout Design System and UI Tokens',
       },
     ],
@@ -279,7 +279,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Visual interface showing polling countdown, desired dates selector, real-time ticket availability, and continuous event log.',
         },
         url: '127.0.0.1:5000/gaztelugatxe',
-        src: '/resources-images/gaztelugatxe-monitor.png',
+        src: '/resources-images/gaztelugatxe-monitor.webp',
         alt: 'Gaztelugatxe Tickets Tracker Dashboard y Logs',
       },
     ],
@@ -345,7 +345,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Live monitor tracking and categorizing hundreds of emergency calls and aid offers (dogs, cats, horses, livestock, birds, feed, veterinary care, and urgent transit).',
         },
         url: 'incendio.sepv.es/monitor',
-        src: '/resources-images/animales-incendios-monitor-grid.png',
+        src: '/resources-images/animales-incendios-monitor-grid.webp',
         alt: 'Ayuda Incendios Madrid y Ávila 2025 - Monitor general y filtros multiespecie',
       },
       {
@@ -360,7 +360,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Algorithm calculating distance in kilometers and match score between each need and available local volunteers, offering direct call and WhatsApp actions.',
         },
         url: 'incendio.sepv.es/match',
-        src: '/resources-images/animales-incendios-matching-cards.png',
+        src: '/resources-images/animales-incendios-matching-cards.webp',
         alt: 'Ayuda Incendios Madrid y Ávila 2025 - Tarjetas de matching y cercanía en km',
       },
       {
@@ -375,7 +375,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Matching view for volunteers offering foster homes, transport, or supplies, displaying ranked cases that matched their availability and location.',
         },
         url: 'incendio.sepv.es/cruces',
-        src: '/resources-images/animales-incendios-modal-matching.png',
+        src: '/resources-images/animales-incendios-modal-matching.webp',
         alt: 'Ayuda Incendios Madrid y Ávila 2025 - Modal de peticiones compatibles para voluntarios',
       },
       {
@@ -390,7 +390,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Spatial visualization of active alerts and solidarity hubs across Madrid and Ávila, showing connection vectors, geolocated pins, and instant category filters.',
         },
         url: 'incendio.sepv.es/mapa',
-        src: '/resources-images/animales-incendios-mapa-interactivo.png',
+        src: '/resources-images/animales-incendios-mapa-interactivo.webp',
         alt: 'Ayuda Incendios Madrid y Ávila 2025 - Mapa interactivo y cruces territoriales',
       },
       {
@@ -405,7 +405,7 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
           en: 'Internal dashboard to verify notifications, assign coordinators to track cases, and mark emergencies as resolved to keep data actionable and fresh.',
         },
         url: 'incendio.sepv.es/admin',
-        src: '/resources-images/animales-incendios-admin-gestion.png',
+        src: '/resources-images/animales-incendios-admin-gestion.webp',
         alt: 'Ayuda Incendios Madrid y Ávila 2025 - Gestor de anuncios y resueltos',
       },
     ],
@@ -672,6 +672,7 @@ export const ProjectDetail = () => {
                       alt={item.alt}
                       className="waykout-cropped-img"
                       loading={idx < 2 ? 'eager' : 'lazy'}
+                      decoding="async"
                     />
                   </div>
                 </div>

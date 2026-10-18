@@ -98,9 +98,13 @@ export const Hero = () => {
         <span className="hero-h-wrapper">
           H
           <img
-            src="/soul-mascot-yellow.png?v=2"
+            src="/soul-mascot-yellow.webp"
             alt="Sitting Soul Companion"
             className="hero-mascot-sitting"
+            width="44"
+            height="44"
+            loading="eager"
+            decoding="async"
           />
         </span>
         {after}

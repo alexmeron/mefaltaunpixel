@@ -10,13 +10,15 @@ interface OrbitSphereProps {
 }
 
 const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePause, label }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animFrameRef = useRef<number | null>(null);
   const angleRef = useRef(0);
   const loadedImagesRef = useRef<HTMLImageElement[]>([]);
+  const isVisibleRef = useRef(true);
 
   useEffect(() => {
-    // Preload images
+    // Preload lightweight images
     let isCancelled = false;
     const loaded: HTMLImageElement[] = [];
 
@@ -38,21 +40,38 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
   }, [images]);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0.05 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    // Retina support for ultra-crisp resolution
-    const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, 2.5) : 1;
+    // Responsive retina support with mobile CPU/GPU optimization
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const dpr = typeof window !== 'undefined' ? Math.min(window.devicePixelRatio || 1, isMobile ? 1.5 : 2) : 1;
     const baseSize = 448;
     canvas.width = Math.round(baseSize * dpr);
     canvas.height = Math.round(baseSize * dpr);
     canvas.style.width = `${baseSize}px`;
     canvas.style.height = `${baseSize}px`;
 
-    // Number of floating items arranged on a sphere (dense cloud of project screens)
-    const count = 22;
+    // Items on sphere: fewer on mobile for smooth 60fps
+    const count = isMobile ? 16 : 22;
     const phi = Math.PI * (3 - Math.sqrt(5)); // Golden ratio angle
 
     // Generate points on sphere (Fibonacci sphere algorithm)
@@ -65,7 +84,6 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
       return { x, y, z, imgIndex: i % images.length };
     });
 
-    // 20% larger dimensions: 234 x 150 (was 195 x 125)
     const sphereRadius = 220;
     const cardBaseW = 234;
     const cardBaseH = 150;
@@ -74,6 +92,11 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
     const rotationSpeed = 0.00018; // Slow, fluid, cinematic rotation
 
     const render = (now: number) => {
+      animFrameRef.current = requestAnimationFrame(render);
+
+      // Do not waste battery/GPU when out of view
+      if (!isVisibleRef.current) return;
+
       const delta = Math.min(now - lastTime, 32);
       lastTime = now;
 
@@ -88,7 +111,7 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
       ctx.save();
       ctx.scale(dpr, dpr);
       ctx.imageSmoothingEnabled = true;
-      ctx.imageSmoothingQuality = 'high';
+      ctx.imageSmoothingQuality = isMobile ? 'medium' : 'high';
 
       ctx.clearRect(0, 0, baseSize, baseSize);
 
@@ -150,11 +173,11 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
         ctx.save();
         ctx.globalAlpha = p.opacity;
 
-        // Drop shadow for 3D depth
+        // Drop shadow for 3D depth (optimized for mobile)
         if (p.tz > 0) {
-          ctx.shadowColor = 'rgba(0, 0, 0, 0.75)';
-          ctx.shadowBlur = 20 * p.scale;
-          ctx.shadowOffsetY = 10 * p.scale;
+          ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
+          ctx.shadowBlur = (isMobile ? 6 : 14) * p.scale;
+          ctx.shadowOffsetY = (isMobile ? 4 : 8) * p.scale;
         }
 
         // Rounded rect card
@@ -177,7 +200,6 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
 
         const img = loadedImagesRef.current[p.imgIndex % loadedImagesRef.current.length];
         if (img && img.complete && img.naturalWidth > 0) {
-          // Object-fit: cover with top alignment to preserve crisp design details
           const imgW = img.naturalWidth;
           const imgH = img.naturalHeight;
           const targetRatio = w / h;
@@ -208,8 +230,6 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
       });
 
       ctx.restore();
-
-      animFrameRef.current = requestAnimationFrame(render);
     };
 
     animFrameRef.current = requestAnimationFrame(render);
@@ -222,7 +242,7 @@ const OrbitSphere: React.FC<OrbitSphereProps> = ({ images, isPaused, onTogglePau
   }, [isPaused, images]);
 
   return (
-    <div className="federal-orbit-box">
+    <div ref={containerRef} className="federal-orbit-box">
       <div className="orbit-canvas-wrapper" aria-hidden="true">
         <canvas
           ref={canvasRef}
@@ -260,22 +280,17 @@ export const HomeFeatureSections: React.FC = () => {
   const [paused1, setPaused1] = useState(false);
   const [paused2, setPaused2] = useState(false);
 
-  // High-resolution real preview images (varied & dense project catalog)
+  // Lightweight WebP orbit thumbnails (~10-25 KB each instead of 48 MB)
   const projectImages = [
-    '/wayk-mages/1.png',
-    '/wayk-mages/6.png',
-    '/wayk-mages/2.png',
-    '/resources-images/helix-preview.png',
-    '/wayk-mages/3.png',
-    '/wayk-mages/7.png',
-    '/wayk-mages/4.png',
-    '/resources-images/waykout-preview.png',
-    '/wayk-mages/5.png',
-    '/wayk-mages/1.png',
-    '/wayk-mages/6.png',
-    '/wayk-mages/2.png',
-    '/wayk-mages/7.png',
-    '/wayk-mages/3.png'
+    '/orbit-thumbs/1.webp',
+    '/orbit-thumbs/6.webp',
+    '/orbit-thumbs/2.webp',
+    '/orbit-thumbs/helix.webp',
+    '/orbit-thumbs/3.webp',
+    '/orbit-thumbs/7.webp',
+    '/orbit-thumbs/4.webp',
+    '/orbit-thumbs/waykout.webp',
+    '/orbit-thumbs/5.webp'
   ];
 
   const resourceImages = [
