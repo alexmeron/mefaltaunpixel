@@ -1,16 +1,13 @@
 # Legacy multi-language 301 redirects to canonical URLs
-/es/project/:id                               /project/:id                                 301!
-/en/project/:id                               /project/:id                                 301!
-/es/articles/:id                              /articles/:id                                301!
-/en/articles/:id                              /articles/:id                                301!
-/es/about                                     /about                                       301!
-/en/about                                     /about                                       301!
-/es/soul                                      /soul                                        301!
-/en/soul                                      /soul                                        301!
-/es/articles                                  /articles                                    301!
-/en/articles                                  /articles                                    301!
-/es                                           /                                            301!
-/en                                           /                                            301!
-
-# SPA Fallback for client-side routing
-/*                                            /index.html                                  200
+/es/project/:id                               /project/:id                                 301
+/en/project/:id                               /project/:id                                 301
+/es/articles/:id                              /articles/:id                                301
+/en/articles/:id                              /articles/:id                                301
+/es/about                                     /about                                       301
+/en/about                                     /about                                       301
+/es/soul                                      /soul                                        301
+/en/soul                                      /soul                                        301
+/es/articles                                  /articles                                    301
+/en/articles                                  /articles                                    301
+/es                                           /                                            301
+/en                                           /                                            301
