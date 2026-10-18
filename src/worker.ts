@@ -50,6 +50,13 @@ export default {
       }
     }
 
+    // Redirección 301 permanente para rutas heredadas con /en/ o /es/
+    if (url.pathname.startsWith('/en/') || url.pathname.startsWith('/es/') || url.pathname === '/en' || url.pathname === '/es') {
+      const cleanPath = url.pathname.replace(/^\/(en|es)(\/|$)/, '/') || '/';
+      const redirectUrl = new URL(cleanPath + url.search, url.origin);
+      return Response.redirect(redirectUrl.toString(), 301);
+    }
+
     // Para el resto de rutas, servir assets estáticos
     // @ts-ignore
     let response = await env.ASSETS.fetch(request);
@@ -61,7 +68,7 @@ export default {
       return newResponse;
     }
 
-    // Implicit index.html resolution para subrutas
+    // Implicit index.html resolution para subrutas prerenderizadas
     if (response.status === 404 && !url.pathname.includes('.')) {
       const newUrl = new URL(url.toString());
       if (!newUrl.pathname.endsWith('/')) {
@@ -71,6 +78,14 @@ export default {
       const newRequest = new Request(newUrl, request);
       // @ts-ignore
       response = await env.ASSETS.fetch(newRequest);
+
+      // Si aún así no existe, servir el index.html raíz como SPA fallback
+      if (response.status === 404) {
+        const rootIndexUrl = new URL('/index.html', url.origin);
+        const rootRequest = new Request(rootIndexUrl, request);
+        // @ts-ignore
+        response = await env.ASSETS.fetch(rootRequest);
+      }
     }
 
     return response;

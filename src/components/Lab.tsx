@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
-import { motion, useScroll, useTransform } from 'framer-motion';
 
 import coverUiFlow from '../assets/images/cover-ui-flow.png?format=webp&w=1800';
 import modesImg from '../assets/images/modes.png?format=webp&w=1324';
@@ -13,39 +12,11 @@ export const Lab = () => {
   const componentsVideoRef = useRef<HTMLVideoElement>(null);
   const video1ContainerRef = useRef<HTMLAnchorElement>(null);
   const video2ContainerRef = useRef<HTMLAnchorElement>(null);
-  const targetRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const [scrollRange, setScrollRange] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
   const [vid1Visible, setVid1Visible] = useState(false);
   const [vid2Visible, setVid2Visible] = useState(false);
   const { t } = useLanguage();
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start start", "end end"]
-  });
-
-  // Calculate the exact distance to scroll horizontally based on DOM widths
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      if (gridRef.current && trackRef.current) {
-        // Total width of the items minus the visible width of the track (excluding page paddings)
-        const maxScroll = gridRef.current.scrollWidth - trackRef.current.clientWidth;
-        setScrollRange(maxScroll > 0 ? maxScroll : 0);
-      }
-    };
-
-    handleResize();
-    // Use a small delay to ensure fonts/images are loaded for accurate width
-    setTimeout(handleResize, 100);
-    // Add another larger delay just in case images load very slowly
-    setTimeout(handleResize, 500);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   // Lazy loading observer for videos
   useEffect(() => {
@@ -64,11 +35,6 @@ export const Lab = () => {
     return () => observer.disconnect();
   }, []);
 
-  const deadZone = scrollRange > 0 ? 500 : 0; // Extra scroll distance to pause at the end ONLY if there is horizontal overflow
-  const totalScroll = scrollRange + deadZone;
-  const endProgress = scrollRange > 0 ? scrollRange / totalScroll : 1;
-  const x = useTransform(scrollYProgress, [0, endProgress], [0, -scrollRange]);
-
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 4.0;
@@ -78,19 +44,15 @@ export const Lab = () => {
     }
   }, [vid1Visible, vid2Visible]);
 
-  const sectionStyle = !isMobile && scrollRange > 0 
-    ? { height: `calc(700px + ${totalScroll}px)` }
-    : { height: 'auto' };
-
   return (
-    <section className="lab" ref={targetRef} style={sectionStyle}>
-      <div className="lab-sticky-wrapper page-wrapper">
+    <section className="lab">
+      <div className="lab-wrapper page-wrapper">
         <h2 className="lab-intro">
           {t('lab_title')}
         </h2>
         
-        <div className="lab-track" ref={trackRef} style={{ width: '100%', overflow: isMobile ? 'auto' : 'visible' }}>
-          <motion.div className="lab-grid" style={{ x: isMobile ? 0 : x }} ref={gridRef}>
+        <div className="lab-track" ref={trackRef}>
+          <div className="lab-grid" ref={gridRef}>
           {/* Item 1 - Video */}
         <div className="lab-item">
           <a 
@@ -287,7 +249,7 @@ export const Lab = () => {
             {t('lab_try_figma')} <ArrowRight size={16} />
           </a>
         </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

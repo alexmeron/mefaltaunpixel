@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Heart } from 'lucide-react';
+
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSoulOverlay } from '../context/SoulOverlayContext';
 
 interface Particle {
   id: number;
@@ -15,6 +17,7 @@ export const LikeButton = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
   const location = useLocation();
+  const { isOpen: isOverlayOpen } = useSoulOverlay();
   const isSoulPage = location.pathname.includes('/soul');
 
   useEffect(() => {
@@ -73,6 +76,9 @@ export const LikeButton = () => {
       setTimeout(() => setParticles([]), 1200);
     }
   };
+
+  // Do not render floating like button when the Soul chat modal/drawer is open
+  if (isOverlayOpen) return null;
 
   return (
     <div className={`floating-like-container ${isSoulPage ? 'hide-mobile-soul' : ''}`}>

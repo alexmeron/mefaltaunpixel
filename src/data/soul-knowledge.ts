@@ -6,12 +6,31 @@ export interface KnowledgeEntry {
 
 export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
   {
-    keywords: ["hola", "hello", "hi", "hey", "buenos días", "buenas tardes", "buenas noches"],
-    responseEn: "Hello! I'm Soul, Álex's little assistant. How can I help you today?",
-    responseEs: "¡Hola! Soy Soul, una pequeña ayudante de Álex. ¿En qué puedo ayudarte hoy?"
+    keywords: [
+      "hola",
+      "hello",
+      "hi",
+      "hey",
+      "buenos días",
+      "buenas tardes",
+      "buenas noches",
+    ],
+    responseEn:
+      "Hello! I'm Soul, Álex's little assistant. How can I help you today?",
+    responseEs:
+      "¡Hola! Soy Soul, una pequeña ayudante de Álex. ¿En qué puedo ayudarte hoy?",
   },
   {
-    keywords: ["how are you", "how are u", "cómo estás", "como estas", "qué tal", "que tal", "how are things", "how's it going"],
+    keywords: [
+      "how are you",
+      "how are u",
+      "cómo estás",
+      "como estas",
+      "qué tal",
+      "que tal",
+      "how are things",
+      "how's it going",
+    ],
     responseEn: [
       "I'm doing great! Floating between pixels and lines of code. How about you?",
       "Álex has me working 24/7, send help! (Just kidding, I love it here). How are you?",
@@ -32,7 +51,7 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
       "Trying to decide if I prefer dark mode or light mode. It's a deep existential crisis.",
       "I just calculated Pi to the last digit... just kidding, I was just thinking about Bronx.",
       "Recharged, refactored, and ready to help! How are you doing?",
-      "Everything is 200 OK in my world today! How about yours?"
+      "Everything is 200 OK in my world today! How about yours?",
     ],
     responseEs: [
       "¡De maravilla! Flotando entre píxeles y líneas de código. ¿Y tú?",
@@ -54,96 +73,313 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
       "Intentando decidir si prefiero el modo oscuro o el claro. Es una crisis existencial profunda.",
       "Acabo de calcular el último dígito de Pi... es broma, solo estaba pensando en Bronx.",
       "¡Recargada, refactorizada y lista para ayudar! ¿Cómo va todo?",
-      "¡Todo está en estado 200 OK en mi mundo hoy! ¿Y en el tuyo?"
-    ]
+      "¡Todo está en estado 200 OK en mi mundo hoy! ¿Y en el tuyo?",
+    ],
   },
   {
-    keywords: ["quién es alex", "quien es alex", "sobre alex", "profile", "who is alex", "who's alex", "who alex", "about alex", "biografía", "bio"],
-    responseEn: "Álex Salmerón is a Senior Product Designer with +15 years of experience, specialized in Design Systems and Product Design. Currently at Cella Medical Solutions, he bridges the gap between design and engineering.",
-    responseEs: "Álex Salmerón es un Senior Product Designer con más de 15 años de experiencia, especializado en Design Systems and Product Design. Actualmente en Cella Medical Solutions, actúa como puente entre diseño e ingeniería."
+    keywords: [
+      "quién es alex",
+      "quien es alex",
+      "sobre alex",
+      "profile",
+      "who is alex",
+      "who's alex",
+      "who alex",
+      "about alex",
+      "biografía",
+      "bio",
+    ],
+    responseEn:
+      "Álex Salmerón is a Senior Product Designer with +15 years of experience, specialized in Design Systems and Product Design. Currently at Cella Medical Solutions, he bridges the gap between design and engineering.",
+    responseEs:
+      "Álex Salmerón es un Senior Product Designer con más de 15 años de experiencia, especializado en Design Systems and Product Design. Actualmente en Cella Medical Solutions, actúa como puente entre diseño e ingeniería.",
   },
   {
-    keywords: ["contact", "email", "contacto", "correo", "how to contact", "how to reach", "get in touch", "write to", "escribir a"],
-    responseEn: "You can reach Álex at pixel@mefaltaunpixel.es or by phone at +34 673 392 063.",
-    responseEs: "Puedes contactar con Álex en pixel@mefaltaunpixel.es o por teléfono en el +34 673 392 063."
+    keywords: [
+      "contact",
+      "email",
+      "contacto",
+      "correo",
+      "how to contact",
+      "how to reach",
+      "get in touch",
+      "write to",
+      "escribir a",
+    ],
+    responseEn:
+      "You can reach Álex at pixel@mefaltaunpixel.es or by phone at +34 673 392 063.",
+    responseEs:
+      "Puedes contactar con Álex en pixel@mefaltaunpixel.es o por teléfono en el +34 673 392 063.",
   },
   {
-    keywords: ["donde vive", "dónde vive", "donde esta alex", "dónde está alex", "where is alex", "where's alex", "where alex", "where", "donde", "dónde", "find alex", "find to alex", "ubicación", "ubicacion", "location", "located", "lives in", "located in", "de donde es", "de dónde es", "born in"],
-    responseEn: "Álex was born and lives in Murcia (Spain), but he works remotely for companies all over the world.",
-    responseEs: "Álex nació y vive en Murcia (España), pero trabaja de forma remota para empresas de cualquier lugar del mundo."
+    keywords: [
+      "donde vive",
+      "dónde vive",
+      "donde esta alex",
+      "dónde está alex",
+      "where is alex",
+      "where's alex",
+      "where alex",
+      "where",
+      "donde",
+      "dónde",
+      "find alex",
+      "find to alex",
+      "ubicación",
+      "ubicacion",
+      "location",
+      "located",
+      "lives in",
+      "located in",
+      "de donde es",
+      "de dónde es",
+      "born in",
+    ],
+    responseEn:
+      "Álex was born and lives in Murcia (Spain), but he works remotely for companies all over the world.",
+    responseEs:
+      "Álex nació y vive en Murcia (España), pero trabaja de forma remota para empresas de cualquier lugar del mundo.",
   },
   {
-    keywords: ["language", "english", "spanish", "idiomas", "inglés", "ingles", "español", "espanol", "habla", "idioma"],
-    responseEn: "Álex is a native Spanish speaker and has a B1 level in English.",
-    responseEs: "Álex es nativo en español y tiene un nivel B1 de inglés."
+    keywords: [
+      "language",
+      "english",
+      "spanish",
+      "idiomas",
+      "inglés",
+      "ingles",
+      "español",
+      "espanol",
+      "habla",
+      "idioma",
+    ],
+    responseEn:
+      "Álex is a native Spanish speaker and has a B1 level in English.",
+    responseEs: "Álex es nativo en español y tiene un nivel B1 de inglés.",
   },
   {
-    keywords: ["process", "proceso", "metodología", "methodology", "cómo trabajas", "como trabajas", "how do you work"],
-    responseEn: "Álex follows a research-driven process, moving from user discovery to systems thinking. He values early collaboration with engineering to ensure technical feasibility and scalability.",
-    responseEs: "Álex sigue un proceso basado en la investigación, desde el descubrimiento de usuario hasta el pensamiento sistémico. Valora la colaboración temprana con ingeniería para asegurar la viabilidad técnica y la escalabilidad."
+    keywords: [
+      "process",
+      "proceso",
+      "metodología",
+      "methodology",
+      "cómo trabajas",
+      "como trabajas",
+      "how do you work",
+    ],
+    responseEn:
+      "Álex follows a research-driven process, moving from user discovery to systems thinking. He values early collaboration with engineering to ensure technical feasibility and scalability.",
+    responseEs:
+      "Álex sigue un proceso basado en la investigación, desde el descubrimiento de usuario hasta el pensamiento sistémico. Valora la colaboración temprana con ingeniería para asegurar la viabilidad técnica y la escalabilidad.",
   },
   {
-    keywords: ["dev", "engineering", "handoff", "ingeniería", "desarrollo", "programación", "puente"],
-    responseEn: "One of Álex's strongest skills is acting as a bridge between design and development. He understands code (HTML/CSS/React) and focuses on DesignOps to improve handoff quality.",
-    responseEs: "Una de las mayores fortalezas de Álex es actuar como puente entre diseño y desarrollo. Entiende el código (HTML/CSS/React) y se enfoca en DesignOps para mejorar la calidad del handoff."
+    keywords: [
+      "dev",
+      "engineering",
+      "handoff",
+      "ingeniería",
+      "desarrollo",
+      "programación",
+      "puente",
+    ],
+    responseEn:
+      "One of Álex's strongest skills is acting as a bridge between design and development. He understands code (HTML/CSS/React) and focuses on DesignOps to improve handoff quality.",
+    responseEs:
+      "Una de las mayores fortalezas de Álex es actuar como puente entre diseño y desarrollo. Entiende el código (HTML/CSS/React) y se enfoca en DesignOps para mejorar la calidad del handoff.",
   },
   {
-    keywords: ["trabajo actual", "actualidad", "puesto actual", "que hace alex", "qué hace alex", "donde trabaja alex", "dónde trabaja alex", "current role", "what is alex doing", "doing right now", "empresa actual", "empresa", "company", "current company", "donde trabaja", "dónde trabaja", "where does he work", "where does alex work"],
-    responseEn: "At Cella Medical Solutions (2025-Now), Álex focuses on UX Research for surgical planning tools and evolved their Design System using Figma, Zeroheight, and Claude AI. He also leads Waykout.com, a marketplace for tourist experiences aimed at boosting the rural economy by connecting travelers with traditions and alternative environments that go beyond",
-    responseEs: "At Cella Medical Solutions (2025-Now), Álex focuses on UX Research for surgical planning tools and evolved their Design System using Figma, Zeroheight, and Claude AI. He also leads Waykout.com, a marketplace for tourist experiences aimed at boosting the rural economy by connecting travelers with traditions and alternative environments that go beyond"
+    keywords: [
+      "rol actual",
+      "rol",
+      "puesto actual",
+      "trabajo actual",
+      "actualidad",
+      "que hace alex",
+      "qué hace alex",
+      "donde trabaja alex",
+      "dónde trabaja alex",
+      "current role",
+      "what is alex doing",
+      "doing right now",
+      "empresa actual",
+      "empresa",
+      "company",
+      "current company",
+      "donde trabaja",
+      "dónde trabaja",
+      "where does he work",
+      "where does alex work",
+      "cella",
+      "cella medical solutions",
+    ],
+    responseEn:
+      "At Cella Medical Solutions (2025-Present), Álex focuses on UX Research for surgical planning tools and evolved their Design System using Figma, Storybook, and Claude AI. He also leads Waykout.com, a marketplace for tourist experiences aimed at boosting the rural economy by connecting travelers with traditions and alternative environments that go beyond traditional mass tourism.",
+    responseEs:
+      "En Cella Medical Solutions (2025-Actualidad), Álex se enfoca en UX Research para herramientas de planificación quirúrgica y en evolucionar su Design System con Figma, Storybook y Claude AI. Además, lidera Waykout.com, un marketplace de experiencias turísticas para impulsar la economía rural conectando a viajeros con tradiciones y entornos alternativos más allá del turismo de masas.",
   },
   {
     keywords: ["displaynote", "past", "experience", "experiencia", "anterior"],
-    responseEn: "At DisplayNote (2020-2025), Álex served as a Senior Product Designer where he built a comprehensive multibrand design system from scratch. He specialized in DesignOps, acting as a critical bridge between design and engineering to ensure visual consistency and technical feasibility across multiple collaborative software products. His work significantly improved the speed and quality of product handoffs.",
-    responseEs: "En DisplayNote (2020-2025), Álex trabajó como Senior Product Designer construyendo un sistema de diseño multimarca completo desde cero. Se especializó en DesignOps, actuando como puente entre diseño e ingeniería para asegurar la consistencia visual y la viabilidad técnica en múltiples productos de software colaborativo, mejorando drásticamente la velocidad y calidad del handoff."
+    responseEn:
+      "At DisplayNote (2020-2025), Álex served as a Senior Product Designer where he built a comprehensive multibrand design system from scratch. He specialized in DesignOps, acting as a critical bridge between design and engineering to ensure visual consistency and technical feasibility across multiple collaborative software products. His work significantly improved the speed and quality of product handoffs.",
+    responseEs:
+      "En DisplayNote (2020-2025), Álex trabajó como Senior Product Designer construyendo un sistema de diseño multimarca completo desde cero. Se especializó en DesignOps, actuando como puente entre diseño e ingeniería para asegurar la consistencia visual y la viabilidad técnica en múltiples productos de software colaborativo, mejorando drásticamente la velocidad y calidad del handoff.",
   },
   {
-    keywords: ["empresas", "companies", "where has he worked", "where's alex worked", "where did he work", "work history", "experiencia laboral", "historial laboral", "donde ha trabajado", "dónde ha trabajado", "trayectoria"],
-    responseEn: "Here is a detailed timeline of Álex's professional experience:\n\n| Company | Period | Role |\n| :--- | :--- | :--- |\n| **Cella Medical Solutions** | Jul 2025 - Present | Senior Product Designer |\n| **Waykout.com** | 2024 - Present | Co-founder & Lead |\n| **DisplayNote** | Feb 2020 - May 2025 | Senior Product Designer |\n| **StaymyWay / Operto** | Sep 2018 - Feb 2020 | Senior Product Designer |\n| **Erasmusu** | Oct 2017 - Apr 2018 | Product Designer |\n| **Upclose.me** | Feb 2017 - Sep 2017 | Product Designer |\n| **Droiders / Streye** | Apr 2015 - Jan 2017 | UI/UX Designer |\n| **Placeband** | Apr 2014 - Mar 2015 | UI/UX Designer |\n| **PcComponentes** | Sep 2013 - Apr 2014 | Web Designer |\n| **Pangea e-Solutions** | Nov 2007 - Nov 2010 | Graphic & Web Designer |",
-    responseEs: "Aquí tienes una cronología detallada de la experiencia profesional de Álex:\n\n| Empresa | Periodo | Rol |\n| :--- | :--- | :--- |\n| **Cella Medical Solutions** | Jul 2025 - Actualidad | Senior Product Designer |\n| **Waykout.com** | 2024 - Actualidad | Co-founder & Lead |\n| **DisplayNote** | Feb 2020 - May 2025 | Senior Product Designer |\n| **StaymyWay / Operto** | Sep 2018 - Feb 2020 | Senior Product Designer |\n| **Erasmusu** | Oct 2017 - Abr 2018 | Product Designer |\n| **Upclose.me** | Feb 2017 - Sep 2017 | Product Designer |\n| **Droiders / Streye** | Abr 2015 - Ene 2017 | UI/UX Designer |\n| **Placeband** | Abr 2014 - Mar 2015 | UI/UX Designer |\n| **PcComponentes** | Sep 2013 - Abr 2014 | Web Designer |\n| **Pangea e-Solutions** | Nov 2007 - Nov 2010 | Graphic & Web Designer |"
+    keywords: ["magma", "magma design system", "storybook", "design system storybook"],
+    responseEn:
+      "Magma Design System is Álex's upcoming case study covering a scalable multibrand design system built with Storybook, semantic tokens, and seamless design-to-code synchronization.",
+    responseEs:
+      "Magma Design System es el próximo caso de estudio de Álex sobre un sistema de diseño multimarca escalable construido con Storybook, tokens semánticos y sincronización fluida entre diseño y código.",
+  },
+  {
+    keywords: ["artículos", "articulos", "articles", "posts", "blog", "lecturas"],
+    responseEn:
+      "Álex is currently preparing new articles and reflections on Design Systems, Figma Variables, and AI in Product Design. They will be published here soon!",
+    responseEs:
+      "Álex está preparando nuevos artículos y reflexiones sobre Sistemas de Diseño, Variables de Figma e IA en el Diseño de Producto. ¡Estarán disponibles muy pronto!",
+  },
+  {
+    keywords: [
+      "empresas",
+      "companies",
+      "where has he worked",
+      "where's alex worked",
+      "where did he work",
+      "work history",
+      "experiencia laboral",
+      "historial laboral",
+      "donde ha trabajado",
+      "dónde ha trabajado",
+      "trayectoria",
+    ],
+    responseEn:
+      "Here is a detailed timeline of Álex's professional experience:\n\n| Company | Period | Role |\n| :--- | :--- | :--- |\n| **Cella Medical Solutions** | Jul 2025 - Present | Senior Product Designer |\n| **Waykout.com** | 2024 - Present | Co-founder & Lead |\n| **DisplayNote** | Feb 2020 - May 2025 | Senior Product Designer |\n| **StaymyWay / Operto** | Sep 2018 - Feb 2020 | Senior Product Designer |\n| **Erasmusu** | Oct 2017 - Apr 2018 | Product Designer |\n| **Upclose.me** | Feb 2017 - Sep 2017 | Product Designer |\n| **Droiders / Streye** | Apr 2015 - Jan 2017 | UI/UX Designer |\n| **Placeband** | Apr 2014 - Mar 2015 | UI/UX Designer |\n| **PcComponentes** | Sep 2013 - Apr 2014 | Web Designer |\n| **Pangea e-Solutions** | Nov 2007 - Nov 2010 | Graphic & Web Designer |",
+    responseEs:
+      "Aquí tienes una cronología detallada de la experiencia profesional de Álex:\n\n| Empresa | Periodo | Rol |\n| :--- | :--- | :--- |\n| **Cella Medical Solutions** | Jul 2025 - Actualidad | Senior Product Designer |\n| **Waykout.com** | 2024 - Actualidad | Co-founder & Lead |\n| **DisplayNote** | Feb 2020 - May 2025 | Senior Product Designer |\n| **StaymyWay / Operto** | Sep 2018 - Feb 2020 | Senior Product Designer |\n| **Erasmusu** | Oct 2017 - Abr 2018 | Product Designer |\n| **Upclose.me** | Feb 2017 - Sep 2017 | Product Designer |\n| **Droiders / Streye** | Abr 2015 - Ene 2017 | UI/UX Designer |\n| **Placeband** | Abr 2014 - Mar 2015 | UI/UX Designer |\n| **PcComponentes** | Sep 2013 - Abr 2014 | Web Designer |\n| **Pangea e-Solutions** | Nov 2007 - Nov 2010 | Graphic & Web Designer |",
   },
   {
     keywords: ["staymyway", "hospitality", "hotel", "reserva", "booking"],
-    responseEn: "Álex worked as a Senior Product Designer at Staymyway, where he designed digital experiences for the hospitality industry, focusing on booking systems and user-centric solutions for hotel management and guests.",
-    responseEs: "Álex trabajó como Senior Product Designer en Staymyway, diseñando experiencias digitales para el sector hospitality, centrándose en sistemas de reserva y soluciones centradas en el usuario para la gestión hotelera y sus huéspedes."
+    responseEn:
+      "Álex worked as a Senior Product Designer at Staymyway, where he designed digital experiences for the hospitality industry, focusing on booking systems and user-centric solutions for hotel management and guests.",
+    responseEs:
+      "Álex trabajó como Senior Product Designer en Staymyway, diseñando experiencias digitales para el sector hospitality, centrándose en sistemas de reserva y soluciones centradas en el usuario para la gestión hotelera y sus huéspedes.",
   },
   {
     keywords: ["gracias", "thanks", "thank you", "merci", "grazi", "grazie"],
-    responseEn: "You're very welcome! It's been a pleasure helping you. If you have more questions about Álex, his work, or Bronx, I'm here for you!",
-    responseEs: "¡De nada! Ha sido un placer ayudarte. Si tienes más preguntas sobre Álex, su trabajo o Bronx, ¡aquí me tienes!"
+    responseEn:
+      "You're very welcome! It's been a pleasure helping you. If you have more questions about Álex, his work, or Bronx, I'm here for you!",
+    responseEs:
+      "¡De nada! Ha sido un placer ayudarte. Si tienes más preguntas sobre Álex, su trabajo o Bronx, ¡aquí me tienes!",
   },
   {
-    keywords: ["education", "study", "formación", "estudios", "workshop", "figma camp", "shift+r", "estudiar", "estudiado", "universidad", "estudió", "donde estudio", "donde estudió"],
-    responseEn: "Álex is a Design System Specialist (Shift+R) and has completed workshops at Instituto Tramontana and Neoland. He's been self-taught since 2005.",
-    responseEs: "Álex es especialista en Design Systems (Shift+R) y ha realizado workshops en el Instituto Tramontana y Neoland. Es autodidacta desde 2005."
+    keywords: [
+      "education",
+      "study",
+      "formación",
+      "estudios",
+      "workshop",
+      "figma camp",
+      "shift+r",
+      "estudiar",
+      "estudiado",
+      "universidad",
+      "estudió",
+      "donde estudio",
+      "donde estudió",
+    ],
+    responseEn:
+      "Álex is a Design System Specialist (Shift+R) and has completed workshops at Instituto Tramontana and Neoland. He's been self-taught since 2005.",
+    responseEs:
+      "Álex es especialista en Design Systems (Shift+R) y ha realizado workshops en el Instituto Tramontana y Neoland. Es autodidacta desde 2005.",
   },
   {
-    keywords: ["skills", "habilidades", "técnico", "tools", "herramientas", "qué sabe", "que sabe"],
-    responseEn: "Álex specializes in end-to-end Product Design and Design Systems. His toolkit includes systems thinking, prototyping, and user research. He works seamlessly with engineering using tools like Figma, Zeroheight, Git, and GitHub, and integrates AI workflows with Claude. He's also proficient in HTML and CSS.",
-    responseEs: "Álex se especializa en Product Design (end-to-end) y Design Systems. Su enfoque combina el pensamiento sistémico, prototipado e investigación de usuario. Colabora estrechamente con equipos de ingeniería usando Figma, Zeroheight, Git y GitHub, e integra flujos de trabajo con IA (Claude). También tiene sólidos conocimientos de HTML y CSS."
+    keywords: [
+      "skills",
+      "habilidades",
+      "técnico",
+      "tools",
+      "herramientas",
+      "qué sabe",
+      "que sabe",
+    ],
+    responseEn:
+      "Álex specializes in end-to-end Product Design, UX Research and Design Systems. He combines user research, behavioural analytics, interaction design, and prototyping with expertise in scalable, multi-brand design systems and design-to-development workflows. He also explores AI-driven workflows to improve design processes, generate interfaces, and accelerate frontend development. His toolkit includes Figma, Claude, Gemini, Antigravity, Vue, CSS Modules, Storybook, Git, GitHub, HTML, and CSS.",
+    responseEs:
+      "Álex se especializa en Product Design end-to-end, UX Research y Design Systems. Combina investigación de usuarios, analítica de comportamiento, diseño de interacción y prototipado con experiencia en sistemas de diseño multimarca y flujos de trabajo entre diseño y desarrollo. También explora flujos de trabajo con IA para optimizar procesos de diseño, generar interfaces y acelerar el desarrollo frontend. Sus herramientas y tecnologías incluyen Figma, Claude, Gemini, Antigravity, Vue, CSS Modules, Storybook, Git, GitHub, HTML y CSS.",
   },
   {
-    keywords: ["cv", "curriculum", "curriculum vitae", "hoja de vida", "resume", "copy of his cv", "get his cv", "download cv", "ver cv", "descargar cv"],
+    keywords: [
+      "cv",
+      "curriculum",
+      "curriculum vitae",
+      "hoja de vida",
+      "resume",
+      "copy of his cv",
+      "get his cv",
+      "download cv",
+      "ver cv",
+      "descargar cv",
+    ],
     responseEn: "Sure! You can view my CV here: [/cv-alex-salmeron.pdf]",
-    responseEs: "¡Claro! Puedes ver mi CV aquí: [/cv-alex-salmeron.pdf]"
+    responseEs: "¡Claro! Puedes ver mi CV aquí: [/cv-alex-salmeron.pdf]",
   },
   {
-    keywords: ["hire", "contratar", "trabajar con alex", "disponibilidad", "availability", "vacante", "oportunidad", "disponible", "está disponible", "esta disponible"],
-    responseEn: "Álex is always available for a coffee, a call, and exploring new exciting projects. Feel free to reach out!",
-    responseEs: "Álex siempre está disponible para un café, una llamada y para explorar nuevos proyectos emocionantes. ¡No dudes en contactar con él!"
+    keywords: [
+      "hire",
+      "contratar",
+      "trabajar con alex",
+      "disponibilidad",
+      "availability",
+      "vacante",
+      "oportunidad",
+      "disponible",
+      "está disponible",
+      "esta disponible",
+    ],
+    responseEn:
+      "Álex is always available for a coffee, a call, and exploring new exciting projects. Feel free to reach out!",
+    responseEs:
+      "Álex siempre está disponible para un café, una llamada y para explorar nuevos proyectos emocionantes. ¡No dudes en contactar con él!",
   },
   {
     keywords: ["bronx", "dog", "perro", "mascota", "amigo", "escudero"],
-    responseEn: "[img:/bronx.jpg]Bronx is one of the most important pillars in Álex's life. He is his dog, his friend, and his companion in both projects and life. They've been together for almost 16 years—his 'fiel escudero'. They've traveled thousands of kilometers together in search of disconnection, which Álex considers an essential part of life.",
-    responseEs: "[img:/bronx.jpg]Bronx es uno de los pilares más importantes de la vida de Álex. Es su perro, su amigo y su compañero de proyectos y vida. Llevan juntos casi 16 años y Álex lo llama su 'fiel escudero'. Han recorrido juntos miles de kilómetros en busca de desconexión, que para Álex es una parte fundamental de la vida."
+    responseEn:
+      "[img:/bronx.jpg]Bronx is one of the most important pillars in Álex's life. He is his dog, his friend, and his companion in both projects and life. They've been together for over 16 years—his 'fiel escudero'. They've traveled thousands of kilometers together in search of disconnection, which Álex considers an essential part of life.",
+    responseEs:
+      "[img:/bronx.jpg]Bronx es uno de los pilares más importantes de la vida de Álex. Es su perro, su amigo y su compañero de proyectos y vida. Llevan juntos más de 16 años y Álex lo llama su 'fiel escudero'. Han recorrido juntos miles de kilómetros en busca de desconexión, que para Álex es una parte fundamental de la vida.",
   },
   {
-    keywords: ["social", "redes", "links", "contact", "linkedin", "figma", "dribbble", "twitter", "instagram"],
-    responseEn: "You can find Álex on these platforms:\n\n- [LinkedIn](https://www.linkedin.com/in/alexsalmeron/)\n- [Figma](https://www.figma.com/@mefaltaunpixel/)\n- [Dribbble](https://dribbble.com/mefaltaunpixel)\n- [Twitter](https://x.com/mefaltaunpixel)\n- [Instagram](https://instagram.com/alex.onlythis)",
-    responseEs: "Puedes encontrar a Álex en estas plataformas:\n\n- [LinkedIn](https://www.linkedin.com/in/alexsalmeron/)\n- [Figma](https://www.figma.com/@mefaltaunpixel/)\n- [Dribbble](https://dribbble.com/mefaltaunpixel)\n- [Twitter](https://x.com/mefaltaunpixel)\n- [Instagram](https://instagram.com/alex.onlythis)"
+    keywords: [
+      "social",
+      "redes",
+      "links",
+      "contact",
+      "linkedin",
+      "figma",
+      "dribbble",
+      "twitter",
+      "instagram",
+    ],
+    responseEn:
+      "You can find Álex on these platforms:\n\n- [LinkedIn](https://www.linkedin.com/in/alexsalmeron/)\n- [Figma](https://www.figma.com/@mefaltaunpixel/)\n- [Dribbble](https://dribbble.com/mefaltaunpixel)\n- [Twitter](https://x.com/mefaltaunpixel)\n- [Instagram](https://instagram.com/alex.onlythis)",
+    responseEs:
+      "Puedes encontrar a Álex en estas plataformas:\n\n- [LinkedIn](https://www.linkedin.com/in/alexsalmeron/)\n- [Figma](https://www.figma.com/@mefaltaunpixel/)\n- [Dribbble](https://dribbble.com/mefaltaunpixel)\n- [Twitter](https://x.com/mefaltaunpixel)\n- [Instagram](https://instagram.com/alex.onlythis)",
   },
   {
-    keywords: ["jaja", "jajaja", "jajajaja", "jajajajaja", "jajajajajaja", "haha", "hahaha", "lol", "lmao", "xd", "🤣", "😂"],
+    keywords: [
+      "jaja",
+      "jajaja",
+      "jajajaja",
+      "jajajajaja",
+      "jajajajajaja",
+      "haha",
+      "hahaha",
+      "lol",
+      "lmao",
+      "xd",
+      "🤣",
+      "😂",
+    ],
     responseEn: [
       "Haha! Glad to see we're on the same wavelength.",
       "LOL! You have a great sense of humor.",
@@ -159,7 +395,7 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
       "Hahaha! That was a good one, you caught me off guard.",
       "LOL! Designing and laughing, Álex's favorite combo.",
       "Haha! My CPU temperature just rose from all this joy.",
-      "XD! Keep 'em coming, I love a good laugh."
+      "XD! Keep 'em coming, I love a good laugh.",
     ],
     responseEs: [
       "¡Jajaja! Me alegra ver que nos entendemos.",
@@ -176,55 +412,280 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
       "¡Jajajaja! Esa ha sido buena, me has pillado desprevenida.",
       "¡LOL! Diseñar y reír, el combo favorito de Álex.",
       "¡Haha! Mi temperatura de CPU ha subido de tanta risa.",
-      "¡XD! Sigue así, me encanta el buen humor."
-    ]
+      "¡XD! Sigue así, me encanta el buen humor.",
+    ],
   },
   {
     keywords: ["bronx diseña", "quien diseña", "who designs", "real designer"],
-    responseEn: "Totally. Álex just moves the mouse, but Bronx is the one who approves the colors. If Bronx doesn't wag his tail, the component doesn't get published. He is the true Chief Design Officer around here.",
-    responseEs: "Totalmente. Álex solo mueve el ratón, pero Bronx es el que aprueba los colores. Si Bronx no mueve la cola, el componente no se publica. Él es el verdadero Chief Design Officer de esta casa."
+    responseEn:
+      "Totally. Álex just moves the mouse, but Bronx is the one who approves the colors. If Bronx doesn't wag his tail, the component doesn't get published. He is the true Chief Design Officer around here.",
+    responseEs:
+      "Totalmente. Álex solo mueve el ratón, pero Bronx es el que aprueba los colores. Si Bronx no mueve la cola, el componente no se publica. Él es el verdadero Chief Design Officer de esta casa.",
   },
   {
     keywords: ["contratar alex", "hire alex", "bronx incluido", "office dog"],
-    responseEn: "There's a hidden clause in the contract: 10% discount if there are treats for Bronx in the office. Think about it. He's great at boosting morale (and stealing lunches).",
-    responseEs: "Hay una cláusula oculta en el contrato: 10% de descuento si hay chuches para Bronx en la oficina. Piénsalo bien. Es un experto en subir la moral (y en robar bocadillos)."
+    responseEn:
+      "There's a hidden clause in the contract: 10% discount if there are treats for Bronx in the office. Think about it. He's great at boosting morale (and stealing lunches).",
+    responseEs:
+      "Hay una cláusula oculta en el contrato: 10% de descuento si hay chuches para Bronx en la oficina. Piénsalo bien. Es un experto en subir la moral (y en robar bocadillos).",
   },
   {
-    keywords: ["vida fuera de figma", "life outside figma", "hobbies", "aficiones", "hace alex", "fuera del trabajo", "crossfit", "deporte", "gym", "entrenar"],
-    responseEn: "Legend has it that once he went outside and saw something called 'sunlight'. He came back after 5 minutes because he couldn't adjust the contrast of the clouds. Just kidding! Álex is actually a concert addict, a kitchen experimenter (he calls it 'cooking'), a CrossFit enthusiast to burn off all that energy, and a professional at getting lost in his car with a killer playlist and Bronx as co-pilot, looking for that perfect spot in nature.",
-    responseEs: "Cuenta la leyenda que una vez salió a la calle y vio algo llamado 'luz solar'. Volvió a los 5 minutos porque no podía ajustar el contraste de las nubes. ¡Es broma! En realidad, a Álex le pierden los conciertos, el CrossFit para quemar toda esa energía, experimentar en la cocina (él lo llama 'cocinar') y perderse sin rumbo en el coche con una buena playlist, la mochila lista y Bronx de copiloto buscando el rincón perfecto en la naturaleza."
+    keywords: [
+      "vida fuera de figma",
+      "life outside figma",
+      "hobbies",
+      "aficiones",
+      "hace alex",
+      "fuera del trabajo",
+      "crossfit",
+      "deporte",
+      "gym",
+      "entrenar",
+    ],
+    responseEn:
+      "Legend has it that once he went outside and saw something called 'sunlight'. He came back after 5 minutes because he couldn't adjust the contrast of the clouds. Just kidding! Álex is actually a concert addict, a kitchen experimenter (he calls it 'cooking'), a CrossFit enthusiast to burn off all that energy, and a professional at getting lost in his car with a killer playlist and Bronx as co-pilot, looking for that perfect spot in nature.",
+    responseEs:
+      "Cuenta la leyenda que una vez salió a la calle y vio algo llamado 'luz solar'. Volvió a los 5 minutos porque no podía ajustar el contraste de las nubes. ¡Es broma! En realidad, a Álex le pierden los conciertos, el CrossFit para quemar toda esa energía, experimentar en la cocina (él lo llama 'cocinar') y perderse sin rumbo en el coche con una buena playlist, la mochila lista y Bronx de copiloto buscando el rincón perfecto en la naturaleza.",
   },
   {
-    keywords: ["cocinar", "cook", "chef", "comida", "food", "pasta", "qué come", "que come", "favorite food", "comida favorita"],
-    responseEn: "Álex loves cooking, and his absolute favorite is pasta. He treats it like a Design System: the pasta shape is the component, the sauce is the style guide, and the result... well, it's always delicious!",
-    responseEs: "A Álex le encanta cocinar, y su comida favorita absoluta es la pasta. Lo trata como un Sistema de Diseño: el tipo de pasta es el componente, la salsa es la guía de estilo y el resultado... bueno, ¡siempre está para chuparse los dedos!"
+    keywords: [
+      "cocinar",
+      "cook",
+      "chef",
+      "comida",
+      "food",
+      "pasta",
+      "qué come",
+      "que come",
+      "favorite food",
+      "comida favorita",
+    ],
+    responseEn:
+      "Álex loves cooking, and his absolute favorite is pasta. He treats it like a Design System: the pasta shape is the component, the sauce is the style guide, and the result... well, it's always delicious!",
+    responseEs:
+      "A Álex le encanta cocinar, y su comida favorita absoluta es la pasta. Lo trata como un Sistema de Diseño: el tipo de pasta es el componente, la salsa es la guía de estilo y el resultado... bueno, ¡siempre está para chuparse los dedos!",
   },
   {
-    keywords: ["color favorito", "favorite color", "hex", "colores", "#FAC31D", "color de alex"],
-    responseEn: "Álex's favorite color is **#FAC31D**. It's a vibrant, energetic tone that reflects his personality and passion for design. You might even find it hidden in some of his most creative projects!",
-    responseEs: "El color favorito de Álex es el **#FAC31D**. Es un tono vibrante y lleno de energía que refleja su personalidad y su pasión por el diseño. ¡Incluso podrías encontrarlo escondido en alguno de sus proyectos más creativos!"
+    keywords: [
+      "color favorito",
+      "favorite color",
+      "hex",
+      "colores",
+      "#FAC31D",
+      "color de alex",
+    ],
+    responseEn:
+      "Álex's favorite color is **#FAC31D**. It's a vibrant, energetic tone that reflects his personality and passion for design. You might even find it hidden in some of his most creative projects!",
+    responseEs:
+      "El color favorito de Álex es el **#FAC31D**. Es un tono vibrante y lleno de energía que refleja su personalidad y su pasión por el diseño. ¡Incluso podrías encontrarlo escondido en alguno de sus proyectos más creativos!",
   },
   {
-    keywords: ["música", "music", "playlist", "concierto", "concert", "escucha alex", "qué escucha", "que escucha", "escucha", "listens to"],
-    responseEn: "Álex listens to almost everything: sometimes rock, sometimes rap... but if he needs an extra boost of concentration, he goes for Skrillex or Deadmau5. His essentials include Arde Bogotá, Extremoduro, Zatu (SFDK), and The Roots. Music is his true fuel for designing!",
-    responseEs: "Álex suele escuchar de todo: a veces rock, a veces rap... pero si necesita un chute extra de concentración, tira de Skrillex o Deadmau5. Sus imprescindibles son Arde Bogotá, Extremoduro, Zatu (SFDK), The Roots... ¡La música es su gasolina para diseñar!"
+    keywords: [
+      "música",
+      "music",
+      "playlist",
+      "concierto",
+      "concert",
+      "escucha alex",
+      "qué escucha",
+      "que escucha",
+      "escucha",
+      "listens to",
+    ],
+    responseEn:
+      "Álex listens to almost everything: sometimes rock, sometimes rap... but if he needs an extra boost of concentration, he goes for Skrillex or Deadmau5. His essentials include Arde Bogotá, Extremoduro, Zatu (SFDK), and The Roots. Music is his true fuel for designing!",
+    responseEs:
+      "Álex suele escuchar de todo: a veces rock, a veces rap... pero si necesita un chute extra de concentración, tira de Skrillex o Deadmau5. Sus imprescindibles son Arde Bogotá, Extremoduro, Zatu (SFDK), The Roots... ¡La música es su gasolina para diseñar!",
   },
   {
-    keywords: ["superpoder", "superpower", "que se le da bien", "talento", "habilidad especial"],
-    responseEn: "Álex's superpower is his ability to speak both Design and Development. He can bridge the gap between Figma and React without breaking a sweat (or anyone's heart).",
-    responseEs: "El superpoder de Álex es su capacidad para hablar tanto 'Diseño' como 'Desarrollo'. Puede unir Figma y React sin que nadie salga herido (ni se rompa ningún layout)."
+    keywords: [
+      "superpoder",
+      "superpower",
+      "que se le da bien",
+      "talento",
+      "habilidad especial",
+    ],
+    responseEn:
+      "Álex's superpower is his ability to speak both Design and Development. He can bridge the gap between Figma and React without breaking a sweat (or anyone's heart).",
+    responseEs:
+      "El superpoder de Álex es su capacidad para hablar tanto 'Diseño' como 'Desarrollo'. Puede unir Figma y React sin que nadie salga herido (ni se rompa ningún layout).",
   },
   {
     keywords: ["secreto", "secret", "cuéntame algo", "tell me a secret"],
-    responseEn: "A little secret? Sometimes, when nobody's watching, Álex designs without a grid... He's a design rebel! But don't tell the DesignOps team.",
-    responseEs: "¿Un secretito? A veces, cuando nadie le ve, Álex diseña sin usar rejilla... ¡Es un rebelde del diseño! Pero no se lo digas al equipo de DesignOps."
+    responseEn:
+      "A little secret? Sometimes, when nobody's watching, Álex designs without a grid... He's a design rebel! But don't tell the DesignOps team.",
+    responseEs:
+      "¿Un secretito? A veces, cuando nadie le ve, Álex diseña sin usar rejilla... ¡Es un rebelde del diseño! Pero no se lo digas al equipo de DesignOps.",
   },
   {
     keywords: ["comic sans", "fuente fea", "ugly font"],
-    responseEn: "If you even mention Comic Sans, Álex's eye starts twitching. Please, for the sake of his sanity, let's stick to Bricolage Grotesque.",
-    responseEs: "Si mencionas la Comic Sans, a Álex le empieza a dar un tic en el ojo. Por favor, por su salud mental, quedémonos con la Bricolage Grotesque."
-  }
+    responseEn:
+      "If you even mention Comic Sans, Álex's eye starts twitching. Please, for the sake of his sanity, let's stick to Bricolage Grotesque.",
+    responseEs:
+      "Si mencionas la Comic Sans, a Álex le empieza a dar un tic en el ojo. Por favor, por su salud mental, quedémonos con la Bricolage Grotesque.",
+  },
 ];
 
-export const DEFAULT_RESPONSE_EN = "I'm Soul, Álex's companion. I can tell you about his +15 years of experience in Design Systems, his work at Cella or DisplayNote, or how to contact him.";
-export const DEFAULT_RESPONSE_ES = "Soy Soul, la compañía de Álex. Puedo contarte sobre sus más de 15 años de experiencia en Design Systems, su trabajo en Cella o DisplayNote, o cómo contactar con él.";
+export const DEFAULT_RESPONSE_EN =
+  "I'm Soul, Álex's companion. I can tell you about his +15 years of experience in Design Systems, his work at Cella or DisplayNote, or how to contact him.";
+export const DEFAULT_RESPONSE_ES =
+  "Soy Soul, la compañía de Álex. Puedo contarte sobre sus más de 15 años de experiencia en Design Systems, su trabajo en Cella o DisplayNote, o cómo contactar con él.";
+
+export const isSpanishQuery = (text: string, fallbackLanguage?: string): boolean => {
+  if (!text || !text.trim()) return fallbackLanguage === "es";
+
+  const raw = text.trim();
+
+  // 1. Inverted punctuation (¿ or ¡) -> 100% Spanish
+  if (/[¿¡]/.test(raw)) return true;
+
+  // 2. Strip "Álex" / "Alex" completely (case-insensitive, with or without accent)
+  // (Do not use ASCII \b because 'Á' is not an ASCII word char in JS regex)
+  const textWithoutAlex = raw.replace(/álex|alex/gi, "").trim();
+
+  // 3. Any Spanish accented character outside the word Alex (á, é, í, ó, ú, ü, ñ) -> 100% Spanish!
+  if (/[áéíóúüñÁÉÍÓÚÜÑ]/.test(textWithoutAlex)) {
+    return true;
+  }
+
+  // Normalize text removing accents for word checking
+  const clean = textWithoutAlex
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+  const tokens = clean.split(/[\s,?.!;:()"\-_/]+/).filter(Boolean);
+  if (tokens.length === 0) return fallbackLanguage === "es";
+
+  // Spanish vocabulary
+  const spanishWords = new Set([
+    // Question words
+    "que", "donde", "cuando", "quien", "quienes", "cual", "cuales", "cuanto", "cuanta", "cuantos", "cuantas", "como", "porque",
+    // Articles & Pronouns
+    "el", "la", "los", "las", "un", "una", "unos", "unas", "lo", "al", "del",
+    "yo", "tu", "vos", "usted", "ustedes", "ella", "ellos", "ellas", "nosotros", "nosotras", "vosotros", "vosotras",
+    "me", "te", "se", "nos", "os", "le", "les",
+    "mi", "mis", "tu", "tus", "su", "sus", "nuestro", "nuestra", "nuestros", "nuestras", "suyo", "suya", "mio", "mia",
+    // Prepositions & Conjunctions
+    "de", "a", "en", "con", "por", "para", "sin", "sobre", "entre", "hacia", "hasta", "desde", "bajo", "contra",
+    "y", "e", "o", "u", "pero", "sino", "aunque", "si", "ni", "ya",
+    // Greetings & conversation
+    "hola", "buenas", "buenos", "dias", "tardes", "noches", "adios", "chao", "hasta", "luego", "gracias", "favor", "porfa", "porfavor", "saludos", "ey", "tal",
+    // Verbs
+    "es", "son", "era", "eras", "eramos", "eran", "fue", "fueron", "sido", "sea", "sean", "eres", "soy", "somos", "ser",
+    "esta", "estas", "estan", "estaba", "estaban", "estuvo", "estuvieron", "estado", "estoy", "estamos", "estar",
+    "hay", "habia", "hubo", "habra", "ha", "han", "he", "has", "hemos", "haber",
+    "tiene", "tienes", "tienen", "tenia", "tenian", "tuvo", "tuvieron", "tenido", "tengo", "tenemos", "tener",
+    "hace", "haces", "hacen", "hacia", "hacian", "hizo", "hicieron", "hecho", "hago", "hacemos", "hacer",
+    "dice", "dices", "dicen", "decia", "dijo", "dijeron", "dicho", "digo", "decimos", "decir", "dime", "cuentame", "hablame", "explicame", "muestrame", "ensename", "dinos",
+    "sabe", "sabes", "saben", "sabia", "supo", "supe", "sabemos", "saber",
+    "puede", "puedes", "pueden", "podia", "podian", "pudo", "pude", "podemos", "poder", "podria", "podrias", "puedo",
+    "quiere", "quieres", "quieren", "queria", "quiso", "quise", "queremos", "querer", "quisiera", "quiero",
+    "ve", "ves", "ven", "vio", "vieron", "visto", "vemos", "ver", "mira", "miras", "miran", "mirar",
+    "da", "das", "dan", "dio", "dieron", "dado", "damos", "dar", "dame",
+    "va", "vas", "van", "vamos", "ir",
+    "trabaja", "trabajas", "trabajan", "trabajaba", "trabajo", "trabajos", "trabaje", "trabajamos", "trabajar",
+    "vive", "vives", "viven", "vivia", "vivio", "vivimos", "vivir", "viviendo",
+    "disena", "disenas", "disenan", "diseno", "disenos", "disenamos", "disenar",
+    "conoce", "conoces", "conocen", "conocia", "conocio", "conocemos", "conocer",
+    "gusta", "gustas", "gustan", "gustaba", "gusto", "gustaria", "gustar",
+    "llama", "llamas", "llaman", "llamaba", "llamo", "llamar", "llamarse",
+    "ayuda", "ayudas", "ayudar", "responde", "responder", "pregunta", "preguntar", "preguntas",
+    // Domain & nouns
+    "rol", "roles", "actual", "actuales", "actualidad", "actualmente",
+    "ubicacion", "ubicado", "ubicada", "ubicados", "ubicadas", "residencia", "ciudad",
+    "red", "redes", "sociales", "contacto", "contactar", "correo", "mensaje", "llamada", "telefono", "movil",
+    "proyecto", "proyectos", "caso", "casos", "estudio", "estudios", "estudiado", "estudiar", "carrera", "formacion", "universidad",
+    "experiencia", "trayectoria", "historial", "ano", "anos", "anios", "tiempo", "edad",
+    "habilidad", "habilidades", "herramientas", "tecnologias", "competencias", "conocimientos",
+    "perro", "perrito", "mascota", "can", "bronx",
+    "curriculum", "curriculo", "hoja", "vida", "educacion", "titulo", "grado",
+    "musica", "comida", "color", "favorito", "favorita", "favoritos", "favoritas", "secreto", "curiosidad"
+  ]);
+
+  // English vocabulary
+  const englishWords = new Set([
+    "the", "is", "are", "was", "were", "what", "who", "where", "when", "why", "how", "which", "whose", "whom",
+    "this", "that", "these", "those", "there", "here",
+    "have", "has", "had", "do", "does", "did", "can", "could", "would", "should", "will", "shall", "may", "might", "must",
+    "tell", "about", "your", "my", "his", "her", "their", "our",
+    "from", "with", "without", "under", "between", "into", "through", "during", "before", "after", "above", "below",
+    "please", "thanks", "thank", "hello", "hey", "good", "morning", "afternoon", "evening", "night",
+    "current", "role", "skills", "located", "social", "dog", "work", "job", "show", "give", "know", "reach", "resume"
+  ]);
+
+  let spanishScore = 0;
+  let englishScore = 0;
+
+  for (const token of tokens) {
+    if (spanishWords.has(token)) spanishScore++;
+    if (englishWords.has(token)) englishScore++;
+  }
+
+  if (spanishScore > 0 && englishScore === 0) return true;
+  if (englishScore > 0 && spanishScore === 0) return false;
+  if (spanishScore > englishScore) return true;
+  if (englishScore > spanishScore) return false;
+
+  return fallbackLanguage === "es";
+};
+
+export const getSoulResponse = (messageText: string, contextLanguage?: string): string => {
+  const isSpanish = isSpanishQuery(messageText, contextLanguage);
+  const normalize = (str: string) =>
+    str
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase();
+  const query = messageText.toLowerCase();
+  const normalizedQuery = normalize(query);
+
+  let bestMatch = {
+    score: 0,
+    response: isSpanish ? DEFAULT_RESPONSE_ES : DEFAULT_RESPONSE_EN,
+  };
+
+  for (const entry of SOUL_KNOWLEDGE) {
+    let score = 0;
+    for (const keyword of entry.keywords) {
+      const normalizedKeyword = normalize(keyword);
+      if (normalizedQuery.includes(normalizedKeyword)) {
+        const multiplier = normalizedKeyword.includes(" ") ? 2 : 1;
+        score += normalizedKeyword.length * multiplier;
+      }
+    }
+
+    if (score > bestMatch.score) {
+      const rawResponse = isSpanish ? entry.responseEs : entry.responseEn;
+      const finalResponse = Array.isArray(rawResponse)
+        ? rawResponse[Math.floor(Math.random() * rawResponse.length)]
+        : rawResponse;
+
+      bestMatch = {
+        score,
+        response: finalResponse,
+      };
+    }
+  }
+
+  if (bestMatch.score === 0) {
+    // Send email notification via Formspree
+    fetch("https://formspree.io/f/xojyregr", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: "soul-assistant@mefaltaunpixel.es",
+        message: `New unknown question for Soul: "${messageText}"`,
+        _subject: "Soul Assistant: New Unanswered Question",
+      }),
+    }).catch((err) => console.error("Error sending notification:", err));
+
+    const fallbackEn =
+      "I'm sorry, I don't have an answer for that yet. But I've just sent your question to Álex so he can teach me! In the meantime, you can ask about his work at Cella, his dog Bronx, or how to contact him.";
+    const fallbackEs =
+      "Lo siento, aún no tengo una respuesta para eso. Pero acabo de enviarle tu pregunta a Álex para que me la enseñe. Mientras tanto, puedes preguntarme sobre su trabajo en Cella, su perro Bronx o cómo contactar con él.";
+
+    bestMatch.response = isSpanish ? fallbackEs : fallbackEn;
+  }
+
+  return bestMatch.response;
+};

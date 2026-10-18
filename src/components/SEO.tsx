@@ -79,7 +79,6 @@ export const SEO: React.FC<SEOProps> = ({ title, description }) => {
       "jobTitle": "Senior Product Designer",
       "description": description,
       "image": "https://www.mefaltaunpixel.es/og-image.png",
-      "email": "pixel@mefaltaunpixel.es",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Murcia",

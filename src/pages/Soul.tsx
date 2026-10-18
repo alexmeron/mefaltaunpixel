@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Smile } from 'lucide-react';
-import { SOUL_KNOWLEDGE, DEFAULT_RESPONSE_EN, DEFAULT_RESPONSE_ES } from '../data/soul-knowledge';
+import { ArrowRight } from 'lucide-react';
+import { getSoulResponse } from '../data/soul-knowledge';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
+import { useSoulPlaceholder } from '../hooks/useSoulPlaceholder';
+
 
 interface Message {
   id: string;
@@ -50,58 +53,25 @@ const renderTextWithLinks = (text: string) => {
 };
 
 export const Soul = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
+  const { t, language } = useLanguage();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const locationState = location.state as {
+    messages?: Message[];
+    input?: string;
+    isTyping?: boolean;
+    query?: string;
+  } | null;
+
+  const qParam = searchParams.get('q') || locationState?.query;
+  const lastHandledQuery = useRef<string | null>(null);
+
+  const [messages, setMessages] = useState<Message[]>(() => locationState?.messages || []);
+  const [input, setInput] = useState<string>(() => locationState?.input || '');
+  const [isTyping, setIsTyping] = useState<boolean>(() => Boolean(locationState?.isTyping));
   const [isFocused, setIsFocused] = useState(false);
-  const [displayedPlaceholder, setDisplayedPlaceholder] = useState("");
-  const [placeholderIndex, setPlaceholderIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  
-  const EXAMPLES = [
-    "Ask anything about Álex",
-    "What is Álex's current role?",
-    "Where is Álex based?",
-    "What are his main skills?",
-    "Who is Bronx?",
-    "Where can I find him on social media?",
-    "How can I reach out to Álex?",
-    "What is the best way to get in touch with him?",
-    "What is his design process?",
-    "Tell me about his work at Cella",
-    "Tell me about his work at DisplayNote",
-    "Where did Álex study?",
-    "What languages does he speak?",
-    "How does he work with developers?",
-    "Is Álex available for new projects?",
-    "Can I see his resume?"
-  ];
+  const displayedPlaceholder = useSoulPlaceholder(input);
 
-  useEffect(() => {
-    if (input) {
-      setDisplayedPlaceholder("");
-      // Reset charIndex so it starts fresh when input is cleared
-      setCharIndex(0);
-      return;
-    }
-
-    const currentFullText = EXAMPLES[placeholderIndex];
-    
-    if (charIndex < currentFullText.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedPlaceholder(prev => prev + currentFullText[charIndex]);
-        setCharIndex(prev => prev + 1);
-      }, 70);
-      return () => clearTimeout(timeout);
-    } else {
-      const timeout = setTimeout(() => {
-        setCharIndex(0);
-        setDisplayedPlaceholder("");
-        setPlaceholderIndex(prev => (prev + 1) % EXAMPLES.length);
-      }, 2500);
-      return () => clearTimeout(timeout);
-    }
-  }, [charIndex, placeholderIndex, input]);
   const inputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -118,12 +88,14 @@ export const Soul = () => {
   }, []);
 
   const scrollToBottom = () => {
-    if (messages.length > 0) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (messages.length > 0 || isTyping) {
+      setTimeout(() => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
     }
   };
 
-  useEffect(scrollToBottom, [messages]);
+  useEffect(scrollToBottom, [messages, isTyping]);
 
   const handleSend = async (text: string) => {
     const messageText = text || input;
@@ -136,61 +108,8 @@ export const Soul = () => {
     inputRef.current?.focus();
 
     setTimeout(() => {
-      const normalize = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-      const query = messageText.toLowerCase();
-      const normalizedQuery = normalize(query);
-      
-      const isSpanishLanguage = false;
-      
-      let bestMatch = { 
-        score: 0, 
-        response: isSpanishLanguage ? DEFAULT_RESPONSE_ES : DEFAULT_RESPONSE_EN 
-      };
-
-      for (const entry of SOUL_KNOWLEDGE) {
-        let score = 0;
-        for (const keyword of entry.keywords) {
-          const normalizedKeyword = normalize(keyword);
-          if (normalizedQuery.includes(normalizedKeyword)) {
-            // Favor longer, more specific keywords
-            // Give extra weight to multi-word keywords
-            const multiplier = normalizedKeyword.includes(' ') ? 2 : 1;
-            score += normalizedKeyword.length * multiplier;
-          }
-        }
-        
-        if (score > bestMatch.score) {
-          const rawResponse = isSpanishLanguage ? entry.responseEs : entry.responseEn;
-          const finalResponse = Array.isArray(rawResponse) 
-            ? rawResponse[Math.floor(Math.random() * rawResponse.length)]
-            : rawResponse;
-            
-          bestMatch = { 
-            score, 
-            response: finalResponse 
-          };
-        }
-      }
-
-      if (bestMatch.score === 0) {
-        // Send email notification via Formspree
-        fetch("https://formspree.io/f/xojyregr", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: "soul-assistant@mefaltaunpixel.es",
-            message: `New unknown question for Soul: "${query}"`,
-            _subject: "Soul Assistant: New Unanswered Question"
-          })
-        }).catch(err => console.error("Error sending notification:", err));
-        
-        const fallbackEn = "I'm sorry, I don't have an answer for that yet. But I've just sent your question to Álex so he can teach me! In the meantime, you can ask about his work at Cella, his dog Bronx, or how to contact him.";
-        const fallbackEs = "Lo siento, aún no tengo una respuesta para eso. Pero acabo de enviarle tu pregunta a Álex para que me la enseñe. Mientras tanto, puedes preguntarme sobre su trabajo en Cella, su perro Bronx o cómo contactar con él.";
-        
-        bestMatch.response = isSpanishLanguage ? fallbackEs : fallbackEn;
-      }
-
-      const assistantMessage: Message = { id: (Date.now() + 1).toString(), role: 'assistant', content: bestMatch.response };
+      const response = getSoulResponse(messageText, language);
+      const assistantMessage: Message = { id: (Date.now() + 1).toString(), role: 'assistant', content: response };
       setMessages(prev => [...prev, assistantMessage]);
       setIsTyping(false);
 
@@ -200,32 +119,78 @@ export const Soul = () => {
       }, 100);
 
       // Auto-open PDF if requested
-      if (bestMatch.response.includes('[/cv-alex-salmeron.pdf]')) {
+      if (response.includes('[/cv-alex-salmeron.pdf]')) {
         window.open('/cv-alex-salmeron.pdf', '_blank');
       }
     }, 1000);
   };
 
-  const { t, language } = useLanguage();
+  useEffect(() => {
+    // If expanded from drawer while assistant response was pending:
+    if (locationState?.messages && locationState.messages.length > 0) {
+      const lastMsg = locationState.messages[locationState.messages.length - 1];
+      if (lastMsg.role === 'user') {
+        setIsTyping(true);
+        const timer = setTimeout(() => {
+          const response = getSoulResponse(lastMsg.content, language);
+          const assistantMessage: Message = {
+            id: (Date.now() + 1).toString(),
+            role: 'assistant',
+            content: response,
+          };
+          setMessages((prev) => {
+            if (prev.some((m) => m.role === 'assistant' && m.id === assistantMessage.id)) {
+              return prev;
+            }
+            return [...prev, assistantMessage];
+          });
+          setIsTyping(false);
+          setTimeout(() => inputRef.current?.focus(), 100);
+
+          if (response.includes('[/cv-alex-salmeron.pdf]')) {
+            window.open('/cv-alex-salmeron.pdf', '_blank');
+          }
+        }, 750);
+        return () => clearTimeout(timer);
+      }
+      return;
+    }
+
+    const trimmed = qParam?.trim();
+    if (trimmed && lastHandledQuery.current !== `${location.key}:${trimmed}`) {
+      lastHandledQuery.current = `${location.key}:${trimmed}`;
+      handleSend(trimmed);
+    }
+  }, [qParam, location.key, locationState, language]);
 
   const greetingText = React.useMemo(() => {
     const hour = new Date().getHours();
     let timeGreeting = "";
 
+    if (language === 'es') {
+      if (hour >= 5 && hour < 12) timeGreeting = "Buenos días";
+      else if (hour >= 12 && hour < 20) timeGreeting = "Buenas tardes";
+      else timeGreeting = "Buenas noches";
+      return `${timeGreeting}. <span translate="no">Soy Soul</span>.<br />¿Qué quieres saber sobre Álex?`;
+    }
+
     if (hour >= 5 && hour < 12) timeGreeting = "Good morning";
     else if (hour >= 12 && hour < 20) timeGreeting = "Good afternoon";
     else timeGreeting = "Good evening";
-    return `${timeGreeting}. <span translate="no">I’m Soul</span>. <br /> What do you want to know about Álex?`;
-  }, []);
+    return `${timeGreeting}. <span translate="no">I’m Soul</span>.<br />What do you want to know about Álex?`;
+  }, [language]);
 
+  const introText = language === 'es'
+    ? "¡Hola! Estoy aquí para responder cualquier pregunta sobre Alex, su experiencia y su forma de trabajar. Puedes elegir uno de los prompts sugeridos o preguntarme directamente lo que quieras saber."
+    : "Hi! I'm here to answer any questions about Alex, his experience, and the way he works. You can choose one of the suggested prompts or simply ask me anything you'd like to know.";
 
   const SOUL_SUGGESTIONS = [
-    { label: t('soul_suggestion_about'), key: "about" },
-    { label: t('soul_suggestion_current'), key: "current" },
-    { label: t('soul_suggestion_skills'), key: "skills" },
-    { label: t('soul_suggestion_located'), key: "located" },
-    { label: t('soul_suggestion_bronx'), key: "bronx" },
-    { label: t('soul_suggestion_social'), key: "social" }
+    { label: `👤 ${t('soul_suggestion_about')}`, key: "about" },
+    { label: `💼 ${t('soul_suggestion_current')}`, key: "current" },
+    { label: `⚡ ${t('soul_suggestion_skills')}`, key: "skills" },
+    { label: `📍 ${t('soul_suggestion_located')}`, key: "located" },
+    { label: `🐶 ${t('soul_suggestion_bronx')}`, key: "bronx" },
+    { label: `🔗 ${t('soul_suggestion_social')}`, key: "social" }
   ];
 
   return (
@@ -235,10 +200,15 @@ export const Soul = () => {
       <section className="soul-hero">
         <div className="soul-content">
           <div className="soul-greeting">
+            <div className="soul-avatar-wrapper">
+              <img src="/soul-mascot.png" alt="Soul mascot" className="soul-avatar-img" />
+            </div>
             <h1 className="greeting-text">
-              <span style={{ marginRight: '12px', verticalAlign: 'middle', display: 'inline-block' }}>🙃</span>
               <span dangerouslySetInnerHTML={{ __html: greetingText }} />
             </h1>
+            <p className="soul-intro-text">
+              {introText}
+            </p>
             
             <div className="suggestion-pills">
               {SOUL_SUGGESTIONS.map(s => (
@@ -255,13 +225,15 @@ export const Soul = () => {
                 key={m.id}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="chat-row"
+                className={`chat-row chat-row--${m.role}`}
               >
-                <div className="role-indicator">
-                  <div className="dot" />
-                  <span className="role-name">{m.role === 'user' ? 'You' : 'Soul'}</span>
-                </div>
-                <div className="message-text">
+                {m.role === 'assistant' && (
+                  <div className="role-indicator">
+                    <div className="dot" />
+                    <span className="role-name">Soul</span>
+                  </div>
+                )}
+                <div className={`message-bubble message-bubble--${m.role}`}>
                   {(() => {
                     const content = m.content;
                     
@@ -347,7 +319,7 @@ export const Soul = () => {
             ))}
             
             {isTyping && (
-              <div className="chat-row typing">
+              <div className="chat-row chat-row--assistant typing">
                 <div className="role-indicator">
                   <div className="dot" />
                   <span className="role-name">Soul</span>
@@ -361,30 +333,35 @@ export const Soul = () => {
             )}
             <div ref={messagesEndRef} />
           </div>
-
-          <div className="soul-input-area">
-            <form className="input-form" onSubmit={(e) => { e.preventDefault(); handleSend(input); }}>
-              <div className="input-container">
-                <div className={`custom-caret ${input || isFocused ? 'hidden' : ''}`} />
-                <input 
-                  ref={inputRef}
-                  autoFocus
-                  type="text" 
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onFocus={() => setIsFocused(true)}
-                  onBlur={() => setIsFocused(false)}
-                  placeholder={displayedPlaceholder}
-                  className="soul-input"
-                />
-                <button type="submit" className="send-btn" disabled={!input.trim() || isTyping}>
-                  {t('soul_send')}
-                </button>
-              </div>
-            </form>
-          </div>
         </div>
       </section>
+
+      <div className="soul-input-bar">
+        <form className="hero-prompt-container soul-prompt-container" onSubmit={(e) => { e.preventDefault(); handleSend(input); }}>
+          <input
+            ref={inputRef}
+            autoFocus
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onFocus={() => setIsFocused(true)}
+            onBlur={() => setIsFocused(false)}
+            placeholder={displayedPlaceholder || "Ask anything about Álex"}
+            className="hero-prompt-input"
+          />
+          <div className="hero-prompt-actions">
+            <button
+              type="submit"
+              className="prompt-submit-btn"
+              disabled={!input.trim() || isTyping}
+              title="Send"
+              aria-label="Submit"
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </form>
+      </div>
     </main>
   );
 };

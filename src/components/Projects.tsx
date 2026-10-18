@@ -15,12 +15,12 @@ const Balloon = ({ className }: { className?: string }) => (
 );
 
 export const Projects = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
   return (
     <section className="projects page-wrapper">
       <div className="projects-list">
         {/* Waykout — Large */}
-        <Link to={`/${language}/project/waykout`} className="project-item">
+        <Link to="/project/waykout" className="project-item">
           <div className="project-image large project-waykout">
             <div className="project-waykout-content">
               <div className="project-waykout-text">

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { SEO } from '../components/SEO';
-import { motion } from 'framer-motion';
 
 import iconsVar from '../assets/images/icons-var.png?format=webp&w=908';
 import modesImg from '../assets/images/modes.png?format=webp&w=1324';
@@ -83,33 +82,23 @@ export const Articles = () => {
       
       <header className="articles-header">
         <div className="articles-title-container">
-          <motion.h1 
-            className="section-title"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <h1 className="section-title">
             {t('articles_title')}
-          </motion.h1>
+          </h1>
         </div>
       </header>
 
       <section className="articles-list">
-        {ARTICLES.map((article, index) => (
-          <motion.div
-            key={article.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Link to={`/${language}/articles/${article.id}`} className="article-item">
+        {ARTICLES.map((article) => (
+          <div key={article.id}>
+            <Link to={`/articles/${article.id}`} className="article-item">
               <div className="article-content">
                 <div className="article-meta">
                   <span className="article-category">{article.category}</span>
                   <span className="meta-sep">•</span>
                   <span className="article-date">{article.date}</span>
                   <span className="meta-sep">•</span>
-                  <span className="article-readtime">{article.readTime} min read</span>
+                  <span className="article-readtime">{article.readTime} {t('articles_min_read')}</span>
                 </div>
                 
                 <h2 className="article-title">{article.title[language]}</h2>
@@ -120,7 +109,7 @@ export const Articles = () => {
                 <img src={article.image} alt={article.title[language]} className="article-image" />
               </div>
             </Link>
-          </motion.div>
+          </div>
         ))}
       </section>
     </main>

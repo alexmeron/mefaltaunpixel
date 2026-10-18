@@ -17,15 +17,29 @@ const SEO_DATA = {
     title: "Soul — Álex Salmerón's AI Design Assistant",
     desc: "Chat with Soul, the personal AI assistant of Álex Salmerón, product designer based in Murcia. Ask about his experience, skills, Design Systems work and how to get in touch."
   },
-  articles: {
-    title: "Articles by Álex Salmerón — Design Systems, Figma & Product Design",
-    desc: "Articles and reflections by Álex Salmerón on Design Systems, Figma workflows, DesignOps and the future of product design. Written from 15+ years of experience."
+  resources: {
+    title: "Recursos creados para la comunidad de diseño — Álex Salmerón",
+    desc: "Plugins, librerías y herramientas desarrolladas a partir de mi experiencia en diseño de producto, Design Systems y optimización de flujos de trabajo. Creados para compartir conocimiento y ayudar a otros diseñadores a trabajar mejor."
   },
   projects: {
+    title: "Proyectos que dan forma a mejores experiencias digitales — Álex Salmerón",
+    desc: "Una selección de proyectos en los que exploro el diseño de producto, los sistemas de diseño y nuevas formas de conectar diseño, tecnología e IA para resolver problemas reales.",
     waykout: {
       title: "Waykout Case Study — Product Design by Álex Salmerón",
       desc: "Waykout is a collaborative tourism platform for authentic local experiences in Murcia, Spain. Full product design and MVP by Álex Salmerón, Senior Product Designer."
+    },
+    animal_rescue: {
+      title: "Ayuda Incendios Madrid y Ávila 2025 | Product Design & AI — Álex Salmerón",
+      desc: "Plataforma con IA para emparejar avisos de auxilio animal por cercanía y necesidad durante los incendios de Madrid y Ávila. Side project por Álex Salmerón."
+    },
+    gaztelugatxe_tracker: {
+      title: "Gaztelugatxe Tickets Tracker — Automation & Case Study by Álex Salmerón",
+      desc: "Rastreador y automatizador de reservas para San Juan de Gaztelugatxe ante cancelaciones en tiempo real. Side project por Álex Salmerón."
     }
+  },
+  articles: {
+    title: "Articles by Álex Salmerón — Design Systems, Figma & Product Design",
+    desc: "Articles and reflections by Álex Salmerón on Design Systems, Figma workflows, DesignOps and the future of product design. Written from 15+ years of experience."
   },
   articles_list: {
     'design-systems-scale': {
@@ -108,6 +122,55 @@ const HTML_CONTENT = {
       <p>Chat with Soul, the personal AI assistant of Álex Salmerón. Ask about his experience, Design Systems work, current role at Cella Medical Solutions, Figma plugins, or how to get in touch.</p>
     </main>
   `,
+  resources: `
+    <header>
+      <h1>Resources built for the design community — Álex Salmerón</h1>
+      <p>Plugins, libraries, and tools developed from my experience in Product Design, Design Systems, and workflow optimization. Created to share knowledge and help other designers work better.</p>
+    </header>
+    <main>
+      <section>
+        <h2>Figma Plugins &amp; Design System Resources</h2>
+        <article>
+          <h3>Variables Timeline</h3>
+          <p>Real-time change log for Figma variables. Track every update, author, and value—right inside your file.</p>
+        </article>
+        <article>
+          <h3>UI Flow Documentation Sample</h3>
+          <p>UI flow documentation in Figma. Annotations on user flows and component behavior.</p>
+        </article>
+        <article>
+          <h3>Infinite Variable Modes</h3>
+          <p>Create and manage unlimited variable modes in Figma. Build scalable design systems without limits.</p>
+        </article>
+        <article>
+          <h3>Component Documentation Structure</h3>
+          <p>Figma workflow structure to build understandable component libraries.</p>
+        </article>
+        <article>
+          <h3>Components Explorer</h3>
+          <p>Find and manage all your components in one place. Instantly locate instances.</p>
+        </article>
+        <article>
+          <h3>Icon Library with Variables</h3>
+          <p>Control your entire icon library with variables.</p>
+        </article>
+      </section>
+    </main>
+  `,
+  projects: `
+    <header>
+      <h1>Projects shaping better digital experiences — Álex Salmerón</h1>
+      <p>A selection of projects exploring Product Design, Design Systems, and new ways to connect design, technology, and AI to solve real-world problems.</p>
+    </header>
+    <main>
+      <section>
+        <article>
+          <h2><a href="/project/waykout">Waykout — Collaborative Tourism Platform</a></h2>
+          <p>Full product design and MVP for a collaborative tourism platform to discover and book authentic local experiences in Spain.</p>
+        </article>
+      </section>
+    </main>
+  `,
   articles: `
     <header>
       <h1>Articles by Álex Salmerón — Design Systems, Figma &amp; Product Design</h1>
@@ -134,6 +197,22 @@ const HTML_CONTENT = {
     <main>
       <p>Waykout is a marketplace for authentic local tourist experiences in the Region of Murcia, Spain. Full product design, UX research and MVP led by Álex Salmerón, Senior Product Designer and co-founder.</p>
       <p>The design focused on removing barriers to entry for hosts and travelers in a low-digitized sector, implementing passwordless authentication, AI-assisted publishing, and a comprehensive Figma UI Kit.</p>
+    </main>
+  `,
+  project_animal_rescue: `
+    <header>
+      <h1>Ayuda Incendios Madrid y Ávila 2025 — Case Study by Álex Salmerón</h1>
+    </header>
+    <main>
+      <p>Plataforma de matching ágil para conectar avisos de auxilio y rescate animal con personas voluntarias durante los incendios de Madrid y Ávila 2025.</p>
+    </main>
+  `,
+  project_gaztelugatxe_tracker: `
+    <header>
+      <h1>Gaztelugatxe Tickets Tracker — Case Study by Álex Salmerón</h1>
+    </header>
+    <main>
+      <p>Rastreador y automatizador de reservas en tiempo real para cancelaciones en San Juan de Gaztelugatxe.</p>
     </main>
   `,
   article_ds: `
@@ -169,7 +248,6 @@ const SCHEMA_DATA = {
   "alternateName": "Alex Salmeron",
   "jobTitle": "Senior Product Designer",
   "url": "https://www.mefaltaunpixel.es",
-  "email": "pixel@mefaltaunpixel.es",
   "image": "https://www.mefaltaunpixel.es/og-image.png",
   "description": "Senior Product Designer based in Murcia, Spain, with 15+ years of experience. Specialized in Visual Design, Design Systems and DesignOps.",
   "address": {
@@ -215,11 +293,11 @@ const ROUTES = [
   { path: '', seoKey: 'home', contentKey: 'home' },
   { path: 'about', seoKey: 'about', contentKey: 'about' },
   { path: 'soul', seoKey: 'soul', contentKey: 'soul' },
-  { path: 'articles', seoKey: 'articles', contentKey: 'articles' },
+  { path: 'resources', seoKey: 'resources', contentKey: 'resources' },
+  { path: 'projects', seoKey: 'projects', contentKey: 'projects' },
   { path: 'project/waykout', seoKey: 'projects.waykout', contentKey: 'project_waykout' },
-  { path: 'articles/design-systems-scale', seoKey: 'articles_list.design-systems-scale', contentKey: 'article_ds' },
-  { path: 'articles/figma-variables-workflow', seoKey: 'articles_list.figma-variables-workflow', contentKey: 'article_variables' },
-  { path: 'articles/product-design-future', seoKey: 'articles_list.product-design-future', contentKey: 'article_ai' }
+  { path: 'project/animal-rescue', seoKey: 'projects.animal_rescue', contentKey: 'project_animal_rescue' },
+  { path: 'project/gaztelugatxe-tracker', seoKey: 'projects.gaztelugatxe_tracker', contentKey: 'project_gaztelugatxe_tracker' }
 ];
 
 function ensureDirSync(dirPath) {
@@ -333,7 +411,9 @@ function generateSitemap() {
     { path: '', priority: '1.0', changefreq: 'weekly' },
     { path: 'about', priority: '0.8', changefreq: 'weekly' },
     { path: 'soul', priority: '0.8', changefreq: 'weekly' },
-    { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' }
+    { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' },
+    { path: 'project/animal-rescue', priority: '0.8', changefreq: 'monthly' },
+    { path: 'project/gaztelugatxe-tracker', priority: '0.8', changefreq: 'monthly' }
   ];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
