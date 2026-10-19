@@ -579,19 +579,6 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
         alt: 'Table order list in light theme',
       },
     ],
-    results: {
-      heading: { es: 'Impacto & Comunidad en Dribbble', en: 'Impact & Community Reach' },
-      body: {
-        es: 'Estas exploraciones han servido como base para componentes reales de producción en clientes y proyectos propios, además de generar feedback valioso de la comunidad internacional de diseño.',
-        en: 'These explorations have served as the foundation for production-ready design system components in client work, while driving engagement across the global design community.',
-      },
-      metrics: [
-        { numEs: '100% Figma', numEn: '100% Figma', lblEs: 'auto-layout & tokens', lblEn: 'auto-layout & tokens' },
-        { numEs: 'B2B SaaS', numEn: 'B2B SaaS', lblEs: 'alta densidad de datos', lblEn: 'high data density' },
-        { numEs: 'Dark & Light', numEn: 'Dark & Light', lblEs: 'paridad de modos', lblEn: 'mode parity' },
-        { numEs: 'Producción', numEn: 'Production', lblEs: 'listo para código', lblEn: 'developer-ready' },
-      ],
-    },
   },
 };
 
