@@ -35,6 +35,10 @@ const SEO_DATA = {
     gaztelugatxe_tracker: {
       title: "Gaztelugatxe Tickets Tracker — Automation & Case Study by Álex Salmerón",
       desc: "Rastreador y automatizador de reservas para San Juan de Gaztelugatxe ante cancelaciones en tiempo real. Side project por Álex Salmerón."
+    },
+    dribbble: {
+      title: "Dribbble Explorations & UI Design | Álex Salmerón",
+      desc: "Colección de conceptos de diseño de producto, sistemas de diseño, dashboards y microinteracciones por Álex Salmerón."
     }
   },
   articles: {
@@ -215,6 +219,14 @@ const HTML_CONTENT = {
       <p>Rastreador y automatizador de reservas en tiempo real para cancelaciones en San Juan de Gaztelugatxe.</p>
     </main>
   `,
+  project_dribbble: `
+    <header>
+      <h1>Dribbble Explorations &amp; UI Design — Álex Salmerón</h1>
+    </header>
+    <main>
+      <p>Colección de conceptos de diseño de producto, sistemas de interfaz, data grids y flujos móviles compartidos en Dribbble por Álex Salmerón.</p>
+    </main>
+  `,
   article_ds: `
     <header>
       <h1>Design Systems at Scale: The Xnorb Case — by Álex Salmerón</h1>
@@ -297,7 +309,8 @@ const ROUTES = [
   { path: 'projects', seoKey: 'projects', contentKey: 'projects' },
   { path: 'project/waykout', seoKey: 'projects.waykout', contentKey: 'project_waykout' },
   { path: 'project/animal-rescue', seoKey: 'projects.animal_rescue', contentKey: 'project_animal_rescue' },
-  { path: 'project/gaztelugatxe-tracker', seoKey: 'projects.gaztelugatxe_tracker', contentKey: 'project_gaztelugatxe_tracker' }
+  { path: 'project/gaztelugatxe-tracker', seoKey: 'projects.gaztelugatxe_tracker', contentKey: 'project_gaztelugatxe_tracker' },
+  { path: 'project/dribbble', seoKey: 'projects.dribbble', contentKey: 'project_dribbble' }
 ];
 
 function ensureDirSync(dirPath) {

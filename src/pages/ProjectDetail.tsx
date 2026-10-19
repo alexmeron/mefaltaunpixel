@@ -423,6 +423,176 @@ const CASE_STUDIES: Record<string, CaseStudyData> = {
       ],
     },
   },
+
+  dribbble: {
+    id: 'dribbble',
+    seoTitle: 'Dribbble Explorations & UI Design | Álex Salmerón',
+    seoDesc: 'Colección de conceptos de diseño de producto, sistemas de diseño, dashboards y microinteracciones por Álex Salmerón.',
+    title: 'Dribbble Explorations',
+    logoNode: (
+      <div className="w-14 h-14 rounded-2xl bg-[#EA4C89] flex items-center justify-center text-white flex-shrink-0 shadow-sm">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94" />
+          <path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32" />
+          <path d="M8.56 2.75c4.37 6 6 9.42 8 17.72" />
+        </svg>
+      </div>
+    ),
+    lead: {
+      es: 'Exploraciones de diseño para gestión de pedidos, tablas de alta densidad y drawers contextuales',
+      en: 'Design explorations for order management, high-density data tables, and contextual drawers',
+    },
+    body: {
+      es: 'Una serie completa de diseño de interfaz para herramientas B2B enfocada en la gestión de pedidos. Aborda desde la visualización de grandes volúmenes de datos con paridad total entre Light y Dark theme, hasta estados progresivos de carga con skeletons y paneles deslizantes (drawers) de inspección rápida.',
+      en: 'A complete B2B UI design suite for order management. It explores high-density data visualization with full Light and Dark theme parity, progressive skeleton loading states, and quick-inspection contextual slide drawers.',
+    },
+    meta: {
+      category: 'Product Design / UI & Interactions',
+      year: '2025',
+      role: 'Senior Product Designer',
+      externalLink: {
+        href: 'https://dribbble.com/mefaltaunpixel',
+        label: { es: 'Ver perfil en Dribbble', en: 'View Dribbble profile' },
+      },
+    },
+    twoCol: [
+      {
+        heading: { es: 'Paridad cromática y consistencia', en: 'Chromatic parity & consistency' },
+        text: {
+          es: 'Cada vista fue concebida simultáneamente en modo claro y modo oscuro. Ajustar tokens semánticos independientes para bordes, sombras, badges de estado y fondos garantiza que la jerarquía y legibilidad permanezcan intactas sin importar las condiciones de luz del usuario.',
+          en: 'Every screen was conceived simultaneously in light and dark modes. Tuning independent semantic tokens for borders, elevation shadows, status badges, and surface backgrounds ensures hierarchy and contrast remain pristine regardless of ambient lighting.',
+        },
+      },
+      {
+        heading: { es: 'Reducción de fricción en la navegación', en: 'Frictionless contextual navigation' },
+        text: {
+          es: 'En lugar de forzar al usuario a abandonar el listado principal para consultar detalles de una orden, implementamos un drawer lateral contextual. Combinado con estados skeleton durante la carga y notificaciones de nuevos pedidos en tiempo real, se minimiza la carga cognitiva del operador.',
+          en: 'Instead of forcing operators to leave the primary grid to inspect order details, we engineered a contextual slide-over drawer. Combined with skeleton feedback during data fetches and real-time order alerts, operator cognitive load is drastically reduced.',
+        },
+      },
+    ],
+    showcaseScreens: [
+      {
+        number: '01',
+        tag: { es: 'Data Grid · Dark Mode', en: 'Data Grid · Dark Mode' },
+        title: {
+          es: 'Orders list + Drawer details (Dark theme)',
+          en: 'Orders list + Drawer details (Dark theme)',
+        },
+        desc: {
+          es: 'Tabla de pedidos de alta densidad en modo oscuro con panel lateral (drawer) para consultar el desglose completo del pedido sin abandonar la vista principal.',
+          en: 'High-density dark theme orders table with contextual slide drawer to inspect order specs without navigating away from the main list.',
+        },
+        url: 'dribbble.com/shots/27813070-Orders-list-Drawer-details',
+        src: '/dribbble-shots/shot-1-orders-list-drawer-dark.webp',
+        alt: 'Orders list + Drawer details in dark mode',
+      },
+      {
+        number: '02',
+        tag: { es: 'Data Grid · Light Mode', en: 'Data Grid · Light Mode' },
+        title: {
+          es: 'Orders list + Drawer details (Light theme)',
+          en: 'Orders list + Drawer details (Light theme)',
+        },
+        desc: {
+          es: 'Paridad completa en modo claro: estructura tabular limpia, contraste optimizado para entornos diurnos y navegación contextual con drawer lateral.',
+          en: 'Full light mode parity: crisp tabular architecture, daylight-optimized contrast, and contextual drawer interaction.',
+        },
+        url: 'dribbble.com/shots/27812292-Orders-list-Drawer-details',
+        src: '/dribbble-shots/shot-2-orders-list-drawer-light.webp',
+        alt: 'Orders list + Drawer details in light mode',
+      },
+      {
+        number: '03',
+        tag: { es: 'Alerts & Feedback · Light', en: 'Alerts & Feedback · Light' },
+        title: {
+          es: 'New order notification (Light theme)',
+          en: 'New order notification (Light theme)',
+        },
+        desc: {
+          es: 'Notificación contextual emergente de nuevo pedido con CTA directo para acceder a la gestión y cálculo dinámico de tiempos.',
+          en: 'Contextual new order alert toast with direct action CTA and real-time order processing feedback.',
+        },
+        url: 'dribbble.com/shots/27813062-New-order-notification-Light-theme',
+        src: '/dribbble-shots/shot-3-new-order-notification-light.webp',
+        alt: 'New order notification in light theme',
+      },
+      {
+        number: '04',
+        tag: { es: 'Detail Drawer · Light', en: 'Detail Drawer · Light' },
+        title: {
+          es: 'Details order - Drawer (Light mode)',
+          en: 'Details order - Drawer (Light mode)',
+        },
+        desc: {
+          es: 'Vista detallada del drawer lateral en modo claro: desglose de artículos, información del cliente, dirección de entrega y línea de tiempo de estados.',
+          en: 'Detailed slide drawer spec in light mode: itemized breakdown, customer details, delivery address, and status timeline.',
+        },
+        url: 'dribbble.com/shots/27812770-Details-order-Drawer-Light-mode',
+        src: '/dribbble-shots/shot-4-details-drawer-light.webp',
+        alt: 'Details order drawer in light mode',
+      },
+      {
+        number: '05',
+        tag: { es: 'Detail Drawer · Dark', en: 'Detail Drawer · Dark' },
+        title: {
+          es: 'Details order - Drawer (Dark mode)',
+          en: 'Details order - Drawer (Dark mode)',
+        },
+        desc: {
+          es: 'Exploración del panel de detalle en dark mode con jerarquía cromática cuidada, tarjetas de datos contrastadas y acciones contextuales rápidas.',
+          en: 'Dark mode detail panel exploration with disciplined contrast, high-legibility data cards, and rapid status actions.',
+        },
+        url: 'dribbble.com/shots/27812767-Details-order-Drawer-Dark-mode',
+        src: '/dribbble-shots/shot-5-details-drawer-dark.webp',
+        alt: 'Details order drawer in dark mode',
+      },
+      {
+        number: '06',
+        tag: { es: 'Loading States · Skeletons', en: 'Loading States · Skeletons' },
+        title: {
+          es: 'Table Skeleton + Date Range Picker (Light)',
+          en: 'Table Skeleton + Date Range Picker (Light)',
+        },
+        desc: {
+          es: 'Estructura de feedback visual con skeleton loaders para mitigar la percepción de latencia en la carga de datos, complementado con un selector de rango de fechas modular.',
+          en: 'Progressive visual feedback with skeleton loaders mitigating perceived latency during data fetches, paired with a modular date range picker.',
+        },
+        url: 'dribbble.com/shots/27810764-Table-Skeleton-Date-Range-Picker-Light',
+        src: '/dribbble-shots/shot-6-table-skeleton-picker-light.webp',
+        alt: 'Table Skeleton and Date Range Picker in light mode',
+      },
+      {
+        number: '07',
+        tag: { es: 'Data Grid · Light Overview', en: 'Data Grid · Light Overview' },
+        title: {
+          es: 'Table · order list (Light theme)',
+          en: 'Table · order list (Light theme)',
+        },
+        desc: {
+          es: 'Vista tabular completa de pedidos en modo claro sin drawer: alineación matemática de columnas, badges semánticos de estado y controles de paginación.',
+          en: 'Full-width light theme orders data grid: column alignment, semantic status pills, and pagination controls.',
+        },
+        url: 'dribbble.com/shots/27810825-Table-order-list-Light',
+        src: '/dribbble-shots/shot-7-table-order-list-light.webp',
+        alt: 'Table order list in light theme',
+      },
+    ],
+    results: {
+      heading: { es: 'Impacto & Comunidad en Dribbble', en: 'Impact & Community Reach' },
+      body: {
+        es: 'Estas exploraciones han servido como base para componentes reales de producción en clientes y proyectos propios, además de generar feedback valioso de la comunidad internacional de diseño.',
+        en: 'These explorations have served as the foundation for production-ready design system components in client work, while driving engagement across the global design community.',
+      },
+      metrics: [
+        { numEs: '100% Figma', numEn: '100% Figma', lblEs: 'auto-layout & tokens', lblEn: 'auto-layout & tokens' },
+        { numEs: 'B2B SaaS', numEn: 'B2B SaaS', lblEs: 'alta densidad de datos', lblEn: 'high data density' },
+        { numEs: 'Dark & Light', numEn: 'Dark & Light', lblEs: 'paridad de modos', lblEn: 'mode parity' },
+        { numEs: 'Producción', numEn: 'Production', lblEs: 'listo para código', lblEn: 'developer-ready' },
+      ],
+    },
+  },
 };
 
 export const ProjectDetail = () => {
@@ -646,7 +816,7 @@ export const ProjectDetail = () => {
               </div>
 
               <div
-                className="waykout-showcase-grey-box"
+                className={`waykout-showcase-grey-box ${activeData.id === 'dribbble' ? 'dribbble-showcase-grey-box' : ''}`}
                 onClick={() => setLightboxIndex(idx)}
                 role="button"
                 tabIndex={0}
@@ -658,24 +828,36 @@ export const ProjectDetail = () => {
                 }}
                 aria-label={`Ampliar captura ${item.number}: ${item.title[language]}`}
               >
-                <div className="waykout-showcase-cropped-card">
-                  <div className="waykout-browser-bar">
-                    <div className="browser-dots">
-                      <span className="browser-dot dot-red"></span>
-                      <span className="browser-dot dot-yellow"></span>
-                      <span className="browser-dot dot-green"></span>
-                    </div>
-                  </div>
-                  <div className="waykout-cropped-viewport">
+                {activeData.id === 'dribbble' ? (
+                  <div className="dribbble-showcase-frame">
                     <img
                       src={item.src}
                       alt={item.alt}
-                      className="waykout-cropped-img"
+                      className="dribbble-showcase-img"
                       loading={idx < 2 ? 'eager' : 'lazy'}
                       decoding="async"
                     />
                   </div>
-                </div>
+                ) : (
+                  <div className="waykout-showcase-cropped-card">
+                    <div className="waykout-browser-bar">
+                      <div className="browser-dots">
+                        <span className="browser-dot dot-red"></span>
+                        <span className="browser-dot dot-yellow"></span>
+                        <span className="browser-dot dot-green"></span>
+                      </div>
+                    </div>
+                    <div className="waykout-cropped-viewport">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="waykout-cropped-img"
+                        loading={idx < 2 ? 'eager' : 'lazy'}
+                        decoding="async"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.article>
           ))}
