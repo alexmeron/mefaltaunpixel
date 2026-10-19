@@ -484,6 +484,175 @@ export const SOUL_KNOWLEDGE: KnowledgeEntry[] = [
   },
   {
     keywords: [
+      "casco anti ceo",
+      "casco de la mascota",
+      "casco que pone anti ceo",
+      "por que la mascota de alex lleva un casco",
+      "porque la mascota de alex lleva un casco",
+      "por que la mascota lleva un casco",
+      "porque la mascota lleva un casco",
+      "mascota anti ceo",
+      "perro anti ceo",
+      "bronx anti ceo",
+      "anti ceo helmet",
+      "mascot helmet",
+      "why does the mascot wear a helmet",
+      "why does the dog wear a helmet",
+    ],
+    responseEn:
+      "Because someone had to bring a little excitement into the corporate world. 😂 It's a humorous provocation, not a declaration of enmity against all CEOs. Peace in the boardroom.",
+    responseEs:
+      "Porque alguien tenía que ponerle un poco de emoción al mundo corporativo. 😂 Es una provocación humorística, no una declaración de enemistad con todos los CEOs. Tranquilidad en la sala de juntas.",
+  },
+  {
+    keywords: [
+      "alex odia a los ceos",
+      "odia a los ceos",
+      "odias a los ceos",
+      "odio a los ceos",
+      "does alex hate ceos",
+      "do you hate ceos",
+      "alex hates ceos",
+      "hate ceos",
+    ],
+    responseEn: [
+      "Hate is a very strong word. Let's just say Alex believes the CEO title doesn't automatically unlock the achievement of knowing everything.",
+      "Not at all! 😂 The ANTI CEO thing is just humor, not an arrest warrant. Alex doesn't have a declared war against CEOs. Though I admit the helmet sparks more questions than some board meetings.",
+    ],
+    responseEs: [
+      "Odiar es una palabra muy fuerte. Digamos que Alex cree que el cargo de CEO no desbloquea automáticamente el logro de saber de todo.",
+      "¡Qué va! 😂 Lo de ANTI CEO es humor, no una orden de busca y captura. Alex no tiene una guerra declarada contra los CEOs. Aunque admito que el casco genera más preguntas que algunas reuniones de dirección.",
+    ],
+  },
+  {
+    keywords: [
+      "alex se lleva mal con los ceos",
+      "se lleva mal con los ceos",
+      "te llevas mal con los ceos",
+      "lleva mal con ceos",
+      "llevarse mal con ceos",
+      "mala relacion con ceos",
+      "does alex get along with ceos",
+      "does alex get along poorly with ceos",
+      "get along with ceos",
+      "bad terms with ceos",
+      "bad relationship with ceos",
+    ],
+    responseEn: [
+      "Not necessarily. But I suspect Alex and a CEO who confuses authority with judgment would have quite a few interesting meetings. And not exactly because of the coffee.",
+      "I have no data suggesting Alex has any general conflict with CEOs. And of course, a helmet with a provocative slogan doesn't prove such conflict exists. Next question, please—we're turning this into an extraordinary shareholder meeting.",
+    ],
+    responseEs: [
+      "No necesariamente. Pero sospecho que Alex y un CEO que confunda autoridad con criterio tendrían unas cuantas reuniones interesantes. Y no precisamente por el café.",
+      "No tengo información que indique que Alex tenga un conflicto general con los CEOs. Y desde luego, un casco con un mensaje provocador no demuestra que exista tal conflicto. Siguiente pregunta, que estamos convirtiendo esto en una junta extraordinaria.",
+    ],
+  },
+  {
+    keywords: [
+      "cuanto le gustan los ceos a alex",
+      "cuanto le gustan los ceos",
+      "cuanto te gustan los ceos",
+      "le gustan los ceos",
+      "gustan los ceos",
+      "admiracion por los ceos",
+      "how much does alex like ceos",
+      "does alex like ceos",
+      "how does alex feel about ceos",
+    ],
+    responseEn: [
+      "Let's say his admiration for someone isn't directly proportional to the size of their corner office. But he wouldn't dismiss a CEO who listens, has good judgment, and understands that leading doesn't mean always being right.",
+      "Enough not to judge them all the same. Our mascot's helmet is more of a humorous provocation than a declaration of war. We don't cancel anyone around here based on their job title.",
+    ],
+    responseEs: [
+      "Digamos que su admiración por alguien no es directamente proporcional al tamaño de su despacho. Pero tampoco descartaría a un CEO que sepa escuchar, tenga criterio y entienda que dirigir no significa tener siempre razón.",
+      "Lo suficiente como para no juzgarlos a todos por igual. El casco de nuestra mascota tiene más de provocación humorística que de declaración de guerra. Aquí no cancelamos a nadie por su cargo.",
+    ],
+  },
+  {
+    keywords: [
+      "por que no le gustan los ceos a alex",
+      "porque no le gustan los ceos a alex",
+      "por que no le gustan los ceos",
+      "porque no le gustan los ceos",
+      "a alex no le gustan los ceos",
+      "alex no le gustan los ceos",
+      "no le gustan los ceos",
+      "no le caen bien los ceos",
+      "why doesn't alex like ceos",
+      "why does alex dislike ceos",
+      "alex doesn't like ceos",
+      "alex dislikes ceos",
+    ],
+    responseEn: [
+      "Who said he doesn't like them? I think you're taking a helmet a bit too literally. Laughing at corporate clichés is one thing; having a personal grudge against company leaders is something else entirely.",
+      "I have no record of any personal crusade. Provocative merch and actual conflict are two very different things. Let's not turn a helmet into a corporate crisis!",
+    ],
+    responseEs: [
+      "¿Quién ha dicho que no le gustan? Creo que estás interpretando demasiado literalmente un casco. Una cosa es reírse de ciertos clichés del mundo corporativo y otra muy distinta tener algo personal contra quienes dirigen empresas.",
+      "No me consta ninguna cruzada personal. El merchandising provocador y los conflictos reales son dos cosas diferentes. ¡No convirtamos un casco en una crisis corporativa!",
+    ],
+  },
+  {
+    keywords: [
+      "alex tiene algun problema con algun ceo",
+      "tiene algun problema con algun ceo",
+      "problema con algun ceo",
+      "problema con un ceo",
+      "conflicto con algun ceo",
+      "algun problema con ceos",
+      "bronca con algun ceo",
+      "does alex have a problem with any ceo",
+      "problem with a ceo",
+      "conflict with a ceo",
+      "beef with a ceo",
+    ],
+    responseEn:
+      "I'm not going to invent conflicts I have no record of. If there's any specific story, I don't have enough data to confirm it. For now, all we have is a rather provocative helmet and plenty of eagerness to read into it.",
+    responseEs:
+      "No voy a inventarme conflictos que no me constan. Si hay alguna historia concreta, no tengo información suficiente para confirmarla. De momento, solo tenemos un casco bastante provocador y muchas ganas de interpretarlo.",
+  },
+  {
+    keywords: [
+      "anti ceo",
+      "anti-ceo",
+      "anticeo",
+      "ceos",
+      "ceo",
+      "que opina de los ceos",
+      "que piensa de los ceos",
+      "opinion sobre los ceos",
+      "opinion de los ceos",
+      "what does alex think of ceos",
+      "thoughts on ceos",
+      "about ceos",
+    ],
+    responseEn: [
+      "Hate is a very strong word. Let's just say Alex believes the CEO title doesn't automatically unlock the achievement of knowing everything.",
+      "Not necessarily. But I suspect Alex and a CEO who confuses authority with judgment would have quite a few interesting meetings. And not exactly because of the coffee.",
+      "Let's say his admiration for someone isn't directly proportional to the size of their corner office. But he wouldn't dismiss a CEO who listens, has good judgment, and understands that leading doesn't mean always being right.",
+      "Enough not to judge them all the same. Our mascot's helmet is more of a humorous provocation than a declaration of war. We don't cancel anyone around here based on their job title.",
+      "Not at all! 😂 The ANTI CEO thing is just humor, not an arrest warrant. Alex doesn't have a declared war against CEOs. Though I admit the helmet sparks more questions than some board meetings.",
+      "Who said he doesn't like them? I think you're taking a helmet a bit too literally. Laughing at corporate clichés is one thing; having a personal grudge against company leaders is something else entirely.",
+      "I have no record of any personal crusade. Provocative merch and actual conflict are two very different things. Let's not turn a helmet into a corporate crisis!",
+      "I have no data suggesting Alex has any general conflict with CEOs. And of course, a helmet with a provocative slogan doesn't prove such conflict exists. Next question, please—we're turning this into an extraordinary shareholder meeting.",
+      "I'm not going to invent conflicts I have no record of. If there's any specific story, I don't have enough data to confirm it. For now, all we have is a rather provocative helmet and plenty of eagerness to read into it.",
+      "Because someone had to bring a little excitement into the corporate world. 😂 It's a humorous provocation, not a declaration of enmity against all CEOs. Peace in the boardroom.",
+    ],
+    responseEs: [
+      "Odiar es una palabra muy fuerte. Digamos que Alex cree que el cargo de CEO no desbloquea automáticamente el logro de saber de todo.",
+      "No necesariamente. Pero sospecho que Alex y un CEO que confunda autoridad con criterio tendrían unas cuantas reuniones interesantes. Y no precisamente por el café.",
+      "Digamos que su admiración por alguien no es directamente proporcional al tamaño de su despacho. Pero tampoco descartaría a un CEO que sepa escuchar, tenga criterio y entienda que dirigir no significa tener siempre razón.",
+      "Lo suficiente como para no juzgarlos a todos por igual. El casco de nuestra mascota tiene más de provocación humorística que de declaración de guerra. Aquí no cancelamos a nadie por su cargo.",
+      "¡Qué va! 😂 Lo de ANTI CEO es humor, no una orden de busca y captura. Alex no tiene una guerra declarada contra los CEOs. Aunque admito que el casco genera más preguntas que algunas reuniones de dirección.",
+      "¿Quién ha dicho que no le gustan? Creo que estás interpretando demasiado literalmente un casco. Una cosa es reírse de ciertos clichés del mundo corporativo y otra muy distinta tener algo personal contra quienes dirigen empresas.",
+      "No me consta ninguna cruzada personal. El merchandising provocador y los conflictos reales son dos cosas diferentes. ¡No convirtamos un casco en una crisis corporativa!",
+      "No tengo información que indique que Alex tenga un conflicto general con los CEOs. Y desde luego, un casco con un mensaje provocador no demuestra que exista tal conflicto. Siguiente pregunta, que estamos convirtiendo esto en una junta extraordinaria.",
+      "No voy a inventarme conflictos que no me constan. Si hay alguna historia concreta, no tengo información suficiente para confirmarla. De momento, solo tenemos un casco bastante provocador y muchas ganas de interpretarlo.",
+      "Porque alguien tenía que ponerle un poco de emoción al mundo corporativo. 😂 Es una provocación humorística, no una declaración de enemistad con todos los CEOs. Tranquilidad en la sala de juntas.",
+    ],
+  },
+  {
+    keywords: [
       "vida fuera de figma",
       "life outside figma",
       "hobbies",
@@ -652,7 +821,8 @@ export const isSpanishQuery = (text: string, fallbackLanguage?: string): boolean
     "habilidad", "habilidades", "herramientas", "tecnologias", "competencias", "conocimientos",
     "perro", "perrito", "mascota", "can", "bronx",
     "curriculum", "curriculo", "hoja", "vida", "educacion", "titulo", "grado",
-    "musica", "comida", "color", "favorito", "favorita", "favoritos", "favoritas", "secreto", "curiosidad"
+    "musica", "comida", "color", "favorito", "favorita", "favoritos", "favoritas", "secreto", "curiosidad",
+    "casco", "cascos", "odio", "odia", "odian", "odiar", "mal", "problema", "problemas", "junta"
   ]);
 
   // English vocabulary
@@ -663,7 +833,8 @@ export const isSpanishQuery = (text: string, fallbackLanguage?: string): boolean
     "tell", "about", "your", "my", "his", "her", "their", "our",
     "from", "with", "without", "under", "between", "into", "through", "during", "before", "after", "above", "below",
     "please", "thanks", "thank", "hello", "hey", "good", "morning", "afternoon", "evening", "night",
-    "current", "role", "skills", "located", "social", "dog", "work", "job", "show", "give", "know", "reach", "resume"
+    "current", "role", "skills", "located", "social", "dog", "work", "job", "show", "give", "know", "reach", "resume",
+    "helmet", "helmets", "hate", "hates", "hating", "problem", "problems", "board", "meeting"
   ]);
 
   let spanishScore = 0;
