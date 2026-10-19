@@ -31,24 +31,54 @@ const SUGGESTIONS = [
 ];
 
 const renderTextWithLinks = (text: string) => {
-  const parts = text.split(/(\[.*?\]\(.*?\))/g);
-  return parts.map((part, i) => {
-    const match = part.match(/\[(.*?)\]\((.*?)\)/);
-    if (match) {
+  // First split by markdown links [label](url)
+  const mdParts = text.split(/(\[.*?\]\(.*?\))/g);
+  return mdParts.map((mdPart, i) => {
+    const mdMatch = mdPart.match(/\[(.*?)\]\((.*?)\)/);
+    if (mdMatch) {
+      const isInternal = mdMatch[2].startsWith('/') || mdMatch[2].includes('mefaltaunpixel.es');
       return (
-        <a 
-          key={i} 
-          href={match[2]} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          key={`md-${i}`}
+          href={mdMatch[2]}
+          target={isInternal ? '_self' : '_blank'}
+          rel={isInternal ? undefined : 'noopener noreferrer'}
           className="cv-link"
           style={{ textDecoration: 'underline' }}
         >
-          {match[1]}
+          {mdMatch[1]}
         </a>
       );
     }
-    return part;
+
+    // Split plain text by raw URLs (http:// or https://)
+    const urlParts = mdPart.split(/(https?:\/\/[^\s]+)/g);
+    return urlParts.map((subPart, j) => {
+      if (subPart.startsWith('http://') || subPart.startsWith('https://')) {
+        const isInternal = subPart.includes('mefaltaunpixel.es');
+        return (
+          <a
+            key={`url-${i}-${j}`}
+            href={subPart}
+            target={isInternal ? '_self' : '_blank'}
+            rel={isInternal ? undefined : 'noopener noreferrer'}
+            className="cv-link"
+            style={{ textDecoration: 'underline', wordBreak: 'break-all' }}
+          >
+            {subPart}
+          </a>
+        );
+      }
+
+      // Handle **bold**
+      const boldParts = subPart.split(/(\*\*.*?\*\*)/g);
+      return boldParts.map((bPart, k) => {
+        if (bPart.startsWith('**') && bPart.endsWith('**')) {
+          return <strong key={`b-${i}-${j}-${k}`}>{bPart.slice(2, -2)}</strong>;
+        }
+        return bPart;
+      });
+    });
   });
 };
 
@@ -311,8 +341,22 @@ export const Soul = () => {
                       );
                     }
 
-                    // Default text rendering (with link support)
-                    return <p>{renderTextWithLinks(content)}</p>;
+                    // Default text rendering (with link and paragraph support)
+                    const paragraphs = content.split('\n\n');
+                    return (
+                      <div className="message-text-paragraphs">
+                        {paragraphs.map((p, idx) => (
+                          <p key={idx} style={idx > 0 ? { marginTop: '10px' } : undefined}>
+                            {p.split('\n').map((line, lineIdx) => (
+                              <React.Fragment key={lineIdx}>
+                                {lineIdx > 0 && <br />}
+                                {renderTextWithLinks(line)}
+                              </React.Fragment>
+                            ))}
+                          </p>
+                        ))}
+                      </div>
+                    );
                   })()}
                 </div>
               </motion.div>

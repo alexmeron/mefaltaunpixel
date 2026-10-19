@@ -41,6 +41,11 @@
   color: #121212;
 }
 
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 body {
   background-color: var(--bg);
   color: var(--text);
@@ -49,6 +54,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.5;
+}
+
+input, textarea, select {
+  font-size: 16px;
 }
 
 
@@ -131,6 +140,21 @@ img {
 
 [data-theme='dark'] .header-scrolled {
   background-color: var(--bg);
+}
+
+.header-menu-open {
+  background-color: #FFFFFF !important;
+  z-index: 2000 !important;
+}
+
+[data-theme='dark'] .header-menu-open {
+  background-color: #0B0B0B !important;
+}
+
+.logo-area--hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 .desktop-only {
@@ -218,7 +242,7 @@ img {
 }
 
 .mobile-nav a {
-  font-size: 35px;
+  font-size: 27px;
   font-weight: 500;
   text-decoration: none;
   color: var(--text);
@@ -900,7 +924,7 @@ img {
     bottom: calc(100% - 10px);
   }
   .hero-prompt-input {
-    font-size: 14px;
+    font-size: 16px;
   }
   .prompt-icon-btn {
     display: none;
@@ -4394,7 +4418,7 @@ img {
 }
 
 .soul-drawer-footer .hero-prompt-input {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   caret-color: var(--text);
 }
@@ -4545,7 +4569,7 @@ img {
   }
   .hero-floating-input-bar .hero-prompt-input,
   .soul-input-bar .hero-prompt-input {
-    font-size: 15px !important;
+    font-size: 16px !important;
     line-height: 1.4;
   }
   .hero-floating-input-bar .prompt-submit-btn,

@@ -31,12 +31,12 @@ const AppContent = () => {
   const location = useLocation();
   const isSoulPage = location.pathname.includes('/soul');
 
-  // Close drawer if navigating to the full Soul page
+  // Close drawer if navigating to another page (e.g. project detail or soul)
   useEffect(() => {
-    if (isSoulPage && isOpen) {
+    if (isOpen) {
       closeOverlay();
     }
-  }, [isSoulPage, isOpen, closeOverlay]);
+  }, [location.pathname]);
 
   return (
     <>

@@ -80,11 +80,11 @@ export const Header = () => {
 
   return (
     <>
-      <header className={`header ${isScrolled ? 'header-scrolled' : ''}`}>
+      <header className={`header ${isScrolled ? 'header-scrolled' : ''} ${isMenuOpen ? 'header-menu-open' : ''}`}>
         <div className="header-inner">
           <Link
             to="/"
-            className="logo-area"
+            className={`logo-area ${isMenuOpen ? 'logo-area--hidden' : ''}`}
             onClick={() => {
               setIsMenuOpen(false);
               if (isOverlayOpen) closeOverlay();
