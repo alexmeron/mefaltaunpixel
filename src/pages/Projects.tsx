@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { Dribbble, ArrowUpRight } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -183,6 +184,53 @@ export const Projects = () => {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Dribbble Showcase Banner */}
+      <section className="site-container pt-12 site-desktop:pt-16">
+        <a
+          href="https://dribbble.com/mefaltaunpixel"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="dribbble-banner group"
+          aria-label={
+            language === 'es'
+              ? 'Ver perfil de Dribbble de Álex Salmerón'
+              : "View Álex Salmerón's Dribbble profile"
+          }
+        >
+          <div className="dribbble-banner-bg-icon" aria-hidden="true">
+            <Dribbble size={200} strokeWidth={1.5} />
+          </div>
+
+          <div className="dribbble-banner-content">
+            <div className="dribbble-banner-icon-badge" aria-hidden="true">
+              <Dribbble size={26} strokeWidth={2.2} />
+            </div>
+
+            <div className="dribbble-banner-text">
+              <span className="dribbble-banner-tag">
+                <span className="dribbble-banner-tag-dot" />
+                {language === 'es' ? 'Dribbble · Exploraciones' : 'Dribbble · Explorations'}
+              </span>
+              <h3 className="dribbble-banner-title">
+                {language === 'es'
+                  ? 'Explora más conceptos y shots en Dribbble'
+                  : 'Explore more concepts and shots on Dribbble'}
+              </h3>
+              <p className="dribbble-banner-desc">
+                {language === 'es'
+                  ? 'Prototipos interactivos, microinteracciones y experimentos visuales de producto.'
+                  : 'Interactive prototypes, micro-interactions, and visual product explorations.'}
+              </p>
+            </div>
+          </div>
+
+          <div className="dribbble-banner-cta">
+            <span>{language === 'es' ? 'Ver en Dribbble' : 'View on Dribbble'}</span>
+            <ArrowUpRight size={18} className="dribbble-banner-cta-icon" />
+          </div>
+        </a>
       </section>
 
       {/* Side Projects Category */}
