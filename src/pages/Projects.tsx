@@ -112,7 +112,7 @@ export const Projects = () => {
             <div className="project-placeholder-center">
               <span className="project-placeholder-pill">
                 {item.isLocked && (
-                  <Lock size={12} strokeWidth={2.2} className="mr-1.5 shrink-0" aria-hidden="true" />
+                  <Lock size={12} strokeWidth={2.2} className="shrink-0" style={{ marginRight: '8px' }} aria-hidden="true" />
                 )}
                 <span>{language === 'es' ? 'Próximamente' : 'Coming soon'}</span>
               </span>
