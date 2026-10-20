@@ -72,49 +72,65 @@ export const SEO: React.FC<SEOProps> = ({ title, description }) => {
     }
     schemaScript.textContent = JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Álex Salmerón",
-      "alternateName": "Alex Salmeron",
-      "url": "https://www.mefaltaunpixel.es",
-      "jobTitle": "Senior Product Designer",
-      "description": description,
-      "image": "https://www.mefaltaunpixel.es/og-image.png",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Murcia",
-        "addressRegion": "Murcia",
-        "addressCountry": "ES"
-      },
-      "knowsAbout": [
-        "Product Design",
-        "Design Systems",
-        "DesignOps",
-        "Visual Design",
-        "UX Research",
-        "Figma",
-        "UI Design",
-        "Prototyping",
-        "Component Libraries",
-        "Design Tokens"
-      ],
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Senior Product Designer",
-        "occupationLocation": {
-          "@type": "City",
-          "name": "Murcia"
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://www.mefaltaunpixel.es/#website",
+          "url": "https://www.mefaltaunpixel.es",
+          "name": "Álex Salmerón",
+          "alternateName": ["Alex Salmeron", "mefaltaunpixel", "mefaltaunpixel.es"],
+          "publisher": {
+            "@id": "https://www.mefaltaunpixel.es/#person"
+          },
+          "inLanguage": ["es", "en"]
         },
-        "skills": "Product Design, Design Systems, DesignOps, Figma, Visual Design, UX Research"
-      },
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Cella Medical Solutions"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/in/alexsalmeron/",
-        "https://dribbble.com/mefaltaunpixel",
-        "https://www.figma.com/@mefaltaunpixel",
-        "https://x.com/mefaltaunpixel"
+        {
+          "@type": "Person",
+          "@id": "https://www.mefaltaunpixel.es/#person",
+          "name": "Álex Salmerón",
+          "alternateName": "Alex Salmeron",
+          "url": "https://www.mefaltaunpixel.es",
+          "jobTitle": "Senior Product Designer",
+          "description": description,
+          "image": "https://www.mefaltaunpixel.es/og-image.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Murcia",
+            "addressRegion": "Murcia",
+            "addressCountry": "ES"
+          },
+          "knowsAbout": [
+            "Product Design",
+            "Design Systems",
+            "DesignOps",
+            "Visual Design",
+            "UX Research",
+            "Figma",
+            "UI Design",
+            "Prototyping",
+            "Component Libraries",
+            "Design Tokens"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Senior Product Designer",
+            "occupationLocation": {
+              "@type": "City",
+              "name": "Murcia"
+            },
+            "skills": "Product Design, Design Systems, DesignOps, Figma, Visual Design, UX Research"
+          },
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Cella Medical Solutions"
+          },
+          "sameAs": [
+            "https://www.linkedin.com/in/alexsalmeron/",
+            "https://dribbble.com/mefaltaunpixel",
+            "https://www.figma.com/@mefaltaunpixel",
+            "https://x.com/mefaltaunpixel"
+          ]
+        }
       ]
     });
   }, [description]);
