@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Dribbble, ArrowUpRight } from 'lucide-react';
+import { Dribbble, ArrowUpRight, Lock } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { useLanguage } from '../context/LanguageContext';
 
@@ -14,6 +14,7 @@ interface ProjectItem {
   href?: string;
   isPlaceholder?: boolean;
   isDribbble?: boolean;
+  isLocked?: boolean;
 }
 
 export const Projects = () => {
@@ -50,6 +51,7 @@ export const Projects = () => {
       descEs: 'Investigación UX y evolución del sistema de diseño para herramientas de planificación quirúrgica 3D guiadas por IA. Actualmente en desarrollo.',
       descEn: 'UX research and design system evolution for AI-guided 3D surgical planning tools. Currently in progress.',
       isPlaceholder: true,
+      isLocked: true,
     },
     {
       id: 'magma-design-system',
@@ -109,7 +111,10 @@ export const Projects = () => {
 
             <div className="project-placeholder-center">
               <span className="project-placeholder-pill">
-                {language === 'es' ? 'Próximamente' : 'Coming soon'}
+                {item.isLocked && (
+                  <Lock size={12} strokeWidth={2.2} className="mr-1.5 shrink-0" aria-hidden="true" />
+                )}
+                <span>{language === 'es' ? 'Próximamente' : 'Coming soon'}</span>
               </span>
             </div>
           </div>
