@@ -836,6 +836,28 @@ img {
   transform: none !important;
 }
 
+@media (min-width: 1280px) {
+  .hero-card .hero-prompt-container {
+    padding: 22px 20px 22px 36px;
+    gap: 16px;
+    min-height: 90px;
+  }
+
+  .hero-card .hero-prompt-input {
+    font-size: 22px;
+  }
+
+  .hero-card .prompt-submit-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .hero-card .prompt-submit-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
 @media (max-width: 1024px) {
   .hero-section {
     padding: 0 32px;
@@ -4527,6 +4549,7 @@ img {
 .soul-input-bar .soul-prompt-container {
   pointer-events: auto;
   max-width: 780px;
+  min-height: 90px;
   padding: 22px 20px 22px 36px;
   gap: 16px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14), 0 2px 10px rgba(0, 0, 0, 0.06);
@@ -4556,13 +4579,14 @@ img {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-@media (max-width: 1470px) {
+@media (max-width: 1279px) {
   .hero-floating-input-bar {
     bottom: 22px;
   }
   .hero-floating-input-bar .hero-prompt-container,
   .soul-input-bar .soul-prompt-container {
     max-width: 640px !important;
+    min-height: auto !important;
     padding: 14px 12px 14px 22px !important;
     gap: 12px !important;
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.05);
