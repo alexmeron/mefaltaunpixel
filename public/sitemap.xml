@@ -1,48 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  <!-- HOME -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mefaltaunpixel.es/es</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.es/en"/>
+    <loc>https://www.mefaltaunpixel.es</loc>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mefaltaunpixel.es/en</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mefaltaunpixel.es/en"/>
-    <priority>1.0</priority>
+    <loc>https://www.mefaltaunpixel.es/projects</loc>
+    <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
-
-  <!-- ABOUT -->
   <url>
-    <loc>https://mefaltaunpixel.es/es/about</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es/about"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en/about"/>
+    <loc>https://www.mefaltaunpixel.es/about</loc>
     <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mefaltaunpixel.es/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es/about"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en/about"/>
+    <loc>https://www.mefaltaunpixel.es/resources</loc>
     <priority>0.8</priority>
-  </url>
-
-  <!-- SOUL -->
-  <url>
-    <loc>https://mefaltaunpixel.es/es/soul</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es/soul"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en/soul"/>
-    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
   </url>
   <url>
-    <loc>https://mefaltaunpixel.es/en/soul</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://mefaltaunpixel.es/es/soul"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mefaltaunpixel.es/en/soul"/>
-    <priority>0.7</priority>
+    <loc>https://www.mefaltaunpixel.es/project/waykout</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.mefaltaunpixel.es/project/animal-rescue</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.mefaltaunpixel.es/project/gaztelugatxe-tracker</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://www.mefaltaunpixel.es/project/dribbble</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
 </urlset>

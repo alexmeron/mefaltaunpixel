@@ -425,10 +425,13 @@ function generateSitemap() {
 
   const pages = [
     { path: '', priority: '1.0', changefreq: 'weekly' },
+    { path: 'projects', priority: '0.9', changefreq: 'weekly' },
     { path: 'about', priority: '0.8', changefreq: 'weekly' },
+    { path: 'resources', priority: '0.8', changefreq: 'weekly' },
     { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' },
     { path: 'project/animal-rescue', priority: '0.8', changefreq: 'monthly' },
-    { path: 'project/gaztelugatxe-tracker', priority: '0.8', changefreq: 'monthly' }
+    { path: 'project/gaztelugatxe-tracker', priority: '0.8', changefreq: 'monthly' },
+    { path: 'project/dribbble', priority: '0.8', changefreq: 'monthly' }
   ];
 
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
@@ -446,7 +449,9 @@ function generateSitemap() {
   xml += '</urlset>';
 
   fs.writeFileSync(path.join(DIST_DIR, 'sitemap.xml'), xml, 'utf8');
-  console.log('Sitemap.xml written successfully to dist/');
+  const publicSitemap = path.join(__dirname, '../public/sitemap.xml');
+  fs.writeFileSync(publicSitemap, xml, 'utf8');
+  console.log('Sitemap.xml written successfully to dist/ and public/');
 }
 
 prerender();
