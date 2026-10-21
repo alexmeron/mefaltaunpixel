@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useSoulOverlay } from '../context/SoulOverlayContext';
@@ -7,18 +7,14 @@ import { useSoulPlaceholder } from '../hooks/useSoulPlaceholder';
 
 export const FloatingSoulBar = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const { isOpen, openOverlay } = useSoulOverlay();
   const [query, setQuery] = useState('');
   const isHomePage = location.pathname === '/' || location.pathname === '';
   const isAboutPage = location.pathname.startsWith('/about');
-  const isSoulPage = location.pathname.includes('/soul');
   const [isScrolled, setIsScrolled] = useState(false);
   const placeholder = useSoulPlaceholder(query);
 
   useEffect(() => {
-    if (isSoulPage) return;
-
     const handleScroll = () => {
       if (isHomePage) {
         const targetEl = document.querySelector('.hero-card');
@@ -39,14 +35,13 @@ export const FloatingSoulBar = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isHomePage, isSoulPage]);
+  }, [isHomePage]);
 
   // Determine visibility:
   // - On About: always visible
-  // - On other non-Soul pages: visible whenever scrolled
-  // - On Soul: never visible
+  // - On other pages: visible whenever scrolled
   // - When overlay drawer is open: hidden
-  const isVisible = !isSoulPage && !isOpen && (isAboutPage || isScrolled);
+  const isVisible = !isOpen && (isAboutPage || isScrolled);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();

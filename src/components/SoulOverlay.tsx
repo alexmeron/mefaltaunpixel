@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, X, Maximize2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, X } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 import { getSoulResponse } from '../data/soul-knowledge';
 import { useSoulPlaceholder } from '../hooks/useSoulPlaceholder';
@@ -356,24 +355,6 @@ export const SoulOverlay = ({
         {/* Drawer Header Actions */}
         <div className="soul-drawer-header">
           <div className="soul-drawer-actions">
-            <Link
-              to="/soul"
-              state={{
-                messages,
-                input,
-                isTyping,
-              }}
-              onClick={onClose}
-              className="soul-drawer-action-btn"
-              title={
-                language === 'es'
-                  ? 'Abrir en página completa'
-                  : 'Open full screen'
-              }
-              aria-label="Open full screen"
-            >
-              <Maximize2 size={16} />
-            </Link>
             <button
               onClick={onClose}
               className="soul-drawer-action-btn"

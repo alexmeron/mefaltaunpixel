@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 
 import { motion, AnimatePresence } from 'framer-motion';
@@ -16,9 +15,7 @@ export const LikeButton = () => {
   const [likes, setLikes] = useState(124);
   const [isLiked, setIsLiked] = useState(false);
   const [particles, setParticles] = useState<Particle[]>([]);
-  const location = useLocation();
   const { isOpen: isOverlayOpen } = useSoulOverlay();
-  const isSoulPage = location.pathname.includes('/soul');
 
   useEffect(() => {
     // 1. Fetch real likes from API
@@ -81,7 +78,7 @@ export const LikeButton = () => {
   if (isOverlayOpen) return null;
 
   return (
-    <div className={`floating-like-container ${isSoulPage ? 'hide-mobile-soul' : ''}`}>
+    <div className="floating-like-container">
       <div className="particles-wrapper">
         <AnimatePresence>
           {particles.map((p) => (

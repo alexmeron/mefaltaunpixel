@@ -5,7 +5,6 @@ import { Header } from './components/Header';
 import { Home } from './pages/Home';
 
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
-const Soul = lazy(() => import('./pages/Soul').then(m => ({ default: m.Soul })));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail').then(m => ({ default: m.ProjectDetail })));
 const Resources = lazy(() => import('./pages/Resources').then(m => ({ default: m.Resources })));
 const Projects = lazy(() => import('./pages/Projects').then(m => ({ default: m.Projects })));
@@ -29,9 +28,8 @@ const LegacyArticleRedirect = () => {
 const AppContent = () => {
   const { isOpen, closeOverlay, initialQuery, overlayId } = useSoulOverlay();
   const location = useLocation();
-  const isSoulPage = location.pathname.includes('/soul');
 
-  // Close drawer if navigating to another page (e.g. project detail or soul)
+  // Close drawer if navigating to another page (e.g. project detail)
   useEffect(() => {
     if (isOpen) {
       closeOverlay();
@@ -45,7 +43,7 @@ const AppContent = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/soul" element={<Soul />} />
+          <Route path="/soul" element={<Navigate to="/" replace />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/projects" element={<Projects />} />
           {/* Articles temporarily hidden - redirecting to home */}
@@ -57,7 +55,7 @@ const AppContent = () => {
           <Route path="/:lang/project/:id" element={<LegacyProjectRedirect />} />
           <Route path="/:lang/articles/:id" element={<Navigate to="/" replace />} />
           <Route path="/:lang/about" element={<Navigate to="/about" replace />} />
-          <Route path="/:lang/soul" element={<Navigate to="/soul" replace />} />
+          <Route path="/:lang/soul" element={<Navigate to="/" replace />} />
           <Route path="/:lang/resources" element={<Navigate to="/resources" replace />} />
           <Route path="/:lang/projects" element={<Navigate to="/projects" replace />} />
           <Route path="/:lang/articles" element={<Navigate to="/" replace />} />
@@ -70,9 +68,9 @@ const AppContent = () => {
       <FloatingSoulBar />
       <LikeButton />
 
-      {/* Soul Right Drawer when queried from any other page */}
+      {/* Soul Right Drawer when queried from any page */}
       <AnimatePresence>
-        {isOpen && !isSoulPage && (
+        {isOpen && (
           <SoulOverlay
             key={`soul-drawer-${overlayId}`}
             initialQuery={initialQuery}

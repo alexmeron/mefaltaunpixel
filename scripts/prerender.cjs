@@ -13,10 +13,6 @@ const SEO_DATA = {
     title: "About Álex Salmerón — Product Designer based in Murcia, Spain",
     desc: "Álex Salmerón is a Senior Product Designer based in Murcia with 15+ years of experience. Specialized in Design Systems, DesignOps and Figma. Discover his professional journey, design library and tools."
   },
-  soul: {
-    title: "Soul — Álex Salmerón's AI Design Assistant",
-    desc: "Chat with Soul, the personal AI assistant of Álex Salmerón, product designer based in Murcia. Ask about his experience, skills, Design Systems work and how to get in touch."
-  },
   resources: {
     title: "Recursos creados para la comunidad de diseño — Álex Salmerón",
     desc: "Plugins, librerías y herramientas desarrolladas a partir de mi experiencia en diseño de producto, Design Systems y optimización de flujos de trabajo. Creados para compartir conocimiento y ayudar a otros diseñadores a trabajar mejor."
@@ -68,7 +64,7 @@ const HTML_CONTENT = {
       <h1>Álex Salmerón — Senior Product Designer</h1>
       <p>Product Designer based in Murcia, Spain, with 15+ years of experience. Specialized in Visual Design, Design Systems and DesignOps. Helping teams and companies build consistent, scalable and maintainable digital products.</p>
       <nav>
-        <a href="/">Work</a> | <a href="/about">About</a> | <a href="/soul">Soul AI</a>
+        <a href="/">Work</a> | <a href="/about">About</a>
       </nav>
     </header>
     <main>
@@ -116,14 +112,6 @@ const HTML_CONTENT = {
           <li>Droiders / Streye — UI/UX Designer (2015–2017)</li>
         </ul>
       </section>
-    </main>
-  `,
-  soul: `
-    <header>
-      <h1>Soul — Álex Salmerón's Personal AI Design Assistant</h1>
-    </header>
-    <main>
-      <p>Chat with Soul, the personal AI assistant of Álex Salmerón. Ask about his experience, Design Systems work, current role at Cella Medical Solutions, Figma plugins, or how to get in touch.</p>
     </main>
   `,
   resources: `
@@ -320,7 +308,6 @@ const SCHEMA_DATA = {
 const ROUTES = [
   { path: '', seoKey: 'home', contentKey: 'home' },
   { path: 'about', seoKey: 'about', contentKey: 'about' },
-  { path: 'soul', seoKey: 'soul', contentKey: 'soul' },
   { path: 'resources', seoKey: 'resources', contentKey: 'resources' },
   { path: 'projects', seoKey: 'projects', contentKey: 'projects' },
   { path: 'project/waykout', seoKey: 'projects.waykout', contentKey: 'project_waykout' },
@@ -439,7 +426,6 @@ function generateSitemap() {
   const pages = [
     { path: '', priority: '1.0', changefreq: 'weekly' },
     { path: 'about', priority: '0.8', changefreq: 'weekly' },
-    { path: 'soul', priority: '0.8', changefreq: 'weekly' },
     { path: 'project/waykout', priority: '0.8', changefreq: 'monthly' },
     { path: 'project/animal-rescue', priority: '0.8', changefreq: 'monthly' },
     { path: 'project/gaztelugatxe-tracker', priority: '0.8', changefreq: 'monthly' }

@@ -100,7 +100,6 @@ export const Header = () => {
               <li><NavLink to="/" end className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_hello')}</NavLink></li>
               <li><NavLink to="/projects" className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_projects')}</NavLink></li>
               <li><NavLink to="/about" className={({isActive}) => isActive ? 'nav-active' : ''}>{t('nav_about')}</NavLink></li>
-              <li><NavLink to="/soul" className={({isActive}) => isActive ? 'nav-active' : ''} translate="no">{t('nav_soul')}</NavLink></li>
               <li><a href="/cv-alex-salmeron.pdf" target="_blank" rel="noreferrer">{t('nav_resume')}</a></li>
             </ul>
           </nav>
@@ -204,7 +203,6 @@ export const Header = () => {
                 <NavLink to="/" end onClick={() => setIsMenuOpen(false)}>{t('nav_hello')}</NavLink>
                 <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>{t('nav_projects')}</NavLink>
                 <NavLink to="/about" onClick={() => setIsMenuOpen(false)}>{t('nav_about')}</NavLink>
-                <NavLink to="/soul" onClick={() => setIsMenuOpen(false)} translate="no">{t('nav_soul')}</NavLink>
                 <a href="/cv-alex-salmeron.pdf" target="_blank" rel="noreferrer">{t('nav_resume')}</a>
                 <a 
                   href="#contact" 
