@@ -10,8 +10,8 @@ const SEO_DATA = {
     desc: "Portfolio of Álex Salmerón, Senior Product Designer based in Murcia, Spain. 15+ years of experience in Visual Design, Design Systems and DesignOps. Helping teams build consistent, scalable digital products."
   },
   about: {
-    title: "About Álex Salmerón — Product Designer based in Murcia, Spain",
-    desc: "Álex Salmerón is a Senior Product Designer based in Murcia with 15+ years of experience. Specialized in Design Systems, DesignOps and Figma. Discover his professional journey, design library and tools."
+    title: "About Álex Salmerón — Senior Product Designer & DesignOps",
+    desc: "Discover Álex Salmerón's 15+ year journey in Product Design. Specialist in Design Systems, Figma, and scalable UI. Living in Spain, passionate about active life."
   },
   resources: {
     title: "Recursos creados para la comunidad de diseño — Álex Salmerón",

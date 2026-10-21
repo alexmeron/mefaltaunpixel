@@ -68,8 +68,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       // SEO ES
       seo_home_title: "Álex Salmerón - Diseñador de Producto Senior",
       seo_home_desc: "Portfolio de Álex Salmerón, diseñador de producto senior en Murcia, especializado en sistemas de diseño y DesignOps. Descubre mis proyectos de diseño y herramientas para Figma.",
-      seo_about_title: "Sobre mí | Álex Salmerón - Product Designer",
-      seo_about_desc: "Conoce la trayectoria de Álex Salmerón, product designer en Murcia desde 2007, especialista en Design Systems y Figma. Descubre mi biblioteca de diseño y mi pasión por el crossfit y la naturaleza.",
+      seo_about_title: "Sobre Álex Salmerón — Senior Product Designer & DesignOps",
+      seo_about_desc: "Conoce la trayectoria de +15 años de Álex Salmerón en diseño de producto. Especialista en Design Systems, Figma y UI escalable. Apasionado de la vida activa.",
       seo_soul_title: "Soul AI | Álex Salmerón - Asistente Personal de Diseño",
       seo_soul_desc: "Interactúa con Soul, mi IA personalizada. Resuelve dudas sobre mi experiencia en Design Systems, metodología de trabajo y proyectos de diseño de producto.",
       seo_project_suffix: " | Proyecto de Diseño de Producto por Álex Salmerón",
@@ -135,8 +135,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       // SEO EN
       seo_home_title: "Álex Salmerón - Senior Product Designer",
       seo_home_desc: "Portfolio of Álex Salmerón, senior product designer based in Murcia, Spain, specialized in design systems and DesignOps. Discover my design projects and tools for Figma.",
-      seo_about_title: "About | Álex Salmerón - Product Designer",
-      seo_about_desc: "Explore my professional journey since 2007. Specialist in DesignOps and Figma Camp. Discover my design library and my passion for nature and life with Bronx.",
+      seo_about_title: "About Álex Salmerón — Senior Product Designer & DesignOps",
+      seo_about_desc: "Discover Álex Salmerón's 15+ year journey in Product Design. Specialist in Design Systems, Figma, and scalable UI. Living in Spain, passionate about active life.",
       seo_soul_title: "Soul AI | Álex Salmerón - Personal Design Assistant",
       seo_soul_desc: "Chat with Soul, my custom AI assistant. Get insights into my experience with Design Systems, workflows, and product design projects.",
       seo_project_suffix: " | Product Design Project by Álex Salmerón",
