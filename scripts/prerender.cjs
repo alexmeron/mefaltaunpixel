@@ -18,8 +18,8 @@ const SEO_DATA = {
     desc: "Plugins, librerías y herramientas desarrolladas a partir de mi experiencia en diseño de producto, Design Systems y optimización de flujos de trabajo. Creados para compartir conocimiento y ayudar a otros diseñadores a trabajar mejor."
   },
   projects: {
-    title: "Proyectos que dan forma a mejores experiencias digitales — Álex Salmerón",
-    desc: "Una selección de proyectos en los que exploro el diseño de producto, los sistemas de diseño y nuevas formas de conectar diseño, tecnología e IA para resolver problemas reales.",
+    title: "Senior Product Designer Portfolio & Case Studies — Álex Salmerón",
+    desc: "Explore UX, Product Design and Design Systems case studies by Álex Salmerón. 15+ years solving complex problems with user-centered design, Figma, and AI.",
     waykout: {
       title: "Waykout Case Study — Product Design by Álex Salmerón",
       desc: "Waykout is a collaborative tourism platform for authentic local experiences in Murcia, Spain. Full product design and MVP by Álex Salmerón, Senior Product Designer."

@@ -188,10 +188,12 @@ export const Projects = () => {
   return (
     <main className="resources-page page-wrapper">
       <SEO
-        title={language === 'es' ? 'Proyectos — Álex Salmerón' : 'Projects — Álex Salmerón'}
+        title={language === 'es'
+          ? 'Portfolio de Diseño de Producto y Casos de Estudio — Álex Salmerón'
+          : 'Senior Product Designer Portfolio & Case Studies — Álex Salmerón'}
         description={language === 'es'
-          ? 'Proyectos de diseño de producto y sistemas de diseño por Álex Salmerón.'
-          : 'Product design and design systems projects by Álex Salmerón.'}
+          ? 'Explora casos de estudio de UX, diseño de producto y Design Systems por Álex Salmerón. +15 años resolviendo problemas complejos con diseño, Figma e IA.'
+          : 'Explore UX, Product Design and Design Systems case studies by Álex Salmerón. 15+ years solving complex problems with user-centered design, Figma, and AI.'}
       />
 
       <div className="site-container">
